@@ -1,0 +1,11 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="covid.csv"
+  DTS:DTSID="{1CDD5064-4516-4507-B3C6-6AAF6580CDC5}"
+  DTS:CreationName="FILE">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:FileUsageType="1"
+      DTS:ConnectionString="D:\Studies\AAA_Semestr_Ostatni\P3\Paczki\Pliki_plaskie\temp\covid.xls" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>
