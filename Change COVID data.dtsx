@@ -11,8 +11,8 @@
   DTS:LocaleID="1045"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="66"
-  DTS:VersionGUID="{4D6C39E5-57E0-487A-9E5A-C3D1166BC18D}">
+  DTS:VersionBuild="67"
+  DTS:VersionGUID="{AD3AC691-1FA8-461C-9AC7-73002E5BB476}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1758,6 +1758,15 @@
       DTS:ObjectName="FlatFileLocation">
       <DTS:VariableValue
         DTS:DataType="8">D:\Studies\AAA_Semestr_Ostatni\P3\Paczki\Pliki_Plaskie</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{EE071458-CA6B-412D-9662-FFA07AC1F2EA}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="Numerator">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
     </DTS:Variable>
   </DTS:Variables>
   <DTS:Executables>
@@ -4517,6 +4526,30 @@
           Id="Package\Data Flow Task\Flat File Destination"
           TopLeft="100.00000170299,175.117649514782" />
         <EdgeLayout
+          Id="Package\Data Flow Task.Paths[ISO]"
+          TopLeft="182.11428742944,152.48235449626">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,22.6352950185229"
+              Start="0,0"
+              End="0,15.1352950185229">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.1352950185229" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-8.7994140625,2.78102641551143,17.598828125,9.5732421875"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package\Data Flow Task.Paths[Flat File Source Output]"
           TopLeft="99.8571429057997,71.3882353584659">
           <EdgeLayout.Curve>
@@ -4548,30 +4581,6 @@
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[ISO]"
-          TopLeft="182.11428742944,152.48235449626">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,22.6352950185229"
-              Start="0,0"
-              End="0,15.1352950185229">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,15.1352950185229" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-8.7994140625,2.78102641551143,17.598828125,9.5732421875"
-              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
