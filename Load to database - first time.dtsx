@@ -11,8 +11,8 @@
   DTS:LocaleID="1045"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="19"
-  DTS:VersionGUID="{7B63945B-02AF-4B3A-9150-6DA4DCCCC2EC}">
+  DTS:VersionBuild="20"
+  DTS:VersionGUID="{91921BE4-09E8-4A2C-9CBB-879286F0359B}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -105,13 +105,11 @@
           DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:PropertyExpression
-            DTS:Name="Connection">@[$Project::SQLServer]+".master"</DTS:PropertyExpression>
-          <DTS:PropertyExpression
             DTS:Name="SqlStatementSource">"
 DROP DATABASE IF EXISTS " +  @[User::DBName]</DTS:PropertyExpression>
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="DESKTOP-DBV1COE\SQLEXPRESS.master"
+              SQLTask:Connection="{BD17A51E-5E68-47C6-BC29-31F77433170F}"
               SQLTask:SqlStatementSource="&#xA;DROP DATABASE IF EXISTS projekt" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ParameterBinding
                 SQLTask:ParameterName="0"
@@ -156,13 +154,17 @@ DROP DATABASE IF EXISTS " +  @[User::DBName]</DTS:PropertyExpression>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="140,41.6"
-          Id="Package\Create DB\Drop if exists"
-          TopLeft="15.628576817318,14.0705900370456" />
-        <NodeLayout
           Size="125.6,41.6"
           Id="Package\Create DB\Create DB"
           TopLeft="17.7714339966677,85.1882380932674" />
+        <NodeLayout
+          Size="156.8,41.6"
+          Id="Package\Create DB\Create DB tables"
+          TopLeft="3.85714401274319,160.258826854072" />
+        <NodeLayout
+          Size="140,41.6"
+          Id="Package\Create DB\Drop if exists"
+          TopLeft="15.628576817318,14.0705900370456" />
         <EdgeLayout
           Id="Package\Create DB.PrecedenceConstraints[Constraint]"
           TopLeft="83.1000054069928,55.6705900370456">
@@ -185,10 +187,6 @@ DROP DATABASE IF EXISTS " +  @[User::DBName]</DTS:PropertyExpression>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="156.8,41.6"
-          Id="Package\Create DB\Create DB tables"
-          TopLeft="3.85714401274319,160.258826854072" />
         <EdgeLayout
           Id="Package\Create DB.PrecedenceConstraints[Constraint 1]"
           TopLeft="81.4142890047054,126.788238093267">

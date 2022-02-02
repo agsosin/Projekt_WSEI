@@ -11,8 +11,8 @@
   DTS:LocaleID="1045"
   DTS:ObjectName="Execute in order"
   DTS:PackageType="5"
-  DTS:VersionBuild="111"
-  DTS:VersionGUID="{9061E0A2-246B-4BD8-A03D-8D18908AE5A4}">
+  DTS:VersionBuild="113"
+  DTS:VersionGUID="{D0D84952-D640-4A7F-96F2-2F0414E80BAD}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -3382,7 +3382,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayEl
           DTS:ExecutableType="Microsoft.ScriptTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Delete downloaded"
-          DTS:ThreadHint="2">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <ScriptProject
@@ -4000,7 +4000,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           DTS:ExecutableType="Microsoft.ScriptTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Download COVID"
-          DTS:ThreadHint="2">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <ScriptProject
@@ -4649,7 +4649,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
           DTS:ExecutableType="Microsoft.ScriptTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Download Indicators"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <ScriptProject
@@ -6077,7 +6077,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           DTS:ExecutableType="Microsoft.ScriptTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Trigger error message"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="2">
           <DTS:Variables />
           <DTS:ObjectData>
             <ScriptProject
@@ -6784,7 +6784,44 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 4"
           DTS:To="Package\First use\Transform death reasons" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\First use.PrecedenceConstraints[Constraint 5]"
+          DTS:CreationName=""
+          DTS:DTSID="{1F1D43D5-4BBD-4126-B0AD-B460112C41D1}"
+          DTS:EvalOp="3"
+          DTS:Expression="@[User::CzyPobrane] ==3"
+          DTS:From="Package\First use\Foreach Loop Container"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 5"
+          DTS:To="Package\First use\Download Indicators" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\First use.PrecedenceConstraints[Constraint 6]"
+          DTS:CreationName=""
+          DTS:DTSID="{84C35CA5-A19A-44FF-BD81-70658B92BEFC}"
+          DTS:EvalOp="3"
+          DTS:Expression="@[User::CzyPobrane] ==3"
+          DTS:From="Package\First use\Foreach Loop Container"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 6"
+          DTS:To="Package\First use\Download COVID" />
       </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Load to DB"
+      DTS:CreationName="Microsoft.ExecutePackageTask"
+      DTS:Description="Execute Package Task"
+      DTS:DTSID="{77A1C947-3C63-401E-A972-731425E1CF81}"
+      DTS:ExecutableType="Microsoft.ExecutePackageTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load to DB"
+      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecutePackageTask>
+          <UseProjectReference>True</UseProjectReference>
+          <PackageName>Load to database - first time.dtsx</PackageName>
+        </ExecutePackageTask>
+      </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\Refresh data"
@@ -7390,75 +7427,16 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
           DTS:To="Package\Refresh data\Transform" />
       </DTS:PrecedenceConstraints>
     </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Sequence Container"
-      DTS:CreationName="STOCK:SEQUENCE"
-      DTS:Description="Sequence Container"
-      DTS:DTSID="{7B2D9E82-5E74-4234-B29A-12F7D8AD4460}"
-      DTS:ExecutableType="STOCK:SEQUENCE"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Sequence Container">
-      <DTS:Variables />
-      <DTS:Executables>
-        <DTS:Executable
-          DTS:refId="Package\Sequence Container\Data Flow Task"
-          DTS:CreationName="Microsoft.Pipeline"
-          DTS:Description="Data Flow Task"
-          DTS:DTSID="{4CAB3116-4A65-44C4-8F9E-C5BE1B916E99}"
-          DTS:ExecutableType="Microsoft.Pipeline"
-          DTS:LocaleID="-1"
-          DTS:ObjectName="Data Flow Task"
-          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
-          <DTS:Variables />
-          <DTS:ObjectData>
-            <pipeline
-              version="1" />
-          </DTS:ObjectData>
-        </DTS:Executable>
-        <DTS:Executable
-          DTS:refId="Package\Sequence Container\Drop DB if exists"
-          DTS:CreationName="Microsoft.ExecuteSQLTask"
-          DTS:Description="Execute SQL Task"
-          DTS:DTSID="{216DC599-78C9-459C-917B-F305F3FD5CB6}"
-          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-          DTS:LocaleID="-1"
-          DTS:ObjectName="Drop DB if exists"
-          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
-          <DTS:Variables />
-          <DTS:ObjectData>
-            <SQLTask:SqlTaskData xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
-          </DTS:ObjectData>
-        </DTS:Executable>
-        <DTS:Executable
-          DTS:refId="Package\Sequence Container\Truncate"
-          DTS:CreationName="Microsoft.ExecuteSQLTask"
-          DTS:Description="Execute SQL Task"
-          DTS:DTSID="{1BA8AC55-51A8-495B-ABC3-2EE67A99C544}"
-          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-          DTS:LocaleID="-1"
-          DTS:ObjectName="Truncate"
-          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
-          <DTS:Variables />
-          <DTS:ObjectData>
-            <SQLTask:SqlTaskData
-              SQLTask:Connection="{4D56EFE2-D747-4400-882F-25A0140E21E6}"
-              SQLTask:SqlStatementSource="truncate table dbo.influenza" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
-          </DTS:ObjectData>
-        </DTS:Executable>
-      </DTS:Executables>
-    </DTS:Executable>
   </DTS:Executables>
   <DTS:PrecedenceConstraints>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{C991B6AB-24A7-47D8-AC1D-6641A0BE4C39}"
+      DTS:DTSID="{88CB593A-1DD2-49DC-8B21-F016C4B4F138}"
       DTS:From="Package\First use"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
-      DTS:To="Package\Sequence Container" />
+      DTS:To="Package\Load to DB" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -7487,7 +7465,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
         <NodeLayout
           Size="175.2,41.6"
           Id="Package\First use\Download Indicators"
-          TopLeft="313.714290579971,92.3529396106626" />
+          TopLeft="303.000004683222,217.00000018232" />
         <NodeLayout
           Size="221.6,41.6"
           Id="Package\First use\Foreach Loop Container\Check if user downloaded files"
@@ -7514,7 +7492,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
         <NodeLayout
           Size="175.2,41.6"
           Id="Package\First use\Transform indicators"
-          TopLeft="315.857149121713,176.682356866421" />
+          TopLeft="305.142863224964,301.329417438078" />
         <NodeLayout
           Size="172,41.6"
           Id="Package\First use\Transform influenza"
@@ -7623,7 +7601,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\First use.PrecedenceConstraints[Constraint 2]"
-          TopLeft="402.385719850842,133.952939610663">
+          TopLeft="391.671433954093,258.60000018232">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -7721,11 +7699,83 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\First use.PrecedenceConstraints[Constraint 5]"
+          TopLeft="526.457145800883,170.069748142764">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-48.257141117661,67.730252039556"
+              Start="0,0"
+              End="-40.757141117661,67.730252039556">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-20.1285705588305,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-20.1285705588305,0"
+                    Point2="-24.1285705588305,0"
+                    Point3="-24.1285705588305,4" />
+                  <mssgle:LineSegment
+                    End="-24.1285705588305,63.730252039556" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-24.1285705588305,63.730252039556"
+                    Point2="-24.1285705588305,67.730252039556"
+                    Point3="-28.1285705588305,67.730252039556" />
+                  <mssgle:LineSegment
+                    End="-40.757141117661,67.730252039556" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-32.1285705588305,-22,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\First use.PrecedenceConstraints[Constraint 6]"
+          TopLeft="526.457145800883,147.669748142764">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-311.314288195786,-39.7050393325649"
+              Start="0,0"
+              End="-303.814288195786,-39.7050393325649">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-122.601143866286,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-122.601143866286,0"
+                    Point2="-126.601143866286,0"
+                    Point3="-126.601143866286,-4" />
+                  <mssgle:LineSegment
+                    End="-126.601143866286,-35.7050393325649" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-126.601143866286,-35.7050393325649"
+                    Point2="-126.601143866286,-39.7050393325649"
+                    Point3="-130.601143866286,-39.7050393325649" />
+                  <mssgle:LineSegment
+                    End="-303.814288195786,-39.7050393325649" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-134.601143866286,1,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="966.4,540"
-          Size="966.4,583.2"
+          PanelSize="966.4,563.2"
+          Size="966.4,606.4"
           Id="Package\First use"
           TopLeft="56.4285723895447,202.845380794136" />
         <NodeLayout
@@ -7765,47 +7815,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
           Size="333.6,262.4"
           Id="Package\Refresh data"
           TopLeft="1135.20001907349,345.076473634054" />
-        <NodeLayout
-          Size="150.4,41.6"
-          Id="Package\Sequence Container\Data Flow Task"
-          TopLeft="67.3428648428011,165.217650061743" />
-        <NodeLayout
-          Size="120,41.6"
-          Id="Package\Sequence Container\Truncate"
-          TopLeft="161.942862203165,151.558825577831" />
-        <NodeLayout
-          Size="156.8,41.6"
-          Id="Package\Sequence Container\Drop DB if exists"
-          TopLeft="49.0571400958664,16.3117626360134" />
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="True"
-          PanelSize="366.4,261.6"
-          Size="366.4,304.8"
-          Id="Package\Sequence Container"
-          TopLeft="350.83809703029,833.27843689935" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="536.833334709917,786.045380794136">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,47.2330561052145"
-              Start="0,0"
-              End="0,39.7330561052145">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,39.7330561052145" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <AnnotationLayout
           Text="Refresh data jest wciąż w fazie designu"
           ParentId="Package"
@@ -7813,48 +7822,24 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
           Size="232.8,60"
           Id="978707bd-802c-47cf-866f-e73e3a109d07"
           TopLeft="1179.4000089407,276.905883779328" />
-      </GraphLayout>
-    </LayoutInfo>
-  </Package>
-  <TaskHost
-    design-time-name="Package\Sequence Container\Data Flow Task">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="150.4,41.6"
-          Id="2"
-          TopLeft="135.000002299036,96.3529425277842" />
-        <NodeLayout
-          Size="170.4,41.6"
-          Id="39"
-          TopLeft="210.714289302729,217.176473634053" />
+          Size="130.4,41.6"
+          Id="Package\Load to DB"
+          TopLeft="472.816333697072,876.657149811353" />
         <EdgeLayout
-          Id="56"
-          TopLeft="210.200002299036,137.952942527784">
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="538.822453043308,809.245380794136">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="85.7142870036923,79.2235311062691"
+              EndConnector="0,67.4117690172166"
               Start="0,0"
-              End="85.7142870036923,71.7235311062691">
+              End="0,59.9117690172166">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,35.6117655531346" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,35.6117655531346"
-                    Point2="0,39.6117655531346"
-                    Point3="4,39.6117655531346" />
-                  <mssgle:LineSegment
-                    End="81.7142870036923,39.6117655531346" />
-                  <mssgle:CubicBezierSegment
-                    Point1="81.7142870036923,39.6117655531346"
-                    Point2="85.7142870036923,39.6117655531346"
-                    Point3="85.7142870036923,43.6117655531346" />
-                  <mssgle:LineSegment
-                    End="85.7142870036923,71.7235311062691" />
+                    End="0,59.9117690172166" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -7865,7 +7850,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
-  </TaskHost>
+  </Package>
   <TaskHost
     design-time-name="Package\First use\Create table with countries and regions">
     <LayoutInfo>
