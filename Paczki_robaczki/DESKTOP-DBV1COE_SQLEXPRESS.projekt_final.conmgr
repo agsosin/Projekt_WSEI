@@ -3,6 +3,12 @@
   DTS:ObjectName="DESKTOP-DBV1COE_SQLEXPRESS.projekt_final"
   DTS:DTSID="{4D56EFE2-D747-4400-882F-25A0140E21E6}"
   DTS:CreationName="OLEDB">
+  <DTS:PropertyExpression
+    DTS:Name="InitialCatalog">@[$Project::Master]</DTS:PropertyExpression>
+  <DTS:PropertyExpression
+    DTS:Name="Name">@[$Project::Your_SQL_Server]</DTS:PropertyExpression>
+  <DTS:PropertyExpression
+    DTS:Name="ServerName">@[$Project::SQL_Server_Name]</DTS:PropertyExpression>
   <DTS:ObjectData>
     <DTS:ConnectionManager
       DTS:ConnectRetryCount="1"
