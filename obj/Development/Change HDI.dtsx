@@ -1,0 +1,3476 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="1/29/2022 11:40:31 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-DBV1COE"
+  DTS:CreatorName="DESKTOP-DBV1COE\agnie"
+  DTS:DTSID="{BC1B5D3F-EF57-4494-8839-DA4E682B8A4C}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.170"
+  DTS:LocaleID="1045"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="10"
+  DTS:VersionGUID="{FF622FFC-4DED-4728-AC75-853547DEEA2A}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Destination HDI]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{8C361A7A-32FB-41C9-A6DD-4382BBDE0BDD}"
+      DTS:ObjectName="Destination HDI">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[$Project::FiPath] +@[$Project::FlatFiles]+"\\HDI.csv"</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1045"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="1250"
+          DTS:ConnectionString="D:\Studies\AAA_Semestr_Ostatni\P3\Paczki\Pliki_Plaskie\HDI.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="HDI Rank"
+              DTS:DTSID="{3C92B61B-2193-4DDD-A1CE-FBBF499F4AAB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Country"
+              DTS:DTSID="{8FA4B3D8-4AAF-493E-9D33-57FE678E742E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Year 2019"
+              DTS:DTSID="{5C3F61BB-E01C-45DF-ADB8-C7821EBFE04A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="country-code"
+              DTS:DTSID="{869C1470-239E-4C5F-8CD2-6C63794E1F82}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="region"
+              DTS:DTSID="{10513C18-BB92-44F1-BDD3-194B942651EA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="sub-region"
+              DTS:DTSID="{1316DE6E-18A0-4411-A54D-53D29C778611}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Source_countries]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{20ACD596-248C-4B60-861E-A1C28B970B05}"
+      DTS:ObjectName="Source_countries">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[$Project::FiPath]+ @[$Project::FlatFiles]+"\\countries.csv"</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1045"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="1250"
+          DTS:ConnectionString="D:\Studies\AAA_Semestr_Ostatni\P3\Paczki\Pliki_Plaskie\countries.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 0"
+              DTS:DTSID="{FC717781-7990-4F53-850B-19179E439351}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="country name"
+              DTS:DTSID="{BA05DF7B-AE9A-4A20-BB06-365CC1511FBB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="country-code"
+              DTS:DTSID="{16D23EE8-D5C1-4A42-BBE3-6A7F4C0CC452}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="region"
+              DTS:DTSID="{78DC8375-DA3A-40C2-A109-07EA9758E03A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="sub-region"
+              DTS:DTSID="{D01FAFFA-2B60-4626-B039-BEE2519666D1}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Source_HDI]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{649B651F-A8F6-453D-A96F-6C7BF42363F7}"
+      DTS:ObjectName="Source_HDI">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[User::ManualDownloadLocation]+"\\Human Development Index (HDI).csv"</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1045"
+          DTS:HeaderRowsToSkip="5"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="1250"
+          DTS:ConnectionString="D:\Studies\AAA_Semestr_Ostatni\P3\Paczki\Pobrane\Human Development Index (HDI).csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="HDI Rank"
+              DTS:DTSID="{35F770E9-9FBF-42C8-8F9A-51C48C151079}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Country"
+              DTS:DTSID="{642DB471-7634-4E6A-A776-83E4DD44DAEC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="1990"
+              DTS:DTSID="{E67F1C5E-24FD-47EA-873F-D3961AC67864}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 3"
+              DTS:DTSID="{914B39CE-9FEC-45B7-92A9-85CD35D2DAB2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="1991"
+              DTS:DTSID="{6A6B2658-69E3-4F4E-B712-EBC4B8E72063}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 5"
+              DTS:DTSID="{91232FAF-2728-4813-BB5E-EF34729A8A9E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="1992"
+              DTS:DTSID="{823D5BD2-A564-4AE7-8548-ACB112A08B88}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 7"
+              DTS:DTSID="{DC7D834B-073A-4584-8B51-62CE2A5DA841}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="1993"
+              DTS:DTSID="{83041198-13E8-429A-86EA-DB1F286580EE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 9"
+              DTS:DTSID="{F1E53959-DB83-403A-A126-9DE4898AC105}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="1994"
+              DTS:DTSID="{6CA7A433-083B-472D-99D7-11302A54A1A0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 11"
+              DTS:DTSID="{11131984-53AA-438B-A176-7AFF050BE3D1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="1995"
+              DTS:DTSID="{4CEBC61A-49DB-4E34-A49F-20D3ACDC2751}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 13"
+              DTS:DTSID="{4F854BCE-DE60-44BD-A959-5BE2A8D2FAD6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="1996"
+              DTS:DTSID="{2555D20D-1BEF-43D9-A001-0C39B3FC5FA6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 15"
+              DTS:DTSID="{32EE685B-1FC1-4F67-80A8-983CEEAB3E51}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="1997"
+              DTS:DTSID="{090B87DF-C179-445C-BBBE-AC6210111987}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 17"
+              DTS:DTSID="{A17D27E9-9377-4F68-9F6A-D30B57620CA0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="1998"
+              DTS:DTSID="{4E6CF0FB-73E6-4273-B4CD-BC2C4B8CDB43}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 19"
+              DTS:DTSID="{80D70D95-0B46-4C8C-AC28-0DC1A0A93538}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="1999"
+              DTS:DTSID="{373A33E5-2938-473B-BC35-9CAA3C2BEC5B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 21"
+              DTS:DTSID="{FEAAE3E4-0E16-47E4-88BD-EA94A4C12195}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="2000"
+              DTS:DTSID="{72FE9947-30E8-4387-9CEE-D81DF12A6C3F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 23"
+              DTS:DTSID="{C77D4072-A62D-47C1-9C6F-B2C7F92B566B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="2001"
+              DTS:DTSID="{4C65BF83-70A0-4B22-8C34-C9CC9A30CF21}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 25"
+              DTS:DTSID="{903FC281-8052-4B60-9E46-4F5BADA76CFA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="2002"
+              DTS:DTSID="{30ABE9AD-4DA9-41D0-8579-1E9D058EDB80}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 27"
+              DTS:DTSID="{4877FAA5-CEDC-4D9F-B9B4-7F3C7FE915AA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="2003"
+              DTS:DTSID="{39D1ED5F-FC13-454C-8E68-D82B6DACF324}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 29"
+              DTS:DTSID="{422AD72A-809F-40C2-84B2-BE18E032906F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="2004"
+              DTS:DTSID="{4A90467B-ACBE-4D3C-892E-86F88F7217D4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 31"
+              DTS:DTSID="{52685A1B-B32F-46ED-9750-F59AF901C8E1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="2005"
+              DTS:DTSID="{B2EA0466-D233-4660-B349-7A6CFFA4690D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 33"
+              DTS:DTSID="{88227D43-44DF-42AB-AF4D-AB56749EF514}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="2006"
+              DTS:DTSID="{C3A683F7-2A6D-47C7-8663-F3BC135663C9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 35"
+              DTS:DTSID="{2059E4F9-BA33-451D-AEBB-BD9E4CE9904D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="2007"
+              DTS:DTSID="{A2FD4D62-4971-433B-964F-B9A0F5990AF3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 37"
+              DTS:DTSID="{6C8EAEEE-1994-408F-B6AB-FEBCB89E1CC0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="2008"
+              DTS:DTSID="{2F7BBDE7-776E-4A13-96C4-C92E9364AF98}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 39"
+              DTS:DTSID="{6FC6EE21-C816-42B6-A805-B81641888434}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="2009"
+              DTS:DTSID="{6ABE7631-EA41-4BD0-98ED-5AF1B4EDCF64}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 41"
+              DTS:DTSID="{357ED0AB-EB0D-4F72-A259-2405F31C9CA9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="2010"
+              DTS:DTSID="{C50746EF-4ACF-4493-8686-096F0221B445}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 43"
+              DTS:DTSID="{2E194BC6-6406-4FEF-BDFD-3BDBC7AD545A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="2011"
+              DTS:DTSID="{5F5CA48B-2A57-4704-86CE-33D020068A51}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 45"
+              DTS:DTSID="{03A31318-E0B3-4E6A-A2F6-332753AB6C5B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="2012"
+              DTS:DTSID="{9CA83CC3-B66D-4E70-9614-C4EF2E7C990D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 47"
+              DTS:DTSID="{85CA59E5-F738-4875-AE37-A65BA4E5671B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="2013"
+              DTS:DTSID="{BA37C50D-FA90-4FBB-B129-40EC3F727951}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 49"
+              DTS:DTSID="{2B176D10-BE06-42D1-8ABD-871BFF379130}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="2014"
+              DTS:DTSID="{E4777FE5-D53C-4D64-A81B-5A9ADE30554F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 51"
+              DTS:DTSID="{34791043-CBF4-4C7D-9644-794C24732EC3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="2015"
+              DTS:DTSID="{7DC2EE87-285F-42F6-B185-2EDFE5FA8DE2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 53"
+              DTS:DTSID="{EBF6CEE4-700E-4D2F-9C3A-48FF8BF9DF33}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="2016"
+              DTS:DTSID="{9413A872-67F4-4F72-9E32-8D6C70784CC4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 55"
+              DTS:DTSID="{93BD7CEC-F29D-48B4-957F-CB716578FAEA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="2017"
+              DTS:DTSID="{5E0EEB69-F34D-4ECC-9DB8-3427B9303B76}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 57"
+              DTS:DTSID="{7EBF514A-4285-41C8-81DD-39A82E8D4E2F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="2018"
+              DTS:DTSID="{676AD518-737D-466A-A5A8-4E029F03FF75}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 59"
+              DTS:DTSID="{CBF82D91-9DF3-4C50-81A8-B1EEF8E5421F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="2019"
+              DTS:DTSID="{6891C792-5512-4CF2-9422-4AC2CB9F36EE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 61"
+              DTS:DTSID="{15A48376-36CC-48C3-B19C-8458617E9E4E}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{ED94E63F-4EB7-4C75-AF3B-FD37EAA88671}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[$Project::FiPath]+  @[$Project::Pobrane]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="ManualDownloadLocation">
+      <DTS:VariableValue
+        DTS:DataType="8">D:\Studies\AAA_Semestr_Ostatni\P3\Paczki\Pobrane</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Change HDI"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{42962B39-4341-46CF-B736-9845F44B05E3}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Change HDI"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Change HDI\Clear data"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Includes and runs custom script code. For example, apply a business rule that limits the range of valid values in an &quot;income&quot; column or add values in two columns and calculate the average of the sum.;Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;12"
+              description="Includes and runs custom script code. For example, apply a business rule that limits the range of valid values in an &quot;income&quot; column or add values in two columns and calculate the average of the sum."
+              name="Clear data"
+              version="12">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Stores the source code of the component"
+                  isArray="true"
+                  name="SourceCode"
+                  state="cdata">
+                  <arrayElements
+                    arrayElementCount="30">
+                    <arrayElement
+                      dataType="System.String"><![CDATA[main.cs]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[#region Help:  Introduction to the Script Component
+/* The Script Component allows you to perform virtually any operation that can be accomplished in
+ * a .Net application within the context of an Integration Services data flow.
+ *
+ * Expand the other regions which have "Help" prefixes for examples of specific ways to use
+ * Integration Services features within this script component. */
+#endregion
+
+#region Namespaces
+using System;
+using System.Data;
+using Microsoft.SqlServer.Dts.Pipeline.Wrapper;
+using Microsoft.SqlServer.Dts.Runtime.Wrapper;
+#endregion
+
+/// <summary>
+/// This is the class to which to add your code.  Do not change the name, attributes, or parent
+/// of this class.
+/// </summary>
+[Microsoft.SqlServer.Dts.Pipeline.SSISScriptComponentEntryPointAttribute]
+public class ScriptMain : UserComponent
+{
+    #region Help:  Using Integration Services variables and parameters
+    /* To use a variable in this script, first ensure that the variable has been added to
+     * either the list contained in the ReadOnlyVariables property or the list contained in
+     * the ReadWriteVariables property of this script component, according to whether or not your
+     * code needs to write into the variable.  To do so, save this script, close this instance of
+     * Visual Studio, and update the ReadOnlyVariables and ReadWriteVariables properties in the
+     * Script Transformation Editor window.
+     * To use a parameter in this script, follow the same steps. Parameters are always read-only.
+     *
+     * Example of reading from a variable or parameter:
+     *  DateTime startTime = Variables.MyStartTime;
+     *
+     * Example of writing to a variable:
+     *  Variables.myStringVariable = "new value";
+     */
+    #endregion
+
+    #region Help:  Using Integration Services Connnection Managers
+    /* Some types of connection managers can be used in this script component.  See the help topic
+     * "Working with Connection Managers Programatically" for details.
+     *
+     * To use a connection manager in this script, first ensure that the connection manager has
+     * been added to either the list of connection managers on the Connection Managers page of the
+     * script component editor.  To add the connection manager, save this script, close this instance of
+     * Visual Studio, and add the Connection Manager to the list.
+     *
+     * If the component needs to hold a connection open while processing rows, override the
+     * AcquireConnections and ReleaseConnections methods.
+     * 
+     * Example of using an ADO.Net connection manager to acquire a SqlConnection:
+     *  object rawConnection = Connections.SalesDB.AcquireConnection(transaction);
+     *  SqlConnection salesDBConn = (SqlConnection)rawConnection;
+     *
+     * Example of using a File connection manager to acquire a file path:
+     *  object rawConnection = Connections.Prices_zip.AcquireConnection(transaction);
+     *  string filePath = (string)rawConnection;
+     *
+     * Example of releasing a connection manager:
+     *  Connections.SalesDB.ReleaseConnection(rawConnection);
+     */
+    #endregion
+
+    #region Help:  Firing Integration Services Events
+    /* This script component can fire events.
+     *
+     * Example of firing an error event:
+     *  ComponentMetaData.FireError(10, "Process Values", "Bad value", "", 0, out cancel);
+     *
+     * Example of firing an information event:
+     *  ComponentMetaData.FireInformation(10, "Process Values", "Processing has started", "", 0, fireAgain);
+     *
+     * Example of firing a warning event:
+     *  ComponentMetaData.FireWarning(10, "Process Values", "No rows were received", "", 0);
+     */
+    #endregion
+
+    /// <summary>
+    /// This method is called once, before rows begin to be processed in the data flow.
+    ///
+    /// You can remove this method if you dont need to do anything here.
+    /// </summary>
+    public override void PreExecute()
+    {
+        base.PreExecute();
+        /*
+         * Add your code here
+         */
+    }
+
+    /// <summary>
+    /// This method is called after all the rows have passed through this component.
+    ///
+    /// You can delete this method if you don't need to do anything here.
+    /// </summary>
+    public override void PostExecute()
+    {
+        base.PostExecute();
+        /*
+         * Add your code here
+         */
+    }
+
+    /// <summary>
+    /// This method is called once for every row that passes through the component from Input0.
+    ///
+    /// Example of reading a value from a column in the the row:
+    ///  string zipCode = Row.ZipCode
+    ///
+    /// Example of writing a value to a column in the row:
+    ///  Row.ZipCode = zipCode
+    /// </summary>
+    /// <param name="Row">The row that is currently passing through the component</param>
+    public override void Input0_ProcessInputRow(Input0Buffer Row)
+    {
+        /*
+         * Add your code here
+         */
+        string nonoes = @"Sub-Saharan Africa,Least Developed Countries,Small Island Developing States,World,East Asia and the Pacific,
+         Europe and Central Asia,Latin America and the Caribbean,South Asia,High human development,Medium human development
+         ,Developing Countries,Arab States,Low human development,Regions, Human Development,
+        Very high human development,Medium human development,Organization for Economic Co-operation and Development";
+
+        if (nonoes.Contains(Row.Country) || Row.HDIRank_IsNull)
+            Row.DataOK = false;
+        else Row.DataOK = true;
+        if (Row.Country.Length > 1)
+            Row.Country = Row.Country.Substring(1);
+
+    }
+
+}
+]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[Properties\Resources.resx]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+</root>]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[SC_67d44727078a49f5b8493da717edc42e.csproj]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectTypeGuids>{30D016F9-3734-4E33-A861-5E7D899E18F3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{91f4f69e-eee4-447d-8fef-b973acf88ec8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SC_67d44727078a49f5b8493da717edc42e</RootNamespace>
+    <AssemblyName>SC_67d44727078a49f5b8493da717edc42e</AssemblyName>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>true</ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>
+    <TargetFrameworkProfile></TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>.\bin\Debug\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <OutputPath>.\bin\Release\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.SqlServer.TxScript, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.DTSRuntimeWrap, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.DTSPipelineWrap, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.PipelineHost, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Compile Include="main.cs" />
+    <Compile Include="BufferWrapper.cs" />
+    <Compile Include="ComponentWrapper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <!-- Include the build rules for a C# project.-->
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- This section defines VSTA properties that describe the host-changable project properties. -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{30D016F9-3734-4E33-A861-5E7D899E18F3}">
+        <ProjectProperties HostName="ScriptComponent" HostPackage="{B3A685AA-7EAF-4BC6-9940-57959FA5AC07}" ApplicationType="usd" Language="cs" TemplatesPath="" DebugInfoExeName="" DebugInfoCommandLine="" DebugInfoWorkingDir="" IconImageList="" />
+        <Host Name="ScriptComponent" GeneratedNamespace="SC_67d44727078a49f5b8493da717edc42e" IconIndex="0"></Host>
+        <ProjectClient>
+          <HostIdentifier>SSIS_SC150</HostIdentifier>
+        </ProjectClient>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[BufferWrapper.cs]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[/* THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT!
+*  Microsoft SQL Server Integration Services buffer wrappers
+*  This module defines classes for accessing data flow buffers
+*  THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT! */
+
+
+
+using System;
+using System.Data;
+using Microsoft.SqlServer.Dts.Pipeline;
+using Microsoft.SqlServer.Dts.Pipeline.Wrapper;
+
+public class Input0Buffer: ScriptBuffer
+
+{
+    public Input0Buffer(PipelineBuffer Buffer, int[] BufferColumnIndexes, OutputNameMap OutputMap)
+        : base(Buffer, BufferColumnIndexes, OutputMap)
+    {
+    }
+
+    public String HDIRank
+    {
+        get
+        {
+            return Buffer.GetString(BufferColumnIndexes[0]);
+        }
+    }
+    public bool HDIRank_IsNull
+    {
+        get
+        {
+            return IsNull(0);
+        }
+    }
+
+    public String Country
+    {
+        get
+        {
+            return Buffer.GetString(BufferColumnIndexes[1]);
+        }
+        set
+        {
+            this[1] = value;
+        }
+    }
+    public bool Country_IsNull
+    {
+        get
+        {
+            return IsNull(1);
+        }
+        set
+        {
+            if (value)
+            {
+                SetNull(1);
+            }
+            else
+            {
+                throw new InvalidOperationException("IsNull property cannot be set to False. Assign a value to the column instead.");
+            }
+        }
+    }
+
+    public String Year2019
+    {
+        get
+        {
+            return Buffer.GetString(BufferColumnIndexes[2]);
+        }
+    }
+    public bool Year2019_IsNull
+    {
+        get
+        {
+            return IsNull(2);
+        }
+    }
+
+    public Boolean DataOK
+    {
+        set
+        {
+            this[3] = value;
+        }
+    }
+    public bool DataOK_IsNull
+    {
+        set
+        {
+            if (value)
+            {
+                SetNull(3);
+            }
+            else
+            {
+                throw new InvalidOperationException("IsNull property cannot be set to False. Assign a value to the column instead.");
+            }
+        }
+    }
+
+    new public bool NextRow()
+    {
+        return base.NextRow();
+    }
+
+    new public bool EndOfRowset()
+    {
+        return base.EndOfRowset();
+    }
+
+}
+]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[Properties\Settings.Designer.cs]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_67d44727078a49f5b8493da717edc42e.Properties.Settings.get_Default():SC_67d44727078a49f5b8493da717edc42e.Properties.Sett" +
+    "ings")]
+
+namespace SC_67d44727078a49f5b8493da717edc42e.Properties {
+    
+    
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
+        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        private static Settings defaultInstance = new Settings();
+        
+        public static Settings Default {
+            get {
+                return defaultInstance;
+            }
+        }
+    }
+}
+]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[ComponentWrapper.cs]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[/* THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT!
+*  Microsoft SQL Server Integration Services component wrapper
+*  This module defines the base class for your component
+*  THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT! */
+
+using System;
+using System.Data;
+using Microsoft.SqlServer.Dts.Pipeline;
+using Microsoft.SqlServer.Dts.Pipeline.Wrapper;
+using Microsoft.SqlServer.Dts.Runtime.Wrapper;
+
+public class UserComponent: ScriptComponent
+{
+    public Connections Connections;
+    public Variables Variables;
+    public UserComponent()
+    {
+        Connections = new Connections(this);
+        Variables = new Variables(this);
+    }
+
+    public override void ProcessInput(int InputID, string InputName, PipelineBuffer Buffer, OutputNameMap OutputMap)
+    {
+
+        if (InputName.Equals(@"Input 0", StringComparison.Ordinal))
+        {
+            Input0_ProcessInput(new Input0Buffer(Buffer, GetColumnIndexes(InputID), OutputMap));
+        }
+
+    }
+
+    public virtual void Input0_ProcessInput(Input0Buffer Buffer)
+    {
+        while (Buffer.NextRow())
+        {
+            Input0_ProcessInputRow(Buffer);
+        }
+    }
+
+    public virtual void Input0_ProcessInputRow(Input0Buffer Row)
+    {
+    }
+
+}
+
+public class Connections
+{
+    ScriptComponent ParentComponent;
+
+    public Connections(ScriptComponent Component)
+    {
+        ParentComponent = Component;
+    }
+
+}
+
+public class Variables
+{
+    ScriptComponent ParentComponent;
+
+    public Variables(ScriptComponent Component)
+    {
+        ParentComponent = Component;
+    }
+
+}
+]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[Project]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF16LE]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
+<c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="4.0" schemaVersion="1.0">
+  <msb:PropertyGroup>
+    <msb:CodeName>SC_67d44727078a49f5b8493da717edc42e</msb:CodeName>
+    <msb:Language>msBuild</msb:Language>
+    <msb:DisplayName>SC_67d44727078a49f5b8493da717edc42e</msb:DisplayName>
+    <msb:ProjectId>{9CB25EFA-5F9E-49F1-9650-EA43C9A88572}</msb:ProjectId>
+  </msb:PropertyGroup>
+  <msb:ItemGroup>
+    <msb:Project Include="SC_67d44727078a49f5b8493da717edc42e.csproj" />
+    <msb:File Include="Properties\Settings.Designer.cs" />
+    <msb:File Include="main.cs" />
+    <msb:File Include="BufferWrapper.cs" />
+    <msb:File Include="ComponentWrapper.cs" />
+    <msb:File Include="Properties\Settings.settings" />
+    <msb:File Include="Properties\AssemblyInfo.cs" />
+    <msb:File Include="Properties\Resources.resx" />
+    <msb:File Include="Properties\Resources.Designer.cs" />
+  </msb:ItemGroup>
+</c:Project>]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[Properties\AssemblyInfo.cs]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("SC_67d44727078a49f5b8493da717edc42e")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("SC_67d44727078a49f5b8493da717edc42e")]
+[assembly: AssemblyCopyright("Copyright @  2022")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.0.0")]
+]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[Properties\Settings.settings]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[Properties\Resources.Designer.cs]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_67d44727078a49f5b8493da717edc42e.Properties.Resources.get_ResourceManager():System.Resources.Resou" +
+    "rceManager")]
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_67d44727078a49f5b8493da717edc42e.Properties.Resources.get_Culture():System.Globalization.CultureIn" +
+    "fo")]
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_67d44727078a49f5b8493da717edc42e.Properties.Resources.set_Culture(System.Globalization.CultureInfo" +
+    "):Void")]
+
+namespace SC_67d44727078a49f5b8493da717edc42e.Properties {
+    
+    
+    /// <summary>
+    ///   A strongly-typed resource class, for looking up localized strings, etc.
+    /// </summary>
+    // This class was auto-generated by the StronglyTypedResourceBuilder
+    // class via a tool like ResGen or Visual Studio.
+    // To add or remove a member, edit your .ResX file then rerun ResGen
+    // with the /str option, or rebuild your VS project.
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    internal class Resources {
+        
+        private static global::System.Resources.ResourceManager resourceMan;
+        
+        private static global::System.Globalization.CultureInfo resourceCulture;
+        
+        [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
+        internal Resources() {
+        }
+        
+        /// <summary>
+        ///   Returns the cached ResourceManager instance used by this class.
+        /// </summary>
+        [global::System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        internal static global::System.Resources.ResourceManager ResourceManager {
+            get {
+                if ((resourceMan == null)) {
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("SC_67d44727078a49f5b8493da717edc42e.Properties.Resources", typeof(Resources).Assembly);
+                    resourceMan = temp;
+                }
+                return resourceMan;
+            }
+        }
+        
+        /// <summary>
+        ///   Overrides the current thread's CurrentUICulture property for all
+        ///   resource lookups using this strongly typed resource class.
+        /// </summary>
+        [global::System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        internal static global::System.Globalization.CultureInfo Culture {
+            get {
+                return resourceCulture;
+            }
+            set {
+                resourceCulture = value;
+            }
+        }
+    }
+}
+]]></arrayElement>
+                  </arrayElements>
+                </property>
+                <property
+                  dataType="System.String"
+                  description="Stores the binary representation of the component"
+                  isArray="true"
+                  name="BinaryCode"
+                  state="cdata">
+                  <arrayElements
+                    arrayElementCount="2">
+                    <arrayElement
+                      dataType="System.String"><![CDATA[SC_67d44727078a49f5b8493da717edc42e.dll]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDAC/U9WEAAAAAAAAAAOAAIiALATAAABgAAAAIAAAAAAAA8jYA
+AAAgAAAAQAAAAAAAEAAgAAAAAgAABAAAAAAAAAAGAAAAAAAAAACAAAAAAgAAAAAAAAMAYIUAABAA
+ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAAKA2AABPAAAAAEAAAEgEAAAAAAAAAAAAAAAAAAAA
+AAAAAGAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAIAAACAAAAAAAAAAAAAAACCAAAEgAAAAAAAAAAAAAAC50ZXh0AAAA+BYAAAAgAAAAGAAAAAIA
+AAAAAAAAAAAAAAAAACAAAGAucnNyYwAAAEgEAAAAQAAAAAYAAAAaAAAAAAAAAAAAAAAAAABAAABA
+LnJlbG9jAAAMAAAAAGAAAAACAAAAIAAAAAAAAAAAAAAAAAAAQAAAQgAAAAAAAAAAAAAAAAAAAADU
+NgAAAAAAAEgAAAACAAUAVCIAAJQTAAABAAAAAAAAAOg1AAC4AAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAB4CKBAAAAoqHgIoEQAACioTMAMASwAAAAAAAAByAQAAcANv
+CAAABm8SAAAKLQgDbwcAAAYsCQMWbw4AAAYrBwMXbw4AAAYDbwgAAAZvEwAAChcxEgMDbwgAAAYX
+bxQAAApvCQAABioeAigSAAAGKioCAwQFKBUAAAoqUgJ7FgAACgJ7FwAAChaUbxgAAAoqIgIWKBkA
+AAoqUgJ7FgAACgJ7FwAACheUbxgAAAoqJgIXAygaAAAKKiICFygZAAAKKloDLAgCFygbAAAKKnJ8
+AwBwcxwAAAp6UgJ7FgAACgJ7FwAAChiUbxgAAAoqIgIYKBkAAAoqOgIZA4wcAAABKBoAAAoqWgMs
+CAIZKBsAAAoqcnwDAHBzHAAACnoeAigdAAAKKh4CKB4AAAoqfgIoHwAACgICcxYAAAZ9AQAABAIC
+cxcAAAZ9AgAABCqSBHIZBABwGm8gAAAKLBUCBQIDKCEAAAoOBHMFAAAGbxQAAAYqSisHAgNvFQAA
+BgNvEAAABi3xKgYqOgIoIgAACgIDfQMAAAQqOgIoIgAACgIDfQQAAAQqHgIoIgAACiqufgUAAAQt
+HnIpBABw0AcAAAIoIwAACm8kAAAKcyUAAAqABQAABH4FAAAEKhp+BgAABCoeAoAGAAAEKhp+BwAA
+BCoeAigmAAAKKi5zHQAABoAHAAAEKgAAAEJTSkIBAAEAAAAAAAwAAAB2NC4wLjMwMzE5AAAAAAUA
+bAAAABgGAAAjfgAAhAYAALgGAAAjU3RyaW5ncwAAAAA8DQAAnAQAACNVUwDYEQAAEAAAACNHVUlE
+AAAA6BEAAKwBAAAjQmxvYgAAAAAAAAACAAABVxWgAQkBAAAA+gEzABYAAAEAAAAgAAAACAAAAAcA
+AAAeAAAAEQAAACYAAAAQAAAAAwAAAAsAAAAOAAAAAQAAAAQAAAABAAAAAAAmAwEAAAAAAAYA/AHM
+BAYAkALMBAYASAG5BA8AQAUAAAYAdQEOBAYA3wEOBAYAwAEOBAYAdwIOBAYAHAIOBAYANQIOBAYA
+jAEOBAYApwHLAgoAUAKVAAoAiwSVAA4AfASVAAoAVwSVAAoADwaVAAYA0gW+AwYAKwG5BAYAnATs
+BAYASwT5AxIA+wAQAxIAXAEQAxIA4wDkAwYAEAHMBAYA6AK+AwYAIAS+AwYA0QO+AwYAOgS+AwYA
+tgC+AwYAZwC+AwYAlAYOBAAAAAAOAAAAAAABAAEAAQAQANkDAAAQAAEAAQABABAAbwQAADkAAQAF
+AAEAEADxBQAARQABABIAAQAQAMYFAABJAAMAFgABABAAfgUAAEkABAAXAAAAEADzBE8FSQAFABgA
+AAEQAK0FTwVhAAcAHAAGAMYFfgAGAH4FggABAP8FhgABAP8FhgARAMUDigARANMAjgARAFcAkgBQ
+IAAAAADGAK4CBgABAFggAAAAAMYAuQIGAAEAYCAAAAAAxgBxBpYAAQC3IAAAAACGGKwEBgACAL8g
+AAAAAIYYrAQpAAIAyiAAAAAAhggEA5wABQDfIAAAAACGCHQDRgAFAOggAAAAAIYInQacAAUA/SAA
+AAAAhgipBhAABQAHIQAAAACGCIcDRgAGABAhAAAAAIYImgOgAAYAJyEAAAAAhggBAJwABwA8IQAA
+AACGCE4DRgAHAEUhAAAAAIYIHwCgAAcAVCEAAAAAhghiA6AACABrIQAAAACGAIgGRgAJAHMhAAAA
+AIYA2QVGAAkAeyEAAAAAhhisBAYACQCbIQAAAADGAGQGpQAJAMAhAAAAAMYBXQaWAA0A0yEAAAAA
+xgFxBpYADgDVIQAAAACGGKwErwAPAOQhAAAAAIYYrASvABAA8yEAAAAAgxisBAYAEQD7IQAAAACT
+CJgEtQARACciAAAAAJMIuwC6ABEALiIAAAAAkwjHAL8AEQA2IgAAAACWCOUFxQASAD0iAAAAAIYY
+rAQGABIARSIAAAAAkRiyBMoAEgAAAAEAjAYAAAEAkQQAAAIAiAUAAAMAZQQAAAEAxQIAAAEAxQIA
+AAEAxQIAAAEAxQIAAAEAFwAAAAIAiwAAAAMAkQQAAAQAZQQAAAEAkQQAAAEAjAYAAAEAFQYAAAEA
+FQYAAAEAxQIJAKwEAQARAKwEBgAZAKwECgApAKwEEAAxAKwEEAA5AKwEEABBAKwEEABJAKwEEABR
+AKwEEABZAKwEEABhAKwEEABpAKwEBgCZAKwEBgC5AKwEFQDJAKwEBgCJAK4CBgCJALkCBgDRAL0F
+GwDRAPkCIADRAO8CJABxAKwEKQBxAJEEMwBxAIgFNwB5AOUCJABxAKYDOwBxALUDQABxAK0DAQDZ
+AKwEEABxAIgGRgBxANkFRgCJAKwEBgDRALYFSgCJAJwFUQCRAKwEBgDxAHkAVwDxAJAGXgChAKwE
+ZADBAKwEBgAuAAsA5QAuABMA7gAuABsADQEuACMAFgEuACsAPwEuADMAPwEuADsAPwEuAEMAFgEu
+AEsARQEuAFMAPwEuAFsAXAFDAGMApgHhAHsApgHjAGsApgEpAXMADQFJAXMADQEDAAEABwAJAAgA
+CwAAAAgDzgAAAHgD0gAAAK0GzgAAAJ4D0gAAAAUAzgAAAFID0gAAACMA0gAAAGYD0gAAAJwE1gAA
+ANsA2wAAAOkF4AACAAYAAwACAAcABQACAAgABwABAAkABwACAAoACQABAAsACQACAAwACwACAA0A
+DQABAA4ADwABAA8AEQACABkAEwACABoAFQABABsAFQACABwAFwAEgAAAAQAAAAAAAAAAAAAAAAAz
+AAAABAAAAAAAAAAAAAAAbAAqAAAAAAAPAAAAAAAAAAAAAAB1AB8GAAAAAA8AAAAAAAAAAAAAAHUA
+PAYAAAAABAAAAAAAAAAAAAAAbAC+AwAAAAAAAAAAAQAAAP0EAAAAAABnZXRfWWVhcjIwMTkAPE1v
+ZHVsZT4ASW5wdXRJRABzZXRfRGF0YU9LAG1zY29ybGliAFNDXzY3ZDQ0NzI3MDc4YTQ5ZjViODQ5
+M2RhNzE3ZWRjNDJlAGRlZmF1bHRJbnN0YW5jZQBSdW50aW1lVHlwZUhhbmRsZQBHZXRUeXBlRnJv
+bUhhbmRsZQBJbnB1dE5hbWUATWljcm9zb2Z0LlNxbFNlcnZlci5EdHMuUGlwZWxpbmUAVHlwZQBn
+ZXRfQ3VsdHVyZQBzZXRfQ3VsdHVyZQByZXNvdXJjZUN1bHR1cmUAQXBwbGljYXRpb25TZXR0aW5n
+c0Jhc2UARWRpdG9yQnJvd3NhYmxlU3RhdGUAQ29tcGlsZXJHZW5lcmF0ZWRBdHRyaWJ1dGUARGVi
+dWdnZXJOb25Vc2VyQ29kZUF0dHJpYnV0ZQBEZWJ1Z2dhYmxlQXR0cmlidXRlAEVkaXRvckJyb3dz
+YWJsZUF0dHJpYnV0ZQBBc3NlbWJseVRpdGxlQXR0cmlidXRlAEFzc2VtYmx5VHJhZGVtYXJrQXR0
+cmlidXRlAFRhcmdldEZyYW1ld29ya0F0dHJpYnV0ZQBBc3NlbWJseUNvbmZpZ3VyYXRpb25BdHRy
+aWJ1dGUAQXNzZW1ibHlEZXNjcmlwdGlvbkF0dHJpYnV0ZQBDb21waWxhdGlvblJlbGF4YXRpb25z
+QXR0cmlidXRlAEFzc2VtYmx5UHJvZHVjdEF0dHJpYnV0ZQBBc3NlbWJseUNvcHlyaWdodEF0dHJp
+YnV0ZQBTU0lTU2NyaXB0Q29tcG9uZW50RW50cnlQb2ludEF0dHJpYnV0ZQBBc3NlbWJseUNvbXBh
+bnlBdHRyaWJ1dGUAUnVudGltZUNvbXBhdGliaWxpdHlBdHRyaWJ1dGUAUHJlRXhlY3V0ZQBQb3N0
+RXhlY3V0ZQB2YWx1ZQBTeXN0ZW0uUnVudGltZS5WZXJzaW9uaW5nAEdldFN0cmluZwBTdWJzdHJp
+bmcAZ2V0X0xlbmd0aABnZXRfSERJUmFuawBTeXN0ZW0uQ29tcG9uZW50TW9kZWwAU0NfNjdkNDQ3
+MjcwNzhhNDlmNWI4NDkzZGE3MTdlZGM0MmUuZGxsAGdldF9ZZWFyMjAxOV9Jc051bGwAc2V0X0Rh
+dGFPS19Jc051bGwAZ2V0X0hESVJhbmtfSXNOdWxsAGdldF9Db3VudHJ5X0lzTnVsbABzZXRfQ291
+bnRyeV9Jc051bGwAU2V0TnVsbABzZXRfSXRlbQBTeXN0ZW0AcmVzb3VyY2VNYW4AQm9vbGVhbgBT
+Y3JpcHRNYWluAFN5c3RlbS5Db25maWd1cmF0aW9uAFN5c3RlbS5HbG9iYWxpemF0aW9uAFN5c3Rl
+bS5SZWZsZWN0aW9uAEludmFsaWRPcGVyYXRpb25FeGNlcHRpb24AU3RyaW5nQ29tcGFyaXNvbgBD
+dWx0dXJlSW5mbwBPdXRwdXROYW1lTWFwAE91dHB1dE1hcABJbnB1dDBCdWZmZXIAUGlwZWxpbmVC
+dWZmZXIAU2NyaXB0QnVmZmVyAGdldF9SZXNvdXJjZU1hbmFnZXIALmN0b3IALmNjdG9yAFN5c3Rl
+bS5EaWFnbm9zdGljcwBTeXN0ZW0uUnVudGltZS5Db21waWxlclNlcnZpY2VzAFN5c3RlbS5SZXNv
+dXJjZXMAU0NfNjdkNDQ3MjcwNzhhNDlmNWI4NDkzZGE3MTdlZGM0MmUuUHJvcGVydGllcy5SZXNv
+dXJjZXMucmVzb3VyY2VzAERlYnVnZ2luZ01vZGVzAFNDXzY3ZDQ0NzI3MDc4YTQ5ZjViODQ5M2Rh
+NzE3ZWRjNDJlLlByb3BlcnRpZXMAVmFyaWFibGVzAEJ1ZmZlckNvbHVtbkluZGV4ZXMAR2V0Q29s
+dW1uSW5kZXhlcwBTZXR0aW5ncwBFcXVhbHMAQ29udGFpbnMAQ29ubmVjdGlvbnMAT2JqZWN0AEVu
+ZE9mUm93c2V0AGdldF9EZWZhdWx0AFVzZXJDb21wb25lbnQAUGFyZW50Q29tcG9uZW50AFNjcmlw
+dENvbXBvbmVudABNaWNyb3NvZnQuU3FsU2VydmVyLlR4U2NyaXB0AE1pY3Jvc29mdC5TcWxTZXJ2
+ZXIuUGlwZWxpbmVIb3N0AElucHV0MF9Qcm9jZXNzSW5wdXQASW5wdXQwX1Byb2Nlc3NJbnB1dFJv
+dwBOZXh0Um93AGdldF9Bc3NlbWJseQBnZXRfQ291bnRyeQBzZXRfQ291bnRyeQAAAAAAg3lTAHUA
+YgAtAFMAYQBoAGEAcgBhAG4AIABBAGYAcgBpAGMAYQAsAEwAZQBhAHMAdAAgAEQAZQB2AGUAbABv
+AHAAZQBkACAAQwBvAHUAbgB0AHIAaQBlAHMALABTAG0AYQBsAGwAIABJAHMAbABhAG4AZAAgAEQA
+ZQB2AGUAbABvAHAAaQBuAGcAIABTAHQAYQB0AGUAcwAsAFcAbwByAGwAZAAsAEUAYQBzAHQAIABB
+AHMAaQBhACAAYQBuAGQAIAB0AGgAZQAgAFAAYQBjAGkAZgBpAGMALAANAAoAIAAgACAAIAAgACAA
+IAAgACAARQB1AHIAbwBwAGUAIABhAG4AZAAgAEMAZQBuAHQAcgBhAGwAIABBAHMAaQBhACwATABh
+AHQAaQBuACAAQQBtAGUAcgBpAGMAYQAgAGEAbgBkACAAdABoAGUAIABDAGEAcgBpAGIAYgBlAGEA
+bgAsAFMAbwB1AHQAaAAgAEEAcwBpAGEALABIAGkAZwBoACAAaAB1AG0AYQBuACAAZABlAHYAZQBs
+AG8AcABtAGUAbgB0ACwATQBlAGQAaQB1AG0AIABoAHUAbQBhAG4AIABkAGUAdgBlAGwAbwBwAG0A
+ZQBuAHQADQAKACAAIAAgACAAIAAgACAAIAAgACwARABlAHYAZQBsAG8AcABpAG4AZwAgAEMAbwB1
+AG4AdAByAGkAZQBzACwAQQByAGEAYgAgAFMAdABhAHQAZQBzACwATABvAHcAIABoAHUAbQBhAG4A
+IABkAGUAdgBlAGwAbwBwAG0AZQBuAHQALABSAGUAZwBpAG8AbgBzACwAIABIAHUAbQBhAG4AIABE
+AGUAdgBlAGwAbwBwAG0AZQBuAHQALAANAAoAIAAgACAAIAAgACAAIAAgAFYAZQByAHkAIABoAGkA
+ZwBoACAAaAB1AG0AYQBuACAAZABlAHYAZQBsAG8AcABtAGUAbgB0ACwATQBlAGQAaQB1AG0AIABo
+AHUAbQBhAG4AIABkAGUAdgBlAGwAbwBwAG0AZQBuAHQALABPAHIAZwBhAG4AaQB6AGEAdABpAG8A
+bgAgAGYAbwByACAARQBjAG8AbgBvAG0AaQBjACAAQwBvAC0AbwBwAGUAcgBhAHQAaQBvAG4AIABh
+AG4AZAAgAEQAZQB2AGUAbABvAHAAbQBlAG4AdAABgJtJAHMATgB1AGwAbAAgAHAAcgBvAHAAZQBy
+AHQAeQAgAGMAYQBuAG4AbwB0ACAAYgBlACAAcwBlAHQAIAB0AG8AIABGAGEAbABzAGUALgAgAEEA
+cwBzAGkAZwBuACAAYQAgAHYAYQBsAHUAZQAgAHQAbwAgAHQAaABlACAAYwBvAGwAdQBtAG4AIABp
+AG4AcwB0AGUAYQBkAC4AAA9JAG4AcAB1AHQAIAAwAABxUwBDAF8ANgA3AGQANAA0ADcAMgA3ADAA
+NwA4AGEANAA5AGYANQBiADgANAA5ADMAZABhADcAMQA3AGUAZABjADQAMgBlAC4AUAByAG8AcABl
+AHIAdABpAGUAcwAuAFIAZQBzAG8AdQByAGMAZQBzAAAACzMcJQSgOUeUWvhRQ78bkQAEIAEBCAMg
+AAEFIAEBEREEIAEBDgUgAQERWQQgAQIOAyAACAQgAQ4ICSADARI9HQgSQQMGEj0DBh0IBCABAggF
+IAIBCBwDIAACBiACAg4RdQUgAR0ICAYAARJ5EX0FIAASgIEHIAIBDhKAgQi3elxWGTTgiQiJhF3N
+gIDMkQMGEhQDBhIYAwYSRQMGElEDBhJVAwYSIAUgAQESDAMgAA4EIAEBAgkgBAEIDhI9EkEFIAEB
+EkUEAAASUQQAABJVBQABARJVBAAAEiADAAABAygADgMoAAIECAASUQQIABJVBAgAEiAIAQAIAAAA
+AAAeAQABAFQCFldyYXBOb25FeGNlcHRpb25UaHJvd3MBCAEAAgAAAAAAKAEAI1NDXzY3ZDQ0NzI3
+MDc4YTQ5ZjViODQ5M2RhNzE3ZWRjNDJlAAAFAQAAAAAWAQARQ29weXJpZ2h0IEAgIDIwMjIAAEkB
+ABouTkVURnJhbWV3b3JrLFZlcnNpb249djQuNwEAVA4URnJhbWV3b3JrRGlzcGxheU5hbWUSLk5F
+VCBGcmFtZXdvcmsgNC43BAEAAAAAtAAAAM7K774BAAAAkQAAAGxTeXN0ZW0uUmVzb3VyY2VzLlJl
+c291cmNlUmVhZGVyLCBtc2NvcmxpYiwgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWws
+IFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkjU3lzdGVtLlJlc291cmNlcy5SdW50aW1l
+UmVzb3VyY2VTZXQCAAAAAAAAAAAAAABQQURQQURQtAAAAMg2AAAAAAAAAAAAAOI2AAAAIAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAADUNgAAAAAAAAAAAAAAAF9Db3JEbGxNYWluAG1zY29yZWUuZGxsAAAA
+AAD/JQAgABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAEAEAAAABgAAIAAAAAAAAAAAAAAAAAAAAEAAQAAADAAAIAAAAAAAAAAAAAAAAAAAAEAAAAAAEgA
+AABYQAAA7AMAAAAAAAAAAAAA7AM0AAAAVgBTAF8AVgBFAFIAUwBJAE8ATgBfAEkATgBGAE8AAAAA
+AL0E7/4AAAEAAAABAAAAAAAAAAEAAAAAAD8AAAAAAAAABAAAAAIAAAAAAAAAAAAAAAAAAABEAAAA
+AQBWAGEAcgBGAGkAbABlAEkAbgBmAG8AAAAAACQABAAAAFQAcgBhAG4AcwBsAGEAdABpAG8AbgAA
+AAAAAACwBEwDAAABAFMAdAByAGkAbgBnAEYAaQBsAGUASQBuAGYAbwAAACgDAAABADAAMAAwADAA
+MAA0AGIAMAAAABoAAQABAEMAbwBtAG0AZQBuAHQAcwAAAAAAAAAiAAEAAQBDAG8AbQBwAGEAbgB5
+AE4AYQBtAGUAAAAAAAAAAABwACQAAQBGAGkAbABlAEQAZQBzAGMAcgBpAHAAdABpAG8AbgAAAAAA
+UwBDAF8ANgA3AGQANAA0ADcAMgA3ADAANwA4AGEANAA5AGYANQBiADgANAA5ADMAZABhADcAMQA3
+AGUAZABjADQAMgBlAAAAMAAIAAEARgBpAGwAZQBWAGUAcgBzAGkAbwBuAAAAAAAxAC4AMAAuADAA
+LgAwAAAAcAAoAAEASQBuAHQAZQByAG4AYQBsAE4AYQBtAGUAAABTAEMAXwA2ADcAZAA0ADQANwAy
+ADcAMAA3ADgAYQA0ADkAZgA1AGIAOAA0ADkAMwBkAGEANwAxADcAZQBkAGMANAAyAGUALgBkAGwA
+bAAAAEgAEgABAEwAZQBnAGEAbABDAG8AcAB5AHIAaQBnAGgAdAAAAEMAbwBwAHkAcgBpAGcAaAB0
+ACAAQAAgACAAMgAwADIAMgAAACoAAQABAEwAZQBnAGEAbABUAHIAYQBkAGUAbQBhAHIAawBzAAAA
+AAAAAAAAeAAoAAEATwByAGkAZwBpAG4AYQBsAEYAaQBsAGUAbgBhAG0AZQAAAFMAQwBfADYANwBk
+ADQANAA3ADIANwAwADcAOABhADQAOQBmADUAYgA4ADQAOQAzAGQAYQA3ADEANwBlAGQAYwA0ADIA
+ZQAuAGQAbABsAAAAaAAkAAEAUAByAG8AZAB1AGMAdABOAGEAbQBlAAAAAABTAEMAXwA2ADcAZAA0
+ADQANwAyADcAMAA3ADgAYQA0ADkAZgA1AGIAOAA0ADkAMwBkAGEANwAxADcAZQBkAGMANAAyAGUA
+AAA0AAgAAQBQAHIAbwBkAHUAYwB0AFYAZQByAHMAaQBvAG4AAAAxAC4AMAAuADAALgAwAAAAOAAI
+AAEAQQBzAHMAZQBtAGIAbAB5ACAAVgBlAHIAcwBpAG8AbgAAADEALgAwAC4AMAAuADAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAAADAAAAPQ2AAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
+                  </arrayElements>
+                </property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the Microsoft Visual Studio Tools for Applications project. Project names must be unique within a package."
+                  name="VSTAProjectName"
+                  typeConverter="NOTBROWSABLE">SC_67d44727078a49f5b8493da717edc42e</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the programming language used by the script."
+                  name="ScriptLanguage"
+                  typeConverter="Microsoft.SqlServer.VSTAHosting.ScriptingLanguages">CSharp</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a comma-separated list of read-only variables."
+                  name="ReadOnlyVariables"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ScriptUIVariablePickerDlg"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a comma-separated list of read/write variables."
+                  name="ReadWriteVariables"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ScriptUIWriteableVariablePickerDlg"></property>
+                <property
+                  dataType="System.String"
+                  description="List of breakpoints present on the script."
+                  isArray="true"
+                  name="BreakpointCollection"
+                  typeConverter="NOTBROWSABLE">
+                  <arrayElements
+                    arrayElementCount="0" />
+                </property>
+                <property
+                  dataType="System.String"
+                  description="Checksum to match component metedata against compiled codes."
+                  name="MetadataChecksum140"
+                  typeConverter="NOTBROWSABLE">6F</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.ScriptComponentHost</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Change HDI\Clear data.Inputs[Input 0]"
+                  hasSideEffects="true"
+                  name="Input 0">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Change HDI\Clear data.Inputs[Input 0].Columns[HDI Rank]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="HDI Rank"
+                      lineageId="Package\Change HDI\Source - HDI.Outputs[Flat File Source Output].Columns[HDI Rank]" />
+                    <inputColumn
+                      refId="Package\Change HDI\Clear data.Inputs[Input 0].Columns[Country]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="Country"
+                      lineageId="Package\Change HDI\Source - HDI.Outputs[Flat File Source Output].Columns[Country]"
+                      usageType="readWrite" />
+                    <inputColumn
+                      refId="Package\Change HDI\Clear data.Inputs[Input 0].Columns[Year 2019]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Year 2019"
+                      lineageId="Package\Change HDI\Source - HDI.Outputs[Flat File Source Output].Columns[Year 2019]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Change HDI\Clear data.Outputs[Output 0]"
+                  name="Output 0"
+                  synchronousInputId="Package\Change HDI\Clear data.Inputs[Input 0]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Change HDI\Clear data.Outputs[Output 0].Columns[DataOK]"
+                      dataType="bool"
+                      lineageId="Package\Change HDI\Clear data.Outputs[Output 0].Columns[DataOK]"
+                      name="DataOK" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Change HDI\Delete junk data"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+              name="Delete junk data"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Change HDI\Delete junk data.Inputs[Conditional Split Input]"
+                  description="Input to the Conditional Split Transformation"
+                  name="Conditional Split Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Change HDI\Delete junk data.Inputs[Conditional Split Input].Columns[DataOK]"
+                      cachedDataType="bool"
+                      cachedName="DataOK"
+                      lineageId="Package\Change HDI\Clear data.Outputs[Output 0].Columns[DataOK]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Change HDI\Delete junk data.Outputs[OKData]"
+                  description="Output 1 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="OKData"
+                  synchronousInputId="Package\Change HDI\Delete junk data.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">#{Package\Change HDI\Clear data.Outputs[Output 0].Columns[DataOK]} ==  TRUE </property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">DataOK ==  TRUE </property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Change HDI\Delete junk data.Outputs[Conditional Split Default Output]"
+                  description="Default Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  name="Conditional Split Default Output"
+                  synchronousInputId="Package\Change HDI\Delete junk data.Inputs[Conditional Split Input]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Change HDI\Delete junk data.Outputs[Conditional Split Error Output]"
+                  description="Error Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Conditional Split Error Output"
+                  synchronousInputId="Package\Change HDI\Delete junk data.Inputs[Conditional Split Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Change HDI\Delete junk data.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Change HDI\Delete junk data.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Change HDI\Delete junk data.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Change HDI\Delete junk data.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Change HDI\HDI final destination"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Destination"
+              localeId="1045"
+              name="HDI final destination"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether the data will overwrite or append to the destination file."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the text to write to the destination file before any data is written."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="When text qualifier is enabled, specifies whether the text qualifier in the data written to the destination file will be escaped or not."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Change HDI\HDI final destination.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Destination HDI]"
+                  connectionManagerRefId="Package.ConnectionManagers[Destination HDI]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Change HDI\HDI final destination.Inputs[Flat File Destination Input]"
+                  hasSideEffects="true"
+                  name="Flat File Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Change HDI\HDI final destination.Inputs[Flat File Destination Input].Columns[HDI Rank]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="HDI Rank"
+                      externalMetadataColumnId="Package\Change HDI\HDI final destination.Inputs[Flat File Destination Input].ExternalColumns[HDI Rank]"
+                      lineageId="Package\Change HDI\Merge Join 1.Outputs[Merge Join Output].Columns[HDI Rank]" />
+                    <inputColumn
+                      refId="Package\Change HDI\HDI final destination.Inputs[Flat File Destination Input].Columns[Country]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="Country"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\Change HDI\HDI final destination.Inputs[Flat File Destination Input].ExternalColumns[Country]"
+                      lineageId="Package\Change HDI\Merge Join 1.Outputs[Merge Join Output].Columns[Country]" />
+                    <inputColumn
+                      refId="Package\Change HDI\HDI final destination.Inputs[Flat File Destination Input].Columns[country-code]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="country-code"
+                      externalMetadataColumnId="Package\Change HDI\HDI final destination.Inputs[Flat File Destination Input].ExternalColumns[country-code]"
+                      lineageId="Package\Change HDI\Merge Join 1.Outputs[Merge Join Output].Columns[country-code]" />
+                    <inputColumn
+                      refId="Package\Change HDI\HDI final destination.Inputs[Flat File Destination Input].Columns[region]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="region"
+                      externalMetadataColumnId="Package\Change HDI\HDI final destination.Inputs[Flat File Destination Input].ExternalColumns[region]"
+                      lineageId="Package\Change HDI\Merge Join 1.Outputs[Merge Join Output].Columns[region]" />
+                    <inputColumn
+                      refId="Package\Change HDI\HDI final destination.Inputs[Flat File Destination Input].Columns[sub-region]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="sub-region"
+                      externalMetadataColumnId="Package\Change HDI\HDI final destination.Inputs[Flat File Destination Input].ExternalColumns[sub-region]"
+                      lineageId="Package\Change HDI\Merge Join 1.Outputs[Merge Join Output].Columns[sub-region]" />
+                    <inputColumn
+                      refId="Package\Change HDI\HDI final destination.Inputs[Flat File Destination Input].Columns[Year 2019]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Year 2019"
+                      externalMetadataColumnId="Package\Change HDI\HDI final destination.Inputs[Flat File Destination Input].ExternalColumns[Year 2019]"
+                      lineageId="Package\Change HDI\Merge Join 1.Outputs[Merge Join Output].Columns[Year 2019]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Change HDI\HDI final destination.Inputs[Flat File Destination Input].ExternalColumns[HDI Rank]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="HDI Rank" />
+                    <externalMetadataColumn
+                      refId="Package\Change HDI\HDI final destination.Inputs[Flat File Destination Input].ExternalColumns[Country]"
+                      codePage="1250"
+                      dataType="str"
+                      length="100"
+                      name="Country" />
+                    <externalMetadataColumn
+                      refId="Package\Change HDI\HDI final destination.Inputs[Flat File Destination Input].ExternalColumns[country-code]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="country-code" />
+                    <externalMetadataColumn
+                      refId="Package\Change HDI\HDI final destination.Inputs[Flat File Destination Input].ExternalColumns[region]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="region" />
+                    <externalMetadataColumn
+                      refId="Package\Change HDI\HDI final destination.Inputs[Flat File Destination Input].ExternalColumns[sub-region]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="sub-region" />
+                    <externalMetadataColumn
+                      refId="Package\Change HDI\HDI final destination.Inputs[Flat File Destination Input].ExternalColumns[Year 2019]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="Year 2019" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\Change HDI\Merge Join 1"
+              componentClassID="Microsoft.MergeJoin"
+              contactInfo="Merge Join;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combine two sorted data flows into one using the FULL, LEFT, or INNER join. We recommend this transformation when data flows can be sorted at their sources."
+              name="Merge Join 1"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of join to perform."
+                  name="JoinType"
+                  typeConverter="JoinType">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the number of columns in the ordering key."
+                  name="NumKeyColumns">1</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the null values are treated as equal values."
+                  name="TreatNullsAsEqual">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Indicates the requested maximum buffers per input before blocking."
+                  name="MaxBuffersPerInput">5</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Change HDI\Merge Join 1.Inputs[Merge Join Left Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Left Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Change HDI\Merge Join 1.Inputs[Merge Join Left Input].Columns[Country]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="Country"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Change HDI\Sort by country name 1.Outputs[Sort Output].Columns[Country]" />
+                    <inputColumn
+                      refId="Package\Change HDI\Merge Join 1.Inputs[Merge Join Left Input].Columns[HDI Rank]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="HDI Rank"
+                      lineageId="Package\Change HDI\Sort by country name 1.Outputs[Sort Output].Columns[HDI Rank]" />
+                    <inputColumn
+                      refId="Package\Change HDI\Merge Join 1.Inputs[Merge Join Left Input].Columns[Year 2019]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Year 2019"
+                      lineageId="Package\Change HDI\Sort by country name 1.Outputs[Sort Output].Columns[Year 2019]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Change HDI\Merge Join 1.Inputs[Merge Join Right Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Right Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Change HDI\Merge Join 1.Inputs[Merge Join Right Input].Columns[country name]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="country name"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Change HDI\Sort by country name 2.Outputs[Sort Output].Columns[country name]" />
+                    <inputColumn
+                      refId="Package\Change HDI\Merge Join 1.Inputs[Merge Join Right Input].Columns[country-code]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="country-code"
+                      lineageId="Package\Change HDI\Sort by country name 2.Outputs[Sort Output].Columns[country-code]" />
+                    <inputColumn
+                      refId="Package\Change HDI\Merge Join 1.Inputs[Merge Join Right Input].Columns[region]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="region"
+                      lineageId="Package\Change HDI\Sort by country name 2.Outputs[Sort Output].Columns[region]" />
+                    <inputColumn
+                      refId="Package\Change HDI\Merge Join 1.Inputs[Merge Join Right Input].Columns[sub-region]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="sub-region"
+                      lineageId="Package\Change HDI\Sort by country name 2.Outputs[Sort Output].Columns[sub-region]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Change HDI\Merge Join 1.Outputs[Merge Join Output]"
+                  isSorted="true"
+                  name="Merge Join Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Change HDI\Merge Join 1.Outputs[Merge Join Output].Columns[HDI Rank]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Change HDI\Merge Join 1.Outputs[Merge Join Output].Columns[HDI Rank]"
+                      name="HDI Rank">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Change HDI\Merge Join 1.Inputs[Merge Join Left Input].Columns[HDI Rank]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Change HDI\Merge Join 1.Outputs[Merge Join Output].Columns[Country]"
+                      codePage="1250"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\Change HDI\Merge Join 1.Outputs[Merge Join Output].Columns[Country]"
+                      name="Country"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Change HDI\Merge Join 1.Inputs[Merge Join Left Input].Columns[Country]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Change HDI\Merge Join 1.Outputs[Merge Join Output].Columns[Year 2019]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Change HDI\Merge Join 1.Outputs[Merge Join Output].Columns[Year 2019]"
+                      name="Year 2019">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Change HDI\Merge Join 1.Inputs[Merge Join Left Input].Columns[Year 2019]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Change HDI\Merge Join 1.Outputs[Merge Join Output].Columns[country-code]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Change HDI\Merge Join 1.Outputs[Merge Join Output].Columns[country-code]"
+                      name="country-code">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Change HDI\Merge Join 1.Inputs[Merge Join Right Input].Columns[country-code]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Change HDI\Merge Join 1.Outputs[Merge Join Output].Columns[region]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Change HDI\Merge Join 1.Outputs[Merge Join Output].Columns[region]"
+                      name="region">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Change HDI\Merge Join 1.Inputs[Merge Join Right Input].Columns[region]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Change HDI\Merge Join 1.Outputs[Merge Join Output].Columns[sub-region]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Change HDI\Merge Join 1.Outputs[Merge Join Output].Columns[sub-region]"
+                      name="sub-region">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Change HDI\Merge Join 1.Inputs[Merge Join Right Input].Columns[sub-region]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Change HDI\Sort by country name 1"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort by country name 1"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Change HDI\Sort by country name 1.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Change HDI\Sort by country name 1.Inputs[Sort Input].Columns[HDI Rank]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="HDI Rank"
+                      lineageId="Package\Change HDI\Source - HDI.Outputs[Flat File Source Output].Columns[HDI Rank]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Change HDI\Sort by country name 1.Inputs[Sort Input].Columns[Country]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="Country"
+                      lineageId="Package\Change HDI\Source - HDI.Outputs[Flat File Source Output].Columns[Country]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Change HDI\Sort by country name 1.Inputs[Sort Input].Columns[Year 2019]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Year 2019"
+                      lineageId="Package\Change HDI\Source - HDI.Outputs[Flat File Source Output].Columns[Year 2019]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Change HDI\Sort by country name 1.Inputs[Sort Input].Columns[DataOK]"
+                      cachedDataType="bool"
+                      cachedName="DataOK"
+                      lineageId="Package\Change HDI\Clear data.Outputs[Output 0].Columns[DataOK]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Change HDI\Sort by country name 1.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Change HDI\Sort by country name 1.Outputs[Sort Output].Columns[HDI Rank]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Change HDI\Sort by country name 1.Outputs[Sort Output].Columns[HDI Rank]"
+                      name="HDI Rank">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Change HDI\Source - HDI.Outputs[Flat File Source Output].Columns[HDI Rank]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Change HDI\Sort by country name 1.Outputs[Sort Output].Columns[Country]"
+                      codePage="1250"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\Change HDI\Sort by country name 1.Outputs[Sort Output].Columns[Country]"
+                      name="Country"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Change HDI\Source - HDI.Outputs[Flat File Source Output].Columns[Country]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Change HDI\Sort by country name 1.Outputs[Sort Output].Columns[Year 2019]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Change HDI\Sort by country name 1.Outputs[Sort Output].Columns[Year 2019]"
+                      name="Year 2019">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Change HDI\Source - HDI.Outputs[Flat File Source Output].Columns[Year 2019]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Change HDI\Sort by country name 1.Outputs[Sort Output].Columns[DataOK]"
+                      dataType="bool"
+                      lineageId="Package\Change HDI\Sort by country name 1.Outputs[Sort Output].Columns[DataOK]"
+                      name="DataOK">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Change HDI\Clear data.Outputs[Output 0].Columns[DataOK]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Change HDI\Sort by country name 2"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort by country name 2"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Change HDI\Sort by country name 2.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Change HDI\Sort by country name 2.Inputs[Sort Input].Columns[country name]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="country name"
+                      lineageId="Package\Change HDI\Source - countries.Outputs[Flat File Source Output].Columns[country name]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Change HDI\Sort by country name 2.Inputs[Sort Input].Columns[country-code]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="country-code"
+                      lineageId="Package\Change HDI\Source - countries.Outputs[Flat File Source Output].Columns[country-code]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Change HDI\Sort by country name 2.Inputs[Sort Input].Columns[region]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="region"
+                      lineageId="Package\Change HDI\Source - countries.Outputs[Flat File Source Output].Columns[region]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Change HDI\Sort by country name 2.Inputs[Sort Input].Columns[sub-region]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="sub-region"
+                      lineageId="Package\Change HDI\Source - countries.Outputs[Flat File Source Output].Columns[sub-region]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Change HDI\Sort by country name 2.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Change HDI\Sort by country name 2.Outputs[Sort Output].Columns[country name]"
+                      codePage="1250"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\Change HDI\Sort by country name 2.Outputs[Sort Output].Columns[country name]"
+                      name="country name"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Change HDI\Source - countries.Outputs[Flat File Source Output].Columns[country name]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Change HDI\Sort by country name 2.Outputs[Sort Output].Columns[country-code]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Change HDI\Sort by country name 2.Outputs[Sort Output].Columns[country-code]"
+                      name="country-code">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Change HDI\Source - countries.Outputs[Flat File Source Output].Columns[country-code]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Change HDI\Sort by country name 2.Outputs[Sort Output].Columns[region]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Change HDI\Sort by country name 2.Outputs[Sort Output].Columns[region]"
+                      name="region">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Change HDI\Source - countries.Outputs[Flat File Source Output].Columns[region]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Change HDI\Sort by country name 2.Outputs[Sort Output].Columns[sub-region]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Change HDI\Sort by country name 2.Outputs[Sort Output].Columns[sub-region]"
+                      name="sub-region">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Change HDI\Source - countries.Outputs[Flat File Source Output].Columns[sub-region]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Change HDI\Source - countries"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1045"
+              name="Source - countries"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Change HDI\Source - countries.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Source_countries]"
+                  connectionManagerRefId="Package.ConnectionManagers[Source_countries]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Change HDI\Source - countries.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Change HDI\Source - countries.Outputs[Flat File Source Output].Columns[country name]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Change HDI\Source - countries.Outputs[Flat File Source Output].ExternalColumns[country name]"
+                      length="100"
+                      lineageId="Package\Change HDI\Source - countries.Outputs[Flat File Source Output].Columns[country name]"
+                      name="country name"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Change HDI\Source - countries.Outputs[Flat File Source Output].Columns[country-code]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Change HDI\Source - countries.Outputs[Flat File Source Output].ExternalColumns[country-code]"
+                      length="50"
+                      lineageId="Package\Change HDI\Source - countries.Outputs[Flat File Source Output].Columns[country-code]"
+                      name="country-code"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Change HDI\Source - countries.Outputs[Flat File Source Output].Columns[region]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Change HDI\Source - countries.Outputs[Flat File Source Output].ExternalColumns[region]"
+                      length="50"
+                      lineageId="Package\Change HDI\Source - countries.Outputs[Flat File Source Output].Columns[region]"
+                      name="region"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Change HDI\Source - countries.Outputs[Flat File Source Output].Columns[sub-region]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Change HDI\Source - countries.Outputs[Flat File Source Output].ExternalColumns[sub-region]"
+                      length="50"
+                      lineageId="Package\Change HDI\Source - countries.Outputs[Flat File Source Output].Columns[sub-region]"
+                      name="sub-region"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Change HDI\Source - countries.Outputs[Flat File Source Output].ExternalColumns[Column 0]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="Column 0" />
+                    <externalMetadataColumn
+                      refId="Package\Change HDI\Source - countries.Outputs[Flat File Source Output].ExternalColumns[country name]"
+                      codePage="1250"
+                      dataType="str"
+                      length="100"
+                      name="country name" />
+                    <externalMetadataColumn
+                      refId="Package\Change HDI\Source - countries.Outputs[Flat File Source Output].ExternalColumns[country-code]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="country-code" />
+                    <externalMetadataColumn
+                      refId="Package\Change HDI\Source - countries.Outputs[Flat File Source Output].ExternalColumns[region]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="region" />
+                    <externalMetadataColumn
+                      refId="Package\Change HDI\Source - countries.Outputs[Flat File Source Output].ExternalColumns[sub-region]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="sub-region" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Change HDI\Source - countries.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Change HDI\Source - countries.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1250"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Change HDI\Source - countries.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Change HDI\Source - countries.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Change HDI\Source - countries.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Change HDI\Source - countries.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Change HDI\Source - countries.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Change HDI\Source - HDI"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1045"
+              name="Source - HDI"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Change HDI\Source - HDI.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Source_HDI]"
+                  connectionManagerRefId="Package.ConnectionManagers[Source_HDI]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Change HDI\Source - HDI.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Change HDI\Source - HDI.Outputs[Flat File Source Output].Columns[HDI Rank]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Change HDI\Source - HDI.Outputs[Flat File Source Output].ExternalColumns[HDI Rank]"
+                      length="50"
+                      lineageId="Package\Change HDI\Source - HDI.Outputs[Flat File Source Output].Columns[HDI Rank]"
+                      name="HDI Rank"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Change HDI\Source - HDI.Outputs[Flat File Source Output].Columns[Country]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Change HDI\Source - HDI.Outputs[Flat File Source Output].ExternalColumns[Country]"
+                      length="100"
+                      lineageId="Package\Change HDI\Source - HDI.Outputs[Flat File Source Output].Columns[Country]"
+                      name="Country"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Change HDI\Source - HDI.Outputs[Flat File Source Output].Columns[Year 2019]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Change HDI\Source - HDI.Outputs[Flat File Source Output].ExternalColumns[2019]"
+                      length="50"
+                      lineageId="Package\Change HDI\Source - HDI.Outputs[Flat File Source Output].Columns[Year 2019]"
+                      name="Year 2019"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Change HDI\Source - HDI.Outputs[Flat File Source Output].ExternalColumns[HDI Rank]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="HDI Rank" />
+                    <externalMetadataColumn
+                      refId="Package\Change HDI\Source - HDI.Outputs[Flat File Source Output].ExternalColumns[Country]"
+                      codePage="1250"
+                      dataType="str"
+                      length="100"
+                      name="Country" />
+                    <externalMetadataColumn
+                      refId="Package\Change HDI\Source - HDI.Outputs[Flat File Source Output].ExternalColumns[1990]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="1990" />
+                    <externalMetadataColumn
+                      refId="Package\Change HDI\Source - HDI.Outputs[Flat File Source Output].ExternalColumns[Column 3]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="Column 3" />
+                    <externalMetadataColumn
+                      refId="Package\Change HDI\Source - HDI.Outputs[Flat File Source Output].ExternalColumns[1991]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="1991" />
+                    <externalMetadataColumn
+                      refId="Package\Change HDI\Source - HDI.Outputs[Flat File Source Output].ExternalColumns[Column 5]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="Column 5" />
+                    <externalMetadataColumn
+                      refId="Package\Change HDI\Source - HDI.Outputs[Flat File Source Output].ExternalColumns[1992]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="1992" />
+                    <externalMetadataColumn
+                      refId="Package\Change HDI\Source - HDI.Outputs[Flat File Source Output].ExternalColumns[Column 7]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="Column 7" />
+                    <externalMetadataColumn
+                      refId="Package\Change HDI\Source - HDI.Outputs[Flat File Source Output].ExternalColumns[1993]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="1993" />
+                    <externalMetadataColumn
+                      refId="Package\Change HDI\Source - HDI.Outputs[Flat File Source Output].ExternalColumns[Column 9]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="Column 9" />
+                    <externalMetadataColumn
+                      refId="Package\Change HDI\Source - HDI.Outputs[Flat File Source Output].ExternalColumns[1994]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="1994" />
+                    <externalMetadataColumn
+                      refId="Package\Change HDI\Source - HDI.Outputs[Flat File Source Output].ExternalColumns[Column 11]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="Column 11" />
+                    <externalMetadataColumn
+                      refId="Package\Change HDI\Source - HDI.Outputs[Flat File Source Output].ExternalColumns[1995]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="1995" />
+                    <externalMetadataColumn
+                      refId="Package\Change HDI\Source - HDI.Outputs[Flat File Source Output].ExternalColumns[Column 13]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="Column 13" />
+                    <externalMetadataColumn
+                      refId="Package\Change HDI\Source - HDI.Outputs[Flat File Source Output].ExternalColumns[1996]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="1996" />
+                    <externalMetadataColumn
+                      refId="Package\Change HDI\Source - HDI.Outputs[Flat File Source Output].ExternalColumns[Column 15]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="Column 15" />
+                    <externalMetadataColumn
+                      refId="Package\Change HDI\Source - HDI.Outputs[Flat File Source Output].ExternalColumns[1997]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="1997" />
+                    <externalMetadataColumn
+                      refId="Package\Change HDI\Source - HDI.Outputs[Flat File Source Output].ExternalColumns[Column 17]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="Column 17" />
+                    <externalMetadataColumn
+                      refId="Package\Change HDI\Source - HDI.Outputs[Flat File Source Output].ExternalColumns[1998]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="1998" />
+                    <externalMetadataColumn
+                      refId="Package\Change HDI\Source - HDI.Outputs[Flat File Source Output].ExternalColumns[Column 19]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="Column 19" />
+                    <externalMetadataColumn
+                      refId="Package\Change HDI\Source - HDI.Outputs[Flat File Source Output].ExternalColumns[1999]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="1999" />
+                    <externalMetadataColumn
+                      refId="Package\Change HDI\Source - HDI.Outputs[Flat File Source Output].ExternalColumns[Column 21]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="Column 21" />
+                    <externalMetadataColumn
+                      refId="Package\Change HDI\Source - HDI.Outputs[Flat File Source Output].ExternalColumns[2000]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="2000" />
+                    <externalMetadataColumn
+                      refId="Package\Change HDI\Source - HDI.Outputs[Flat File Source Output].ExternalColumns[Column 23]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="Column 23" />
+                    <externalMetadataColumn
+                      refId="Package\Change HDI\Source - HDI.Outputs[Flat File Source Output].ExternalColumns[2001]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="2001" />
+                    <externalMetadataColumn
+                      refId="Package\Change HDI\Source - HDI.Outputs[Flat File Source Output].ExternalColumns[Column 25]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="Column 25" />
+                    <externalMetadataColumn
+                      refId="Package\Change HDI\Source - HDI.Outputs[Flat File Source Output].ExternalColumns[2002]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="2002" />
+                    <externalMetadataColumn
+                      refId="Package\Change HDI\Source - HDI.Outputs[Flat File Source Output].ExternalColumns[Column 27]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="Column 27" />
+                    <externalMetadataColumn
+                      refId="Package\Change HDI\Source - HDI.Outputs[Flat File Source Output].ExternalColumns[2003]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="2003" />
+                    <externalMetadataColumn
+                      refId="Package\Change HDI\Source - HDI.Outputs[Flat File Source Output].ExternalColumns[Column 29]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="Column 29" />
+                    <externalMetadataColumn
+                      refId="Package\Change HDI\Source - HDI.Outputs[Flat File Source Output].ExternalColumns[2004]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="2004" />
+                    <externalMetadataColumn
+                      refId="Package\Change HDI\Source - HDI.Outputs[Flat File Source Output].ExternalColumns[Column 31]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="Column 31" />
+                    <externalMetadataColumn
+                      refId="Package\Change HDI\Source - HDI.Outputs[Flat File Source Output].ExternalColumns[2005]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="2005" />
+                    <externalMetadataColumn
+                      refId="Package\Change HDI\Source - HDI.Outputs[Flat File Source Output].ExternalColumns[Column 33]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="Column 33" />
+                    <externalMetadataColumn
+                      refId="Package\Change HDI\Source - HDI.Outputs[Flat File Source Output].ExternalColumns[2006]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="2006" />
+                    <externalMetadataColumn
+                      refId="Package\Change HDI\Source - HDI.Outputs[Flat File Source Output].ExternalColumns[Column 35]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="Column 35" />
+                    <externalMetadataColumn
+                      refId="Package\Change HDI\Source - HDI.Outputs[Flat File Source Output].ExternalColumns[2007]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="2007" />
+                    <externalMetadataColumn
+                      refId="Package\Change HDI\Source - HDI.Outputs[Flat File Source Output].ExternalColumns[Column 37]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="Column 37" />
+                    <externalMetadataColumn
+                      refId="Package\Change HDI\Source - HDI.Outputs[Flat File Source Output].ExternalColumns[2008]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="2008" />
+                    <externalMetadataColumn
+                      refId="Package\Change HDI\Source - HDI.Outputs[Flat File Source Output].ExternalColumns[Column 39]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="Column 39" />
+                    <externalMetadataColumn
+                      refId="Package\Change HDI\Source - HDI.Outputs[Flat File Source Output].ExternalColumns[2009]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="2009" />
+                    <externalMetadataColumn
+                      refId="Package\Change HDI\Source - HDI.Outputs[Flat File Source Output].ExternalColumns[Column 41]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="Column 41" />
+                    <externalMetadataColumn
+                      refId="Package\Change HDI\Source - HDI.Outputs[Flat File Source Output].ExternalColumns[2010]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="2010" />
+                    <externalMetadataColumn
+                      refId="Package\Change HDI\Source - HDI.Outputs[Flat File Source Output].ExternalColumns[Column 43]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="Column 43" />
+                    <externalMetadataColumn
+                      refId="Package\Change HDI\Source - HDI.Outputs[Flat File Source Output].ExternalColumns[2011]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="2011" />
+                    <externalMetadataColumn
+                      refId="Package\Change HDI\Source - HDI.Outputs[Flat File Source Output].ExternalColumns[Column 45]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="Column 45" />
+                    <externalMetadataColumn
+                      refId="Package\Change HDI\Source - HDI.Outputs[Flat File Source Output].ExternalColumns[2012]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="2012" />
+                    <externalMetadataColumn
+                      refId="Package\Change HDI\Source - HDI.Outputs[Flat File Source Output].ExternalColumns[Column 47]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="Column 47" />
+                    <externalMetadataColumn
+                      refId="Package\Change HDI\Source - HDI.Outputs[Flat File Source Output].ExternalColumns[2013]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="2013" />
+                    <externalMetadataColumn
+                      refId="Package\Change HDI\Source - HDI.Outputs[Flat File Source Output].ExternalColumns[Column 49]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="Column 49" />
+                    <externalMetadataColumn
+                      refId="Package\Change HDI\Source - HDI.Outputs[Flat File Source Output].ExternalColumns[2014]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="2014" />
+                    <externalMetadataColumn
+                      refId="Package\Change HDI\Source - HDI.Outputs[Flat File Source Output].ExternalColumns[Column 51]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="Column 51" />
+                    <externalMetadataColumn
+                      refId="Package\Change HDI\Source - HDI.Outputs[Flat File Source Output].ExternalColumns[2015]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="2015" />
+                    <externalMetadataColumn
+                      refId="Package\Change HDI\Source - HDI.Outputs[Flat File Source Output].ExternalColumns[Column 53]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="Column 53" />
+                    <externalMetadataColumn
+                      refId="Package\Change HDI\Source - HDI.Outputs[Flat File Source Output].ExternalColumns[2016]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="2016" />
+                    <externalMetadataColumn
+                      refId="Package\Change HDI\Source - HDI.Outputs[Flat File Source Output].ExternalColumns[Column 55]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="Column 55" />
+                    <externalMetadataColumn
+                      refId="Package\Change HDI\Source - HDI.Outputs[Flat File Source Output].ExternalColumns[2017]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="2017" />
+                    <externalMetadataColumn
+                      refId="Package\Change HDI\Source - HDI.Outputs[Flat File Source Output].ExternalColumns[Column 57]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="Column 57" />
+                    <externalMetadataColumn
+                      refId="Package\Change HDI\Source - HDI.Outputs[Flat File Source Output].ExternalColumns[2018]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="2018" />
+                    <externalMetadataColumn
+                      refId="Package\Change HDI\Source - HDI.Outputs[Flat File Source Output].ExternalColumns[Column 59]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="Column 59" />
+                    <externalMetadataColumn
+                      refId="Package\Change HDI\Source - HDI.Outputs[Flat File Source Output].ExternalColumns[2019]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="2019" />
+                    <externalMetadataColumn
+                      refId="Package\Change HDI\Source - HDI.Outputs[Flat File Source Output].ExternalColumns[Column 61]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="Column 61" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Change HDI\Source - HDI.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Change HDI\Source - HDI.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1250"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Change HDI\Source - HDI.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Change HDI\Source - HDI.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Change HDI\Source - HDI.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Change HDI\Source - HDI.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Change HDI\Source - HDI.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Change HDI.Paths[Flat File Source Output]"
+              endId="Package\Change HDI\Clear data.Inputs[Input 0]"
+              name="Flat File Source Output"
+              startId="Package\Change HDI\Source - HDI.Outputs[Flat File Source Output]" />
+            <path
+              refId="Package\Change HDI.Paths[Flat File Source Output1]"
+              endId="Package\Change HDI\Sort by country name 2.Inputs[Sort Input]"
+              name="Flat File Source Output"
+              startId="Package\Change HDI\Source - countries.Outputs[Flat File Source Output]" />
+            <path
+              refId="Package\Change HDI.Paths[Merge Join Output]"
+              endId="Package\Change HDI\HDI final destination.Inputs[Flat File Destination Input]"
+              name="Merge Join Output"
+              startId="Package\Change HDI\Merge Join 1.Outputs[Merge Join Output]" />
+            <path
+              refId="Package\Change HDI.Paths[OKData]"
+              endId="Package\Change HDI\Sort by country name 1.Inputs[Sort Input]"
+              name="OKData"
+              startId="Package\Change HDI\Delete junk data.Outputs[OKData]" />
+            <path
+              refId="Package\Change HDI.Paths[Output 0]"
+              endId="Package\Change HDI\Delete junk data.Inputs[Conditional Split Input]"
+              name="Output 0"
+              startId="Package\Change HDI\Clear data.Outputs[Output 0]" />
+            <path
+              refId="Package\Change HDI.Paths[Sort Output]"
+              endId="Package\Change HDI\Merge Join 1.Inputs[Merge Join Left Input]"
+              name="Sort Output"
+              startId="Package\Change HDI\Sort by country name 1.Outputs[Sort Output]" />
+            <path
+              refId="Package\Change HDI.Paths[Sort Output1]"
+              endId="Package\Change HDI\Merge Join 1.Inputs[Merge Join Right Input]"
+              name="Sort Output"
+              startId="Package\Change HDI\Sort by country name 2.Outputs[Sort Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="135.2,41.6"
+          Id="Package\Change HDI"
+          TopLeft="60.0000010217939,58.8823537669793" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Change HDI">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="139.2,41.6"
+          Id="Package\Change HDI\Source - HDI"
+          TopLeft="89.285715806241,61.1764714462122" />
+        <NodeLayout
+          Size="164,41.6"
+          Id="Package\Change HDI\Source - countries"
+          TopLeft="275.714290409672,62.7058832323675" />
+        <NodeLayout
+          Size="126.4,41.6"
+          Id="Package\Change HDI\Clear data"
+          TopLeft="92.8571444384906,130.000001823201" />
+        <EdgeLayout
+          Id="Package\Change HDI.Paths[Flat File Source Output]"
+          TopLeft="157.471430122366,102.776471446212">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,27.2235303769888"
+              Start="0,0"
+              End="0,19.7235303769888">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.7235303769888" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="189.6,41.6"
+          Id="Package\Change HDI\Sort by country name 2"
+          TopLeft="269.785718786473,133.205884143968" />
+        <NodeLayout
+          Size="189.6,41.6"
+          Id="Package\Change HDI\Sort by country name 1"
+          TopLeft="60.0000010217939,276.058827401033" />
+        <EdgeLayout
+          Id="Package\Change HDI.Paths[Flat File Source Output1]"
+          TopLeft="361.150004598073,104.305883232367">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,28.9000009116006"
+              Start="0,0"
+              End="0,21.4000009116006">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.4000009116006" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="138.4,41.6"
+          Id="Package\Change HDI\Merge Join 1"
+          TopLeft="234.285718275576,328.823534023391" />
+        <EdgeLayout
+          Id="Package\Change HDI.Paths[Sort Output]"
+          TopLeft="249.600001021794,296.858827401033">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="32.1523839204491,31.9647066223579"
+              Start="0,0"
+              End="32.1523839204491,24.4647066223579">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="28.1523839204491,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="28.1523839204491,0"
+                    Point2="32.1523839204491,0"
+                    Point3="32.1523839204491,4" />
+                  <mssgle:LineSegment
+                    End="32.1523839204491,24.4647066223579" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Change HDI.Paths[Sort Output1]"
+          TopLeft="364.585718786473,174.805884143968">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-39.3666671775638,154.017649879423"
+              Start="0,0"
+              End="-39.3666671775638,146.517649879423">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,87.354468899909" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,87.354468899909"
+                    Point2="0,91.354468899909"
+                    Point3="-4,91.354468899909" />
+                  <mssgle:LineSegment
+                    End="-35.3666671775638,91.354468899909" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-35.3666671775638,91.354468899909"
+                    Point2="-39.3666671775638,91.354468899909"
+                    Point3="-39.3666671775638,95.354468899909" />
+                  <mssgle:LineSegment
+                    End="-39.3666671775638,146.517649879423" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="175.2,41.6"
+          Id="Package\Change HDI\HDI final destination"
+          TopLeft="216.428575114328,396.117652614224" />
+        <NodeLayout
+          Size="156,41.6"
+          Id="Package\Change HDI\Delete junk data"
+          TopLeft="82.1428585417417,202.894120414034" />
+        <EdgeLayout
+          Id="Package\Change HDI.Paths[Output 0]"
+          TopLeft="158.100001490116,171.600001823201">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,31.2941185908334"
+              Start="0,0"
+              End="0,23.7941185908334">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.7941185908334" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Change HDI.Paths[OKData]"
+          TopLeft="157.471429781768,244.494120414034">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,31.5647069869983"
+              Start="0,0"
+              End="0,24.0647069869983">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.0647069869983" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-17.31587890625,7.24573239974916,34.6317578125,9.5732421875"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Change HDI.Paths[Merge Join Output]"
+          TopLeft="303.757146694952,370.423534023391">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,25.6941185908333"
+              Start="0,0"
+              End="0,18.1941185908333">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.1941185908333" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

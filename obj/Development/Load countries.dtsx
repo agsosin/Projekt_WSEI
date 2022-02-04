@@ -1,0 +1,607 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="2/4/2022 12:09:23 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-DBV1COE"
+  DTS:CreatorName="DESKTOP-DBV1COE\agnie"
+  DTS:DTSID="{D9248597-CEE5-4E30-934A-2111810131FD}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.170"
+  DTS:LocaleID="1045"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="3"
+  DTS:VersionGUID="{0E876E09-FD81-4EFD-8FD2-D923B716E5D7}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat_Load_Countries]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{34ED2C63-53B5-4EE0-AF9E-918D2C330AA5}"
+      DTS:ObjectName="Flat_Load_Countries">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[$Project::FiPath]+ @[$Project::FlatFiles]+"\\countries.csv"</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1045"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="1250"
+          DTS:ConnectionString="D:\Studies\AAA_Semestr_Ostatni\P3\Paczki\Pliki_Plaskie\countries.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 0"
+              DTS:DTSID="{7C55647C-EEE5-4B81-B21B-A2A234686969}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="52"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="country name"
+              DTS:DTSID="{9C56D70C-CBD0-45AE-9FB2-D80DDC608403}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="3"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="country-code"
+              DTS:DTSID="{57259D3B-08CA-4FB2-A648-8E196955DE1B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="8"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="region"
+              DTS:DTSID="{ABD24168-37A4-4666-A556-6CC0F6F86204}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="31"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="sub-region"
+              DTS:DTSID="{06A811EE-FE18-48CF-96F5-CA4C4DB62879}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Load countries"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{454CCE0F-4254-4E3C-8409-3B8D38B5321B}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load countries"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Load countries\Flat File Source"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1045"
+              name="Flat File Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load countries\Flat File Source.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Flat_Load_Countries]"
+                  connectionManagerRefId="Package.ConnectionManagers[Flat_Load_Countries]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Load countries\Flat File Source.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load countries\Flat File Source.Outputs[Flat File Source Output].Columns[Column 0]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load countries\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Column 0]"
+                      lineageId="Package\Load countries\Flat File Source.Outputs[Flat File Source Output].Columns[Column 0]"
+                      name="Column 0"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load countries\Flat File Source.Outputs[Flat File Source Output].Columns[country name]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load countries\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[country name]"
+                      length="52"
+                      lineageId="Package\Load countries\Flat File Source.Outputs[Flat File Source Output].Columns[country name]"
+                      name="country name"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load countries\Flat File Source.Outputs[Flat File Source Output].Columns[country-code]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load countries\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[country-code]"
+                      length="3"
+                      lineageId="Package\Load countries\Flat File Source.Outputs[Flat File Source Output].Columns[country-code]"
+                      name="country-code"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load countries\Flat File Source.Outputs[Flat File Source Output].Columns[region]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load countries\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[region]"
+                      length="8"
+                      lineageId="Package\Load countries\Flat File Source.Outputs[Flat File Source Output].Columns[region]"
+                      name="region"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load countries\Flat File Source.Outputs[Flat File Source Output].Columns[sub-region]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load countries\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[sub-region]"
+                      length="31"
+                      lineageId="Package\Load countries\Flat File Source.Outputs[Flat File Source Output].Columns[sub-region]"
+                      name="sub-region"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load countries\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Column 0]"
+                      dataType="i2"
+                      name="Column 0" />
+                    <externalMetadataColumn
+                      refId="Package\Load countries\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[country name]"
+                      codePage="1250"
+                      dataType="str"
+                      length="52"
+                      name="country name" />
+                    <externalMetadataColumn
+                      refId="Package\Load countries\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[country-code]"
+                      codePage="1250"
+                      dataType="str"
+                      length="3"
+                      name="country-code" />
+                    <externalMetadataColumn
+                      refId="Package\Load countries\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[region]"
+                      codePage="1250"
+                      dataType="str"
+                      length="8"
+                      name="region" />
+                    <externalMetadataColumn
+                      refId="Package\Load countries\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[sub-region]"
+                      codePage="1250"
+                      dataType="str"
+                      length="31"
+                      name="sub-region" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Load countries\Flat File Source.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load countries\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1250"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Load countries\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Load countries\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load countries\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load countries\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load countries\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load countries\SQL Server Destination"
+              componentClassID="Microsoft.SQLServerDestination"
+              contactInfo="SQL Server Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;5"
+              description="SQL Server Destination"
+              name="SQL Server Destination"
+              version="5">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.String"
+                  description="The name of the database object to copy data into."
+                  expressionType="Notify"
+                  name="BulkInsertTableName">[dbo].[countries]</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies that any constraints on the destination object are checked during the data copy operation. Corresponds to the bulk insert CHECK_CONSTRAINTS option."
+                  name="BulkInsertCheckConstraints">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the number of the first row to copy. Corresponds to the bulk insert FIRSTROW option."
+                  expressionType="Notify"
+                  name="BulkInsertFirstRow">-1</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies that any insert triggers defined on the destination object will execute during the data copy. Corresponds to the bulk insert FIRE_TRIGGERS option."
+                  name="BulkInsertFireTriggers">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Corresponds to the bulk insert KEEPIDENTITY option."
+                  name="BulkInsertKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null copied to the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="BulkInsertKeepNulls">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the number of the last row to copy. Corresponds to the bulk insert LASTROW option."
+                  expressionType="Notify"
+                  name="BulkInsertLastRow">-1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of syntax errors and compilation errors that can occur before the data copy operation is canceled. Each row that cannot be copied is ignored and counted as one error. Corresponds to the bulk insert MAXERRORS option."
+                  name="BulkInsertMaxErrors">-1</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies how the data to be copied is sorted. Corresponds to the bulk insert ORDER option."
+                  expressionType="Notify"
+                  name="BulkInsertOrder"></property>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies that a table-level lock is acquired for the duration of the data copy operation. Corresponds to the bulk insert TABLOCK option."
+                  name="BulkInsertTablock">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies in seconds the amount of time the SQL Destination adapter will wait before terminating if there is no data available for insertion.  A timeout value of 0 means the SQL Destination adapter will not time out."
+                  expressionType="Notify"
+                  name="Timeout">30</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion."
+                  name="MaxInsertCommitSize">0</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load countries\SQL Server Destination.Connections[OleDbConnection]"
+                  connectionManagerID="{AE2EB598-B55B-4FB5-8683-E1C1A1205AD6}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-DBV1COE_SQLEXPRESS.projekt]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load countries\SQL Server Destination.Inputs[SQL Server Destination Input]"
+                  hasSideEffects="true"
+                  name="SQL Server Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load countries\SQL Server Destination.Inputs[SQL Server Destination Input].Columns[Column 0]"
+                      cachedDataType="i2"
+                      cachedName="Column 0"
+                      externalMetadataColumnId="Package\Load countries\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[Column 0]"
+                      lineageId="Package\Load countries\Flat File Source.Outputs[Flat File Source Output].Columns[Column 0]" />
+                    <inputColumn
+                      refId="Package\Load countries\SQL Server Destination.Inputs[SQL Server Destination Input].Columns[country name]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="52"
+                      cachedName="country name"
+                      externalMetadataColumnId="Package\Load countries\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[country name]"
+                      lineageId="Package\Load countries\Flat File Source.Outputs[Flat File Source Output].Columns[country name]" />
+                    <inputColumn
+                      refId="Package\Load countries\SQL Server Destination.Inputs[SQL Server Destination Input].Columns[country-code]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="3"
+                      cachedName="country-code"
+                      externalMetadataColumnId="Package\Load countries\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[country-code]"
+                      lineageId="Package\Load countries\Flat File Source.Outputs[Flat File Source Output].Columns[country-code]" />
+                    <inputColumn
+                      refId="Package\Load countries\SQL Server Destination.Inputs[SQL Server Destination Input].Columns[region]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="8"
+                      cachedName="region"
+                      externalMetadataColumnId="Package\Load countries\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[region]"
+                      lineageId="Package\Load countries\Flat File Source.Outputs[Flat File Source Output].Columns[region]" />
+                    <inputColumn
+                      refId="Package\Load countries\SQL Server Destination.Inputs[SQL Server Destination Input].Columns[sub-region]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="31"
+                      cachedName="sub-region"
+                      externalMetadataColumnId="Package\Load countries\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[sub-region]"
+                      lineageId="Package\Load countries\Flat File Source.Outputs[Flat File Source Output].Columns[sub-region]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load countries\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[Column 0]"
+                      dataType="i2"
+                      name="Column 0" />
+                    <externalMetadataColumn
+                      refId="Package\Load countries\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[country name]"
+                      codePage="1250"
+                      dataType="str"
+                      length="52"
+                      name="country name" />
+                    <externalMetadataColumn
+                      refId="Package\Load countries\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[country-code]"
+                      codePage="1250"
+                      dataType="str"
+                      length="3"
+                      name="country-code" />
+                    <externalMetadataColumn
+                      refId="Package\Load countries\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[region]"
+                      codePage="1250"
+                      dataType="str"
+                      length="8"
+                      name="region" />
+                    <externalMetadataColumn
+                      refId="Package\Load countries\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[sub-region]"
+                      codePage="1250"
+                      dataType="str"
+                      length="31"
+                      name="sub-region" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Load countries.Paths[Flat File Source Output]"
+              endId="Package\Load countries\SQL Server Destination.Inputs[SQL Server Destination Input]"
+              name="Flat File Source Output"
+              startId="Package\Load countries\Flat File Source.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Truncate countries"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{A9805F7D-1C8B-4CED-8FE8-C3F33BECC6B4}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Truncate countries"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:PropertyExpression
+        DTS:Name="Connection">@[$Project::SQLServer]+"."+ @[$Project::DBName]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{AE2EB598-B55B-4FB5-8683-E1C1A1205AD6}"
+          SQLTask:SqlStatementSource="truncate table dbo.countries" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{BE6BC4BB-27CF-43B8-AE9F-524E2816CBE1}"
+      DTS:From="Package\Truncate countries"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Load countries" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="166.4,41.6"
+          Id="Package\Truncate countries"
+          TopLeft="85.0000014475414,39.7647064400379" />
+        <NodeLayout
+          Size="147.2,41.6"
+          Id="Package\Load countries"
+          TopLeft="99.2857159765399,114.705883961648" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="170.542858712041,81.3647064400379">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,33.3411775216099"
+              Start="0,0"
+              End="0,25.8411775216099">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.8411775216099" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Load countries">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="150.4,41.6"
+          Id="Package\Load countries\Flat File Source"
+          TopLeft="90.7142872591408,56.5882360877463" />
+        <NodeLayout
+          Size="187.2,41.6"
+          Id="Package\Load countries\SQL Server Destination"
+          TopLeft="88.5714300797911,156.000002187841" />
+        <EdgeLayout
+          Id="Package\Load countries.Paths[Flat File Source Output]"
+          TopLeft="165.914287259141,98.1882360877463">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="16.2571428206502,57.8117661000948"
+              Start="0,0"
+              End="16.2571428206502,50.3117661000948">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.9058830500474" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24.9058830500474"
+                    Point2="0,28.9058830500474"
+                    Point3="4,28.9058830500474" />
+                  <mssgle:LineSegment
+                    End="12.2571428206502,28.9058830500474" />
+                  <mssgle:CubicBezierSegment
+                    Point1="12.2571428206502,28.9058830500474"
+                    Point2="16.2571428206502,28.9058830500474"
+                    Point3="16.2571428206502,32.9058830500474" />
+                  <mssgle:LineSegment
+                    End="16.2571428206502,50.3117661000948" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-12.4359012459249,33.9058830500474,41.1289453125,9.568359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load countries\SQL Server Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

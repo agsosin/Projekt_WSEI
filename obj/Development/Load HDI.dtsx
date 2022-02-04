@@ -1,0 +1,662 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="2/4/2022 12:28:58 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-DBV1COE"
+  DTS:CreatorName="DESKTOP-DBV1COE\agnie"
+  DTS:DTSID="{D3448ED8-8B89-4901-8D34-0A5D2D00E54B}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.170"
+  DTS:LocaleID="1045"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="1"
+  DTS:VersionGUID="{1CEF5783-D550-401F-8BEE-676568432F45}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat_Source_HDI]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{58450CB8-0ED7-4EFF-BAD3-615F01C5ADE5}"
+      DTS:ObjectName="Flat_Source_HDI">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1045"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="1250"
+          DTS:ConnectionString="D:\Studies\AAA_Semestr_Ostatni\P3\Paczki\Pliki_plaskie\HDI.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="HDI Rank"
+              DTS:DTSID="{936D88D5-6100-4411-87BA-B141D6F46E3E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="34"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Country"
+              DTS:DTSID="{144D27BE-4763-40F6-A565-DD626A218A8F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="13"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Year 2019"
+              DTS:DTSID="{8F24EC98-CDFA-4F04-8422-365ABAC4CDB0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="5"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="country-code"
+              DTS:DTSID="{3A6EC2C1-600F-4469-ACAD-A27AF47B5CC5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="8"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="region"
+              DTS:DTSID="{8AA11BBC-F37F-4ED2-A8CD-3C973447B0DA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="31"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="sub-region"
+              DTS:DTSID="{C41CC3B8-2DAF-4A57-8C76-783ED04A1DB9}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Execute SQL Task"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{089B3FCF-0523-412F-9118-25D10C4A6286}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute SQL Task"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:PropertyExpression
+        DTS:Name="Connection">@[$Project::SQLServer]+"."+@[$Project::DBName]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{AE2EB598-B55B-4FB5-8683-E1C1A1205AD6}"
+          SQLTask:SqlStatementSource="truncate table dbo.HDI" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Load HDI"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{063219C4-6D60-4DE4-ABDD-3FCF5C0FFE78}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load HDI"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Load HDI\Flat File Source"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1045"
+              name="Flat File Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load HDI\Flat File Source.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Flat_Source_HDI]"
+                  connectionManagerRefId="Package.ConnectionManagers[Flat_Source_HDI]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Load HDI\Flat File Source.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load HDI\Flat File Source.Outputs[Flat File Source Output].Columns[HDI Rank]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load HDI\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[HDI Rank]"
+                      lineageId="Package\Load HDI\Flat File Source.Outputs[Flat File Source Output].Columns[HDI Rank]"
+                      name="HDI Rank"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load HDI\Flat File Source.Outputs[Flat File Source Output].Columns[Country]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load HDI\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Country]"
+                      length="34"
+                      lineageId="Package\Load HDI\Flat File Source.Outputs[Flat File Source Output].Columns[Country]"
+                      name="Country"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load HDI\Flat File Source.Outputs[Flat File Source Output].Columns[Year 2019]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load HDI\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Year 2019]"
+                      length="13"
+                      lineageId="Package\Load HDI\Flat File Source.Outputs[Flat File Source Output].Columns[Year 2019]"
+                      name="Year 2019"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load HDI\Flat File Source.Outputs[Flat File Source Output].Columns[country-code]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load HDI\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[country-code]"
+                      length="5"
+                      lineageId="Package\Load HDI\Flat File Source.Outputs[Flat File Source Output].Columns[country-code]"
+                      name="country-code"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load HDI\Flat File Source.Outputs[Flat File Source Output].Columns[region]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load HDI\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[region]"
+                      length="8"
+                      lineageId="Package\Load HDI\Flat File Source.Outputs[Flat File Source Output].Columns[region]"
+                      name="region"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load HDI\Flat File Source.Outputs[Flat File Source Output].Columns[sub-region]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load HDI\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[sub-region]"
+                      length="31"
+                      lineageId="Package\Load HDI\Flat File Source.Outputs[Flat File Source Output].Columns[sub-region]"
+                      name="sub-region"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load HDI\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[HDI Rank]"
+                      dataType="i2"
+                      name="HDI Rank" />
+                    <externalMetadataColumn
+                      refId="Package\Load HDI\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Country]"
+                      codePage="1250"
+                      dataType="str"
+                      length="34"
+                      name="Country" />
+                    <externalMetadataColumn
+                      refId="Package\Load HDI\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Year 2019]"
+                      codePage="1250"
+                      dataType="str"
+                      length="13"
+                      name="Year 2019" />
+                    <externalMetadataColumn
+                      refId="Package\Load HDI\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[country-code]"
+                      codePage="1250"
+                      dataType="str"
+                      length="5"
+                      name="country-code" />
+                    <externalMetadataColumn
+                      refId="Package\Load HDI\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[region]"
+                      codePage="1250"
+                      dataType="str"
+                      length="8"
+                      name="region" />
+                    <externalMetadataColumn
+                      refId="Package\Load HDI\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[sub-region]"
+                      codePage="1250"
+                      dataType="str"
+                      length="31"
+                      name="sub-region" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Load HDI\Flat File Source.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load HDI\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1250"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Load HDI\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Load HDI\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load HDI\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load HDI\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load HDI\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load HDI\SQL Server Destination"
+              componentClassID="Microsoft.SQLServerDestination"
+              contactInfo="SQL Server Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;5"
+              description="SQL Server Destination"
+              name="SQL Server Destination"
+              version="5">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.String"
+                  description="The name of the database object to copy data into."
+                  expressionType="Notify"
+                  name="BulkInsertTableName">[dbo].[HDI]</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies that any constraints on the destination object are checked during the data copy operation. Corresponds to the bulk insert CHECK_CONSTRAINTS option."
+                  name="BulkInsertCheckConstraints">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the number of the first row to copy. Corresponds to the bulk insert FIRSTROW option."
+                  expressionType="Notify"
+                  name="BulkInsertFirstRow">-1</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies that any insert triggers defined on the destination object will execute during the data copy. Corresponds to the bulk insert FIRE_TRIGGERS option."
+                  name="BulkInsertFireTriggers">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Corresponds to the bulk insert KEEPIDENTITY option."
+                  name="BulkInsertKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null copied to the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="BulkInsertKeepNulls">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the number of the last row to copy. Corresponds to the bulk insert LASTROW option."
+                  expressionType="Notify"
+                  name="BulkInsertLastRow">-1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of syntax errors and compilation errors that can occur before the data copy operation is canceled. Each row that cannot be copied is ignored and counted as one error. Corresponds to the bulk insert MAXERRORS option."
+                  name="BulkInsertMaxErrors">-1</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies how the data to be copied is sorted. Corresponds to the bulk insert ORDER option."
+                  expressionType="Notify"
+                  name="BulkInsertOrder"></property>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies that a table-level lock is acquired for the duration of the data copy operation. Corresponds to the bulk insert TABLOCK option."
+                  name="BulkInsertTablock">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies in seconds the amount of time the SQL Destination adapter will wait before terminating if there is no data available for insertion.  A timeout value of 0 means the SQL Destination adapter will not time out."
+                  expressionType="Notify"
+                  name="Timeout">30</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion."
+                  name="MaxInsertCommitSize">0</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load HDI\SQL Server Destination.Connections[OleDbConnection]"
+                  connectionManagerID="{AE2EB598-B55B-4FB5-8683-E1C1A1205AD6}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-DBV1COE_SQLEXPRESS.projekt]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load HDI\SQL Server Destination.Inputs[SQL Server Destination Input]"
+                  hasSideEffects="true"
+                  name="SQL Server Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load HDI\SQL Server Destination.Inputs[SQL Server Destination Input].Columns[HDI Rank]"
+                      cachedDataType="i2"
+                      cachedName="HDI Rank"
+                      externalMetadataColumnId="Package\Load HDI\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[HDI Rank]"
+                      lineageId="Package\Load HDI\Flat File Source.Outputs[Flat File Source Output].Columns[HDI Rank]" />
+                    <inputColumn
+                      refId="Package\Load HDI\SQL Server Destination.Inputs[SQL Server Destination Input].Columns[Country]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="34"
+                      cachedName="Country"
+                      externalMetadataColumnId="Package\Load HDI\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[Country]"
+                      lineageId="Package\Load HDI\Flat File Source.Outputs[Flat File Source Output].Columns[Country]" />
+                    <inputColumn
+                      refId="Package\Load HDI\SQL Server Destination.Inputs[SQL Server Destination Input].Columns[country-code]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="5"
+                      cachedName="country-code"
+                      externalMetadataColumnId="Package\Load HDI\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[country-code]"
+                      lineageId="Package\Load HDI\Flat File Source.Outputs[Flat File Source Output].Columns[country-code]" />
+                    <inputColumn
+                      refId="Package\Load HDI\SQL Server Destination.Inputs[SQL Server Destination Input].Columns[region]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="8"
+                      cachedName="region"
+                      externalMetadataColumnId="Package\Load HDI\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[region]"
+                      lineageId="Package\Load HDI\Flat File Source.Outputs[Flat File Source Output].Columns[region]" />
+                    <inputColumn
+                      refId="Package\Load HDI\SQL Server Destination.Inputs[SQL Server Destination Input].Columns[sub-region]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="31"
+                      cachedName="sub-region"
+                      externalMetadataColumnId="Package\Load HDI\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[sub-region]"
+                      lineageId="Package\Load HDI\Flat File Source.Outputs[Flat File Source Output].Columns[sub-region]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load HDI\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[Column 0]"
+                      dataType="i2"
+                      name="Column 0" />
+                    <externalMetadataColumn
+                      refId="Package\Load HDI\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[HDI Rank]"
+                      dataType="i2"
+                      name="HDI Rank" />
+                    <externalMetadataColumn
+                      refId="Package\Load HDI\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[Country]"
+                      codePage="1250"
+                      dataType="str"
+                      length="34"
+                      name="Country" />
+                    <externalMetadataColumn
+                      refId="Package\Load HDI\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[2019]"
+                      codePage="1250"
+                      dataType="str"
+                      length="13"
+                      name="2019" />
+                    <externalMetadataColumn
+                      refId="Package\Load HDI\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[country-code]"
+                      codePage="1250"
+                      dataType="str"
+                      length="5"
+                      name="country-code" />
+                    <externalMetadataColumn
+                      refId="Package\Load HDI\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[region]"
+                      codePage="1250"
+                      dataType="str"
+                      length="8"
+                      name="region" />
+                    <externalMetadataColumn
+                      refId="Package\Load HDI\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[sub-region]"
+                      codePage="1250"
+                      dataType="str"
+                      length="31"
+                      name="sub-region" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Load HDI.Paths[Flat File Source Output]"
+              endId="Package\Load HDI\SQL Server Destination.Inputs[SQL Server Destination Input]"
+              name="Flat File Source Output"
+              startId="Package\Load HDI\Flat File Source.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{EB358E43-A2DD-47A7-A3AB-068E15FD29A2}"
+      DTS:From="Package\Execute SQL Task"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Load HDI" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="162.4,41.6"
+          Id="Package\Execute SQL Task"
+          TopLeft="97.1428587971902,55.058824301591" />
+        <NodeLayout
+          Size="122.4,41.6"
+          Id="Package\Load HDI"
+          TopLeft="104.285716061689,131.529413609356" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="178.34285879719,96.658824301591">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-12.8571427355007,34.8705893077652"
+              Start="0,0"
+              End="-12.8571427355007,27.3705893077652">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,13.4352946538826" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13.4352946538826"
+                    Point2="0,17.4352946538826"
+                    Point3="-4,17.4352946538826" />
+                  <mssgle:LineSegment
+                    End="-8.8571427355007,17.4352946538826" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-8.8571427355007,17.4352946538826"
+                    Point2="-12.8571427355007,17.4352946538826"
+                    Point3="-12.8571427355007,21.4352946538826" />
+                  <mssgle:LineSegment
+                    End="-12.8571427355007,27.3705893077652" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Load HDI">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="150.4,41.6"
+          Id="Package\Load HDI\Flat File Source"
+          TopLeft="77.8571441830421,39.0000005469603" />
+        <NodeLayout
+          Size="187.2,41.6"
+          Id="Package\Load HDI\SQL Server Destination"
+          TopLeft="81.4285728152918,112.411766282415" />
+        <EdgeLayout
+          Id="Package\Load HDI.Paths[Flat File Source Output]"
+          TopLeft="153.057144183042,80.6000005469603">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="21.9714286322497,31.8117657354547"
+              Start="0,0"
+              End="21.9714286322497,24.3117657354547">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,11.9058828677273" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,11.9058828677273"
+                    Point2="0,15.9058828677273"
+                    Point3="4,15.9058828677273" />
+                  <mssgle:LineSegment
+                    End="17.9714286322497,15.9058828677273" />
+                  <mssgle:CubicBezierSegment
+                    Point1="17.9714286322497,15.9058828677273"
+                    Point2="21.9714286322497,15.9058828677273"
+                    Point3="21.9714286322497,19.9058828677273" />
+                  <mssgle:LineSegment
+                    End="21.9714286322497,24.3117657354547" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load HDI\SQL Server Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
