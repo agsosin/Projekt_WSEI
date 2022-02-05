@@ -2,7 +2,7 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>Paczki_robaczki</Name>
-    <LastWriteTime>2022-02-04T17:49:57.9243962Z</LastWriteTime>
+    <LastWriteTime>2022-02-05T20:37:34.2594695Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
@@ -13,7 +13,7 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Change indicators.dtsx</Name>
-      <LastWriteTime>2022-02-04T17:49:57.8944774Z</LastWriteTime>
+      <LastWriteTime>2022-02-04T17:59:38.9509838Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
@@ -28,12 +28,17 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Execute in order.dtsx</Name>
-      <LastWriteTime>2022-02-04T17:53:50.1742915Z</LastWriteTime>
+      <LastWriteTime>2022-02-05T20:37:34.2235718Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Change death reasons.dtsx</Name>
       <LastWriteTime>2022-02-04T17:49:57.790754Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>Upload countries.dtsx</Name>
+      <LastWriteTime>2022-02-05T20:37:32.5711308Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>
