@@ -2,7 +2,7 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>Paczki_robaczki</Name>
-    <LastWriteTime>2022-02-05T20:37:34.2594695Z</LastWriteTime>
+    <LastWriteTime>2022-02-05T21:43:13.2518702Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
@@ -28,7 +28,7 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Execute in order.dtsx</Name>
-      <LastWriteTime>2022-02-05T20:37:34.2235718Z</LastWriteTime>
+      <LastWriteTime>2022-02-05T21:45:31.7031431Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
@@ -38,7 +38,17 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Upload countries.dtsx</Name>
-      <LastWriteTime>2022-02-05T20:37:32.5711308Z</LastWriteTime>
+      <LastWriteTime>2022-02-05T20:53:12.910514Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>Upload covid.dtsx</Name>
+      <LastWriteTime>2022-02-05T20:56:28.082702Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>Upload indicators.dtsx</Name>
+      <LastWriteTime>2022-02-05T21:43:13.1591101Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>

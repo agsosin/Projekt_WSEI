@@ -1,28 +1,28 @@
 <?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
-  DTS:CreationDate="2/5/2022 9:33:35 PM"
+  DTS:CreationDate="2/5/2022 10:04:06 PM"
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="DESKTOP-DBV1COE"
   DTS:CreatorName="DESKTOP-DBV1COE\agnie"
-  DTS:DTSID="{20879E2E-45A2-45E9-965E-2FB9A6BD6812}"
+  DTS:DTSID="{9A937464-22B4-4EFD-A1E8-6D0C129DB032}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="15.0.2000.170"
   DTS:LocaleID="1045"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="3"
-  DTS:VersionGUID="{06BBA440-AA9A-4F27-8E82-70D6560A7556}">
+  DTS:VersionBuild="9"
+  DTS:VersionGUID="{7557E899-3595-4CBE-841A-D26070D85FD0}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[Source_countries]"
+      DTS:refId="Package.ConnectionManagers[Source_death_rate]"
       DTS:CreationName="FLATFILE"
-      DTS:DTSID="{CC0F0B83-02C4-4C85-B8AB-714328E0E3BF}"
-      DTS:ObjectName="Source_countries">
+      DTS:DTSID="{F380342E-123F-4204-931B-BB429970293D}"
+      DTS:ObjectName="Source_death_rate">
       <DTS:PropertyExpression
-        DTS:Name="ConnectionString">@[$Project::FiPath]+ @[$Project::FlatFiles]+"\\countries.csv"</DTS:PropertyExpression>
+        DTS:Name="ConnectionString">@[$Project::FiPath]+ @[$Project::FlatFiles]+"\\Death_rate_per_1000_people.csv"</DTS:PropertyExpression>
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:Format="Delimited"
@@ -32,52 +32,25 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x0022_"
           DTS:CodePage="1250"
-          DTS:ConnectionString="D:\Studies\AAA_Semestr_Ostatni\P3\Paczki\Pliki_Plaskie\countries.csv">
+          DTS:ConnectionString="D:\Studies\AAA_Semestr_Ostatni\P3\Paczki\Pliki_Plaskie\Death_rate_per_1000_people.csv">
           <DTS:FlatFileColumns>
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="Column 0"
-              DTS:DTSID="{83162AC2-BDD9-4B59-8A35-9030A9F02657}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="52"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="country name"
-              DTS:DTSID="{6E8721C5-DF4C-4BB8-B18C-3961DAFFDC43}"
-              DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x002C_"
               DTS:MaximumWidth="3"
               DTS:DataType="129"
               DTS:TextQualified="True"
-              DTS:ObjectName="country-code"
-              DTS:DTSID="{87AAEFF1-84A0-4866-A2D4-861452E85EE7}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="8"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="region"
-              DTS:DTSID="{EC4F0434-C6C1-44FC-98D1-E13421F9E199}"
+              DTS:ObjectName="&quot;Country Code&quot;"
+              DTS:DTSID="{366BD68D-4AA0-4CA3-9038-CC5D6598391D}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x000D__x000A_"
-              DTS:MaximumWidth="31"
+              DTS:MaximumWidth="16"
               DTS:DataType="129"
               DTS:TextQualified="True"
-              DTS:ObjectName="sub-region"
-              DTS:DTSID="{A7706521-4A7B-4BF8-B248-7CC7B0FFA87A}"
+              DTS:ObjectName="&quot;Year 2019&quot;"
+              DTS:DTSID="{AF257F4D-9422-4E0C-8D6F-CC086233EF25}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -87,30 +60,30 @@
   <DTS:Variables />
   <DTS:Executables>
     <DTS:Executable
-      DTS:refId="Package\Truncate countries"
+      DTS:refId="Package\Truncate indicators"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{36B14A31-4B4F-4DB0-9BE2-023B2A7F7B76}"
+      DTS:DTSID="{4E391FF0-B4C6-46B4-B1DE-27A9D6B4D7F1}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Truncate countries"
+      DTS:ObjectName="Truncate indicators"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
       DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{9ECC9E2D-1D15-477D-B8E3-083C2C2E19AF}"
-          SQLTask:SqlStatementSource="TRUNCATE TABLE dbo.countries" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="truncate table [dbo].[Death_rate_per_1000_people]&#xA;truncate table [dbo].[international_tourism]&#xA;truncate table [dbo].[Population_Density_per_sq_km]&#xA;truncate table [dbo].[Population_total]&#xA;truncate table [dbo].[Urban_population_percentage]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Upload countries"
+      DTS:refId="Package\Upload death rate"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:DTSID="{E1F5D150-F37F-4665-A792-8426A5802BA0}"
+      DTS:DTSID="{0438F17F-970C-499B-9A9A-ABC4D03878CD}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Upload countries"
+      DTS:ObjectName="Upload death rate"
       DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
       <DTS:ObjectData>
@@ -118,7 +91,7 @@
           version="1">
           <components>
             <component
-              refId="Package\Upload countries\Flat File Source"
+              refId="Package\Upload death rate\Flat File Source"
               componentClassID="Microsoft.FlatFileSource"
               contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
               description="Flat File Source"
@@ -138,48 +111,26 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Upload countries\Flat File Source.Connections[FlatFileConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Source_countries]"
-                  connectionManagerRefId="Package.ConnectionManagers[Source_countries]"
+                  refId="Package\Upload death rate\Flat File Source.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Source_death_rate]"
+                  connectionManagerRefId="Package.ConnectionManagers[Source_death_rate]"
                   name="FlatFileConnection" />
               </connections>
               <outputs>
                 <output
-                  refId="Package\Upload countries\Flat File Source.Outputs[Flat File Source Output]"
+                  refId="Package\Upload death rate\Flat File Source.Outputs[Flat File Source Output]"
                   name="Flat File Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Upload countries\Flat File Source.Outputs[Flat File Source Output].Columns[country name]"
+                      refId="Package\Upload death rate\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;Country Code&quot;]"
                       codePage="1250"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Upload countries\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[country name]"
-                      length="52"
-                      lineageId="Package\Upload countries\Flat File Source.Outputs[Flat File Source Output].Columns[country name]"
-                      name="country name"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Upload countries\Flat File Source.Outputs[Flat File Source Output].Columns[country-code]"
-                      codePage="1250"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Upload countries\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[country-code]"
+                      externalMetadataColumnId="Package\Upload death rate\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;Country Code&quot;]"
                       length="3"
-                      lineageId="Package\Upload countries\Flat File Source.Outputs[Flat File Source Output].Columns[country-code]"
-                      name="country-code"
+                      lineageId="Package\Upload death rate\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;Country Code&quot;]"
+                      name="&quot;Country Code&quot;"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -193,37 +144,15 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Upload countries\Flat File Source.Outputs[Flat File Source Output].Columns[region]"
+                      refId="Package\Upload death rate\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;Year 2019&quot;]"
                       codePage="1250"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Upload countries\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[region]"
-                      length="8"
-                      lineageId="Package\Upload countries\Flat File Source.Outputs[Flat File Source Output].Columns[region]"
-                      name="region"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Upload countries\Flat File Source.Outputs[Flat File Source Output].Columns[sub-region]"
-                      codePage="1250"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Upload countries\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[sub-region]"
-                      length="31"
-                      lineageId="Package\Upload countries\Flat File Source.Outputs[Flat File Source Output].Columns[sub-region]"
-                      name="sub-region"
+                      externalMetadataColumnId="Package\Upload death rate\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;Year 2019&quot;]"
+                      length="16"
+                      lineageId="Package\Upload death rate\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;Year 2019&quot;]"
+                      name="&quot;Year 2019&quot;"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -240,59 +169,41 @@
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Upload countries\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Column 0]"
-                      codePage="1250"
-                      dataType="str"
-                      length="50"
-                      name="Column 0" />
-                    <externalMetadataColumn
-                      refId="Package\Upload countries\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[country name]"
-                      codePage="1250"
-                      dataType="str"
-                      length="52"
-                      name="country name" />
-                    <externalMetadataColumn
-                      refId="Package\Upload countries\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[country-code]"
+                      refId="Package\Upload death rate\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;Country Code&quot;]"
                       codePage="1250"
                       dataType="str"
                       length="3"
-                      name="country-code" />
+                      name="&quot;Country Code&quot;" />
                     <externalMetadataColumn
-                      refId="Package\Upload countries\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[region]"
+                      refId="Package\Upload death rate\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;Year 2019&quot;]"
                       codePage="1250"
                       dataType="str"
-                      length="8"
-                      name="region" />
-                    <externalMetadataColumn
-                      refId="Package\Upload countries\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[sub-region]"
-                      codePage="1250"
-                      dataType="str"
-                      length="31"
-                      name="sub-region" />
+                      length="16"
+                      name="&quot;Year 2019&quot;" />
                   </externalMetadataColumns>
                 </output>
                 <output
-                  refId="Package\Upload countries\Flat File Source.Outputs[Flat File Source Error Output]"
+                  refId="Package\Upload death rate\Flat File Source.Outputs[Flat File Source Error Output]"
                   isErrorOut="true"
                   name="Flat File Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Upload countries\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      refId="Package\Upload death rate\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
                       codePage="1250"
                       dataType="text"
                       description="Flat File Source Error Output Column"
-                      lineageId="Package\Upload countries\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      lineageId="Package\Upload death rate\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
                       name="Flat File Source Error Output Column" />
                     <outputColumn
-                      refId="Package\Upload countries\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      refId="Package\Upload death rate\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Upload countries\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Upload death rate\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Upload countries\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      refId="Package\Upload death rate\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Upload countries\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Upload death rate\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -301,7 +212,7 @@
               </outputs>
             </component>
             <component
-              refId="Package\Upload countries\SQL Server Destination"
+              refId="Package\Upload death rate\SQL Server Destination"
               componentClassID="Microsoft.SQLServerDestination"
               contactInfo="SQL Server Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;5"
               description="SQL Server Destination"
@@ -320,7 +231,7 @@
                   dataType="System.String"
                   description="The name of the database object to copy data into."
                   expressionType="Notify"
-                  name="BulkInsertTableName">[dbo].[countries]</property>
+                  name="BulkInsertTableName">[dbo].[Death_rate_per_1000_people]</property>
                 <property
                   dataType="System.Boolean"
                   description="Specifies that any constraints on the destination object are checked during the data copy operation. Corresponds to the bulk insert CHECK_CONSTRAINTS option."
@@ -372,7 +283,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Upload countries\SQL Server Destination.Connections[OleDbConnection]"
+                  refId="Package\Upload death rate\SQL Server Destination.Connections[OleDbConnection]"
                   connectionManagerID="{9ECC9E2D-1D15-477D-B8E3-083C2C2E19AF}:external"
                   connectionManagerRefId="Project.ConnectionManagers[Your_SQL_SERVER_project_db]"
                   description="The OLE DB runtime connection used to access the database."
@@ -380,73 +291,45 @@
               </connections>
               <inputs>
                 <input
-                  refId="Package\Upload countries\SQL Server Destination.Inputs[SQL Server Destination Input]"
+                  refId="Package\Upload death rate\SQL Server Destination.Inputs[SQL Server Destination Input]"
                   hasSideEffects="true"
                   name="SQL Server Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Upload countries\SQL Server Destination.Inputs[SQL Server Destination Input].Columns[country name]"
-                      cachedCodepage="1250"
-                      cachedDataType="str"
-                      cachedLength="52"
-                      cachedName="country name"
-                      externalMetadataColumnId="Package\Upload countries\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[country name]"
-                      lineageId="Package\Upload countries\Flat File Source.Outputs[Flat File Source Output].Columns[country name]" />
-                    <inputColumn
-                      refId="Package\Upload countries\SQL Server Destination.Inputs[SQL Server Destination Input].Columns[country-code]"
+                      refId="Package\Upload death rate\SQL Server Destination.Inputs[SQL Server Destination Input].Columns[&quot;Country Code&quot;]"
                       cachedCodepage="1250"
                       cachedDataType="str"
                       cachedLength="3"
-                      cachedName="country-code"
-                      externalMetadataColumnId="Package\Upload countries\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[country-code]"
-                      lineageId="Package\Upload countries\Flat File Source.Outputs[Flat File Source Output].Columns[country-code]" />
+                      cachedName="&quot;Country Code&quot;"
+                      externalMetadataColumnId="Package\Upload death rate\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[Country Code]"
+                      lineageId="Package\Upload death rate\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;Country Code&quot;]" />
                     <inputColumn
-                      refId="Package\Upload countries\SQL Server Destination.Inputs[SQL Server Destination Input].Columns[region]"
+                      refId="Package\Upload death rate\SQL Server Destination.Inputs[SQL Server Destination Input].Columns[&quot;Year 2019&quot;]"
                       cachedCodepage="1250"
                       cachedDataType="str"
-                      cachedLength="8"
-                      cachedName="region"
-                      externalMetadataColumnId="Package\Upload countries\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[region]"
-                      lineageId="Package\Upload countries\Flat File Source.Outputs[Flat File Source Output].Columns[region]" />
-                    <inputColumn
-                      refId="Package\Upload countries\SQL Server Destination.Inputs[SQL Server Destination Input].Columns[sub-region]"
-                      cachedCodepage="1250"
-                      cachedDataType="str"
-                      cachedLength="31"
-                      cachedName="sub-region"
-                      externalMetadataColumnId="Package\Upload countries\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[sub-region]"
-                      lineageId="Package\Upload countries\Flat File Source.Outputs[Flat File Source Output].Columns[sub-region]" />
+                      cachedLength="16"
+                      cachedName="&quot;Year 2019&quot;"
+                      externalMetadataColumnId="Package\Upload death rate\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[Year 2019]"
+                      lineageId="Package\Upload death rate\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;Year 2019&quot;]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Upload countries\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[Column 0]"
+                      refId="Package\Upload death rate\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[Column 0]"
                       dataType="i2"
                       name="Column 0" />
                     <externalMetadataColumn
-                      refId="Package\Upload countries\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[country name]"
-                      codePage="1250"
-                      dataType="str"
-                      length="52"
-                      name="country name" />
-                    <externalMetadataColumn
-                      refId="Package\Upload countries\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[country-code]"
+                      refId="Package\Upload death rate\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[Country Code]"
                       codePage="1250"
                       dataType="str"
                       length="3"
-                      name="country-code" />
+                      name="Country Code" />
                     <externalMetadataColumn
-                      refId="Package\Upload countries\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[region]"
+                      refId="Package\Upload death rate\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[Year 2019]"
                       codePage="1250"
                       dataType="str"
-                      length="8"
-                      name="region" />
-                    <externalMetadataColumn
-                      refId="Package\Upload countries\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[sub-region]"
-                      codePage="1250"
-                      dataType="str"
-                      length="31"
-                      name="sub-region" />
+                      length="16"
+                      name="Year 2019" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -454,12 +337,72 @@
           </components>
           <paths>
             <path
-              refId="Package\Upload countries.Paths[Flat File Source Output]"
-              endId="Package\Upload countries\SQL Server Destination.Inputs[SQL Server Destination Input]"
+              refId="Package\Upload death rate.Paths[Flat File Source Output]"
+              endId="Package\Upload death rate\SQL Server Destination.Inputs[SQL Server Destination Input]"
               name="Flat File Source Output"
-              startId="Package\Upload countries\Flat File Source.Outputs[Flat File Source Output]" />
+              startId="Package\Upload death rate\Flat File Source.Outputs[Flat File Source Output]" />
           </paths>
         </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Upload density"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{F0541B15-9335-4EF5-97AB-2A0B9E7485ED}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Upload density"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Upload pop_total"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{A73F6597-40CE-4066-8942-6BE7ACFBD2D1}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Upload pop_total"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Upload tourism"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{F2366B65-49B4-4A37-AADE-B9A8C48D2A4E}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Upload tourism"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Upload urban_pop"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{5C94940B-4248-4302-B410-5F730AAEC99A}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Upload urban_pop"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1" />
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
@@ -467,11 +410,43 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{CE9367DF-1DF4-4ABD-A6EA-F33BC2DF68AE}"
-      DTS:From="Package\Truncate countries"
+      DTS:DTSID="{01B1DE7D-7310-4987-989B-F3F0D9252AD5}"
+      DTS:From="Package\Upload death rate"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
-      DTS:To="Package\Upload countries" />
+      DTS:To="Package\Upload tourism" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{885CD4F0-42D2-4565-B3ED-6BA8ECB22654}"
+      DTS:From="Package\Upload tourism"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Upload density" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{3DD43DAA-DC65-40DF-9740-09041F3A60ED}"
+      DTS:From="Package\Upload density"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Upload pop_total" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{9F88B7B9-D374-4F64-9FC1-25B5ABF189D0}"
+      DTS:From="Package\Upload pop_total"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3"
+      DTS:To="Package\Upload urban_pop" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
+      DTS:CreationName=""
+      DTS:DTSID="{44E97809-E4E0-43F9-8925-F8C60E9E6919}"
+      DTS:From="Package\Truncate indicators"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 4"
+      DTS:To="Package\Upload death rate" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -484,29 +459,133 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="156.8,41.6"
-          Id="Package\Upload countries"
-          TopLeft="39.7857148695966,102.617648420862" />
+          Size="168.8,41.6"
+          Id="Package\Truncate indicators"
+          TopLeft="197.642860415031,55.2058830500474" />
         <NodeLayout
-          Size="166.4,41.6"
-          Id="Package\Truncate countries"
-          TopLeft="33.5714291431466,22.1764708992519" />
+          Size="163.2,41.6"
+          Id="Package\Upload death rate"
+          TopLeft="207.857146396929,123.88235467858" />
+        <NodeLayout
+          Size="149.6,41.6"
+          Id="Package\Upload tourism"
+          TopLeft="210.714289302729,208.000002917122" />
+        <NodeLayout
+          Size="148,41.6"
+          Id="Package\Upload density"
+          TopLeft="206.428574944029,282.176474545654" />
+        <NodeLayout
+          Size="158.4,41.6"
+          Id="Package\Upload pop_total"
+          TopLeft="197.85714622663,358.647063853419" />
+        <NodeLayout
+          Size="164.8,41.6"
+          Id="Package\Upload urban_pop"
+          TopLeft="200.71428913243,428.235300123485" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="117.478572006372,63.7764708992519">
+          TopLeft="287.485717849829,165.48235467858">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,38.8411775216099"
+              EndConnector="0,42.5176482385418"
               Start="0,0"
-              End="0,31.3411775216099">
+              End="0,35.0176482385418">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,31.3411775216099" />
+                    End="0,35.0176482385418" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="282.971432123379,249.600002917122">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,32.5764716285322"
+              Start="0,0"
+              End="0,25.0764716285322">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.0764716285322" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="278.74286058533,323.776474545654">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,34.8705893077653"
+              Start="0,0"
+              End="0,27.3705893077653">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.3705893077653" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="280.08571767953,400.247063853419">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,27.9882362700664"
+              Start="0,0"
+              End="0,20.4882362700664">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.4882362700664" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 4]"
+          TopLeft="285.75000340598,96.8058830500474">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,27.0764716285323"
+              Start="0,0"
+              End="0,19.5764716285323">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.5764716285323" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -519,32 +598,44 @@
     </LayoutInfo>
   </Package>
   <TaskHost
-    design-time-name="Package\Upload countries">
+    design-time-name="Package\Upload death rate">
     <LayoutInfo>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="150.4,41.6"
-          Id="Package\Upload countries\Flat File Source"
-          TopLeft="87.8571443533411,69.5882362700664" />
+          Id="Package\Upload death rate\Flat File Source"
+          TopLeft="183,119" />
         <NodeLayout
           Size="187.2,41.6"
-          Id="Package\Upload countries\SQL Server Destination"
-          TopLeft="72.8571440978926,149.88235504322" />
+          Id="Package\Upload death rate\SQL Server Destination"
+          TopLeft="186,210" />
         <EdgeLayout
-          Id="Package\Upload countries.Paths[Flat File Source Output]"
-          TopLeft="164.757144225617,111.188236270066">
+          Id="Package\Upload death rate.Paths[Flat File Source Output]"
+          TopLeft="258.2,160.6">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,38.6941187731535"
+              EndConnector="21.4,49.4"
               Start="0,0"
-              End="0,31.1941187731535">
+              End="21.4,41.9">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,31.1941187731535" />
+                    End="0,20.7" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.7"
+                    Point2="0,24.7"
+                    Point3="4,24.7" />
+                  <mssgle:LineSegment
+                    End="17.4,24.7" />
+                  <mssgle:CubicBezierSegment
+                    Point1="17.4,24.7"
+                    Point2="21.4,24.7"
+                    Point3="21.4,28.7" />
+                  <mssgle:LineSegment
+                    End="21.4,41.9" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -557,7 +648,7 @@
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Upload countries\SQL Server Destination">
+    design-time-name="Package\Upload death rate\SQL Server Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
