@@ -11,8 +11,8 @@
   DTS:LocaleID="1045"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="4"
-  DTS:VersionGUID="{AEC5BEE2-8110-4C24-818F-994B4C7FCA36}">
+  DTS:VersionBuild="5"
+  DTS:VersionGUID="{B11B99BD-8C41-4602-B7FD-DBA9204B6D27}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -41,7 +41,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="iso_code"
-              DTS:DTSID="{AF1558C9-B63C-4F59-B81A-82F99296311A}"
+              DTS:DTSID="{3788AD6C-58C6-422B-9578-C8B5AA44EECA}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -50,7 +50,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="continent"
-              DTS:DTSID="{7FC1C0E5-2958-4299-AA36-DFFF5A838C5A}"
+              DTS:DTSID="{16B434BB-9B68-4140-9368-F25864E55EF3}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -59,7 +59,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="location"
-              DTS:DTSID="{45F7CC3C-6699-4B7E-A047-8B9472344262}"
+              DTS:DTSID="{E64ADF38-1F32-44DF-83A9-FAD450EEB24D}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -68,7 +68,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="date"
-              DTS:DTSID="{16F21069-E66E-429A-8253-3845C990435D}"
+              DTS:DTSID="{34319AB8-B74D-4DB5-916C-FAA41598B17E}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -77,7 +77,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="total_cases"
-              DTS:DTSID="{370CA608-351D-43A1-A99C-25EB45F1119D}"
+              DTS:DTSID="{B7BDB597-D3A4-4364-BE2F-2F24F1F250F4}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -86,7 +86,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="new_cases"
-              DTS:DTSID="{EDB21972-BA76-42B4-BB01-9B388A5B5D49}"
+              DTS:DTSID="{8B238BCD-2235-4D55-BFF9-E545D542943C}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -95,7 +95,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="new_cases_smoothed"
-              DTS:DTSID="{8F1E30FB-5AB3-4E9D-A7F9-FADE7557B496}"
+              DTS:DTSID="{A656D3B4-34F9-4383-9F1A-8F8227E958F9}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -104,7 +104,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="total_deaths"
-              DTS:DTSID="{E527ECB3-76F1-4EE8-9C75-D435E5EC5602}"
+              DTS:DTSID="{00F36489-074C-4B31-8F37-09EFCFE1BE07}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -113,7 +113,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="new_deaths"
-              DTS:DTSID="{C7A969F9-C718-4531-9396-08DD87E80AB3}"
+              DTS:DTSID="{1380131C-58C3-4922-978B-C15D81FC0E7F}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -122,7 +122,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="new_deaths_smoothed"
-              DTS:DTSID="{AEC2CBC1-C8A3-40EB-BD7D-935EB9300E96}"
+              DTS:DTSID="{712EDCC7-5D69-444F-91F5-7A515E93CD59}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -131,7 +131,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="total_cases_per_million"
-              DTS:DTSID="{AFEDD9D6-A366-44F4-A9AB-B2776865B30C}"
+              DTS:DTSID="{DF9B5C98-D592-4533-9E89-D4A0B69B7167}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -140,7 +140,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="new_cases_per_million"
-              DTS:DTSID="{817CD801-B5F9-4672-8E6B-87D9F9C1D2E2}"
+              DTS:DTSID="{4B285F5E-4F1E-415D-AC41-D09823E72A32}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -149,7 +149,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="new_cases_smoothed_per_million"
-              DTS:DTSID="{7EFF48AF-5FF5-483A-86EF-5D2410B8ECC2}"
+              DTS:DTSID="{80EA40CB-E648-43C6-AF73-832598871CB8}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -158,7 +158,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="total_deaths_per_million"
-              DTS:DTSID="{C61BDC29-F30F-41FA-9292-44A9EB83D61C}"
+              DTS:DTSID="{FB9D35AC-B2C3-4B9F-9E57-DB8E470FF118}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -167,7 +167,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="new_deaths_per_million"
-              DTS:DTSID="{3434A58D-207B-4EBB-9ABA-B8BB999CFD03}"
+              DTS:DTSID="{07643B76-C731-4B7B-8048-24916F5B76D5}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -176,7 +176,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="new_deaths_smoothed_per_million"
-              DTS:DTSID="{08E3AFEA-BFDB-441B-A8AE-753A7D783181}"
+              DTS:DTSID="{BD1CF3E7-0EBD-4F3F-9743-D38E6BFEABC1}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -185,7 +185,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="icu_patients"
-              DTS:DTSID="{1DF33032-EDAA-4878-87BD-1BF92031F866}"
+              DTS:DTSID="{1039D22F-2C7C-4293-8CD9-B9BD7158AE93}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -194,7 +194,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="icu_patients_per_million"
-              DTS:DTSID="{320F6B96-6565-40EF-B1EC-42CE9D04854F}"
+              DTS:DTSID="{B866BC54-6A16-4A93-B208-EA887230A3E1}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -203,7 +203,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="hosp_patients"
-              DTS:DTSID="{1E5F76A3-2B6C-4B5E-B08F-20CD5651325E}"
+              DTS:DTSID="{44D41E36-AA50-49D2-B6F0-09F713BAB273}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -212,7 +212,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="hosp_patients_per_million"
-              DTS:DTSID="{5F64B675-0E76-4A9C-8311-47219F0FF3A7}"
+              DTS:DTSID="{FBE3BD11-179C-4C15-A7B7-91E8F4FB10D1}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -221,7 +221,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="new_tests"
-              DTS:DTSID="{FE5087AC-2B73-48FF-A84C-356A78C6423E}"
+              DTS:DTSID="{3503BEF3-854D-4E1D-80EF-F3EB6348AE07}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -230,7 +230,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="total_tests"
-              DTS:DTSID="{A4F18091-FCD2-4B37-B90F-4D09E6292B23}"
+              DTS:DTSID="{07E0F5AD-49C7-4247-A522-59B97E39C2E1}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -239,7 +239,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="total_tests_per_thousand"
-              DTS:DTSID="{00961642-BABD-412F-ACEE-74E10C27FF0E}"
+              DTS:DTSID="{893F4DD3-2931-40F3-A870-294F556233CC}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -248,7 +248,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="new_tests_per_thousand"
-              DTS:DTSID="{7CFE4F01-9651-4615-97DD-E895CFD8A777}"
+              DTS:DTSID="{D8D26FBE-9780-4D76-B41D-5ED78D0952EE}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -257,7 +257,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="new_tests_smoothed"
-              DTS:DTSID="{A597E220-455F-4018-A3E2-EE80D0D93D74}"
+              DTS:DTSID="{2CCE194E-143B-4399-80B8-B988450B7917}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -266,7 +266,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="new_tests_smoothed_per_thousand"
-              DTS:DTSID="{9D47CDCB-02E5-4999-ACFA-FA2A24140F94}"
+              DTS:DTSID="{0B1E367B-EB92-47A1-B8E7-7C11C029AA2B}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -275,7 +275,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="positive_rate"
-              DTS:DTSID="{54A438B2-756D-4F60-B6CE-68B69D748D49}"
+              DTS:DTSID="{A69482B0-2991-4ED1-B32A-11F245ED18BB}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -284,7 +284,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="tests_per_case"
-              DTS:DTSID="{6D746AD9-0846-4606-8BC3-0036D1FA190A}"
+              DTS:DTSID="{914281E7-79E4-45B5-A354-C8F676F3A78A}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -293,7 +293,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="tests_units"
-              DTS:DTSID="{9F386A0C-203A-4AC2-BFF3-C1E1ED16D35E}"
+              DTS:DTSID="{AD95455A-2EBA-4B3C-AAD0-39E93E74E125}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -302,7 +302,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="total_vaccinations"
-              DTS:DTSID="{867CE2F3-BDEF-44B6-B96A-F7E63373589E}"
+              DTS:DTSID="{3ED5C036-78DD-47E1-887C-4404105DD8BF}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -311,7 +311,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="people_vaccinated"
-              DTS:DTSID="{867700DC-65E7-49C0-A67B-44A82D521468}"
+              DTS:DTSID="{11FCA19B-9421-4A6C-9BFA-9E31D8A9177F}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -320,7 +320,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="people_fully_vaccinated"
-              DTS:DTSID="{5005781E-4301-45E8-860A-6A862EDB9E08}"
+              DTS:DTSID="{31F7A2D8-9E5B-40B1-879C-4947107FFB43}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -329,7 +329,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="total_boosters"
-              DTS:DTSID="{259FBAD9-D463-48AA-9B07-2B502A4C50B6}"
+              DTS:DTSID="{355AD868-B051-431D-A055-734934920A2E}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -338,7 +338,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="new_vaccinations"
-              DTS:DTSID="{97252F03-8C4E-4729-BA80-3D3BC3B13EAF}"
+              DTS:DTSID="{FB010117-EA23-4019-881D-FBA7A1075C17}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -347,7 +347,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="new_vaccinations_smoothed"
-              DTS:DTSID="{24C29496-43E2-4D6F-967E-C3C727275EF7}"
+              DTS:DTSID="{0990D244-A924-427F-8D9E-DF8BF57B0E85}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -356,7 +356,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="total_vaccinations_per_hundred"
-              DTS:DTSID="{DB7C0D40-5E23-4A56-84E4-6539DC6A4394}"
+              DTS:DTSID="{DA55B4CC-DDE0-4D62-A122-61B8EB72CCAA}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -365,7 +365,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="people_vaccinated_per_hundred"
-              DTS:DTSID="{32D32240-67A2-49EB-86BE-DAA71C3302C7}"
+              DTS:DTSID="{EAA1B94E-05B7-434E-ABC1-A6A2F5D8F591}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -374,7 +374,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="people_fully_vaccinated_per_hundred"
-              DTS:DTSID="{DEED5C62-E2DF-4D6D-AB87-5BCCEB924794}"
+              DTS:DTSID="{CDFCD232-BD74-4E00-97DF-DAFD155272E1}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -383,7 +383,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="total_boosters_per_hundred"
-              DTS:DTSID="{A88880B3-F30E-48E2-8CF2-955D4C2AD038}"
+              DTS:DTSID="{E5A10EB7-A13E-4012-B76E-D89EEB816BD1}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -392,7 +392,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="new_vaccinations_smoothed_per_million"
-              DTS:DTSID="{2279A9DA-F483-4F3F-8F26-43C8AEBB122E}"
+              DTS:DTSID="{2E11DB1F-F573-4AA5-B515-88867780D51A}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -401,7 +401,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="new_people_vaccinated_smoothed"
-              DTS:DTSID="{82DE4BAA-8929-49EB-B99C-DDC476026948}"
+              DTS:DTSID="{50886287-E3E3-4222-BF3B-AC9DF846D06F}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -410,7 +410,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="new_people_vaccinated_smoothed_per_hundred"
-              DTS:DTSID="{AA78B89B-A16E-4DC5-A5D2-48AE946ACB9A}"
+              DTS:DTSID="{64C5D28C-7E3A-488E-B508-CDCB7B753C5B}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -419,7 +419,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="stringency_index"
-              DTS:DTSID="{E6ACCABF-473A-4CBE-8329-429143512C00}"
+              DTS:DTSID="{29FD0A0D-5D18-4D73-9536-519D716E3025}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -428,7 +428,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="population"
-              DTS:DTSID="{75A4D9F3-C131-449E-9C1F-3A5F78F7AB5D}"
+              DTS:DTSID="{89D9A4FA-460B-4C25-9488-27D88A6171BC}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -437,7 +437,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="population_density"
-              DTS:DTSID="{D689940B-8B84-444C-A597-C3A3CF9BD171}"
+              DTS:DTSID="{740D5378-8C47-413F-AB66-1DDBEFC0C409}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -446,7 +446,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="median_age"
-              DTS:DTSID="{DD581777-5BFC-4E43-9E69-52C80BBB82E6}"
+              DTS:DTSID="{0355DAB1-CF2F-438F-9989-02DD708FE0B0}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -455,7 +455,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="aged_65_older"
-              DTS:DTSID="{6D2337FC-DC5B-4371-AE63-7269451D8B59}"
+              DTS:DTSID="{1EB60CBB-DC36-4849-A2A0-7811270C396D}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -464,7 +464,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="aged_70_older"
-              DTS:DTSID="{1A4EBC56-97D5-4425-94D8-27D3EB9A034D}"
+              DTS:DTSID="{14D89D7C-9F11-4EAB-86C7-20EB366107FB}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -473,7 +473,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="gdp_per_capita"
-              DTS:DTSID="{07708658-DBF4-498B-9DDB-025B10FC49EA}"
+              DTS:DTSID="{2284A556-8297-4B84-8638-7B32F9A3B6AA}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -482,7 +482,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="extreme_poverty"
-              DTS:DTSID="{EBBEA987-4DEC-474D-8F54-7A31B0EFED8E}"
+              DTS:DTSID="{5D378B8E-01B9-403B-A4B4-3464537A865E}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -491,7 +491,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="cardiovasc_death_rate"
-              DTS:DTSID="{891BA511-C182-4A6E-8AB0-C0F6B9665950}"
+              DTS:DTSID="{E1794033-43FB-43AB-9117-CB92BCD5942D}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -500,7 +500,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="diabetes_prevalence"
-              DTS:DTSID="{73D15EC9-D1AC-4F0B-8B34-1E58071EBCFE}"
+              DTS:DTSID="{B224814D-0103-49F5-A36A-615129328517}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -509,7 +509,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="female_smokers"
-              DTS:DTSID="{F47BC3E8-09DF-403B-AD3A-3A83921805BD}"
+              DTS:DTSID="{AA95976F-AC6A-4F04-863C-2C7276977789}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -518,7 +518,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="male_smokers"
-              DTS:DTSID="{ABBCB122-5CE6-40C9-8CE5-F272181738F7}"
+              DTS:DTSID="{CE8F4062-78A7-4EDC-BA07-736F37126AB4}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -527,7 +527,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="handwashing_facilities"
-              DTS:DTSID="{B5AE9C89-D543-4F9A-BE2F-305964CA549B}"
+              DTS:DTSID="{D321FAE8-5986-4D92-8A3A-70113C261E68}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -536,7 +536,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="hospital_beds_per_thousand"
-              DTS:DTSID="{FD7589AF-B807-405A-A4ED-67C4D27D6659}"
+              DTS:DTSID="{982C5863-FECB-4444-A800-6DD8E998185E}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -545,7 +545,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="life_expectancy"
-              DTS:DTSID="{3EDE83EF-630D-411D-BDEB-A0843943CDC1}"
+              DTS:DTSID="{8AA1E3F3-7A29-4383-B90F-56AF679C99CF}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -554,7 +554,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="human_development_index"
-              DTS:DTSID="{AD951ED0-07D7-4098-A122-481F5D3CE8A8}"
+              DTS:DTSID="{D0684D2F-EE85-4299-BDCB-2918EE27B3EC}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -3225,13 +3225,13 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="138.4,41.6"
-          Id="Package\Upload covid"
-          TopLeft="62.8571439275936,137.647060753977" />
-        <NodeLayout
           Size="155.2,41.6"
           Id="Package\Truncate COVID"
           TopLeft="54.2857152101945,52.764706622358" />
+        <NodeLayout
+          Size="138.4,41.6"
+          Id="Package\Upload covid"
+          TopLeft="62.8571439275936,137.647060753977" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="131.971429568894,94.364706622358">
@@ -3263,13 +3263,13 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="150.4,41.6"
-          Id="Package\Upload covid\Flat File Source"
-          TopLeft="111.428573326189,127.705884143968" />
-        <NodeLayout
           Size="187.2,41.6"
           Id="Package\Upload covid\SQL Server Destination"
           TopLeft="81.4285728152918,211.058826489432" />
+        <NodeLayout
+          Size="150.4,41.6"
+          Id="Package\Upload covid\Flat File Source"
+          TopLeft="111.428573326189,127.705884143968" />
         <EdgeLayout
           Id="Package\Upload covid.Paths[Flat File Source Output]"
           TopLeft="186.628573326189,169.305884143968">
