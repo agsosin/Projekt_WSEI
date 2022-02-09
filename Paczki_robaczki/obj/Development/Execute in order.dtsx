@@ -11,8 +11,8 @@
   DTS:LocaleID="1045"
   DTS:ObjectName="Execute in order"
   DTS:PackageType="5"
-  DTS:VersionBuild="130"
-  DTS:VersionGUID="{9D361013-ECE9-48A1-AD60-9BAD595F5BC0}">
+  DTS:VersionBuild="133"
+  DTS:VersionGUID="{9283F71C-62F1-4E1B-960C-E243B47A95B0}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -459,6 +459,17 @@
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[temp]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{443A37CF-3EA6-4BA3-8530-2A2D67DCBDE6}"
+      DTS:ObjectName="temp">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:FileUsageType="2"
+          DTS:ConnectionString="D:\Studies\AAA_Semestr_Ostatni\P3\Paczki\Pliki_plaskie\temp" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -3774,7 +3785,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayEl
           DTS:ExecutableType="Microsoft.ScriptTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Delete downloaded"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <ScriptProject
@@ -3784,35 +3795,14 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayEl
               Language="CSharp"
               ReadOnlyVariables="User::CovidData,User::DownloadLocation">
               <ProjectItem
-                Name="Properties\AssemblyInfo.cs"
-                Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
-
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_572db21fb91b4fe5b196a495ca28ed0f")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ST_572db21fb91b4fe5b196a495ca28ed0f")]
-[assembly: AssemblyCopyright("Copyright @  2022")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
-
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+                Name="Properties\Settings.settings"
+                Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
               <ProjectItem
                 Name="Properties\Resources.resx"
                 Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -4115,7 +4105,6 @@ namespace ST_572db21fb91b4fe5b196a495ca28ed0f
 		{
             // TODO: Add your code here
             string fileName = Dts.Variables["User::DownloadLocation"].Value.ToString()  + "\\" + Dts.Variables["User::CovidData"].Value.ToString();
-
             File.Delete(fileName);
 
             Dts.TaskResult = (int)ScriptResults.Success;
@@ -4145,7 +4134,7 @@ namespace ST_572db21fb91b4fe5b196a495ca28ed0f
     <msb:CodeName>ST_572db21fb91b4fe5b196a495ca28ed0f</msb:CodeName>
     <msb:Language>msBuild</msb:Language>
     <msb:DisplayName>ST_572db21fb91b4fe5b196a495ca28ed0f</msb:DisplayName>
-    <msb:ProjectId>{786227D0-490A-42B9-BAAD-5FC0B89B9802}</msb:ProjectId>
+    <msb:ProjectId>{EB740378-8DA9-4FA0-A737-0845BBEC8F99}</msb:ProjectId>
   </msb:PropertyGroup>
   <msb:ItemGroup>
     <msb:Project Include="ST_572db21fb91b4fe5b196a495ca28ed0f.csproj" />
@@ -4187,14 +4176,35 @@ namespace ST_572db21fb91b4fe5b196a495ca28ed0f.Properties {
     }
 }]]></ProjectItem>
               <ProjectItem
-                Name="Properties\Settings.settings"
-                Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
+                Name="Properties\AssemblyInfo.cs"
+                Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_572db21fb91b4fe5b196a495ca28ed0f")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("ST_572db21fb91b4fe5b196a495ca28ed0f")]
+[assembly: AssemblyCopyright("Copyright @  2022")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
               <ProjectItem
                 Name="Properties\Resources.Designer.cs"
                 Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
@@ -4266,7 +4276,7 @@ namespace ST_572db21fb91b4fe5b196a495ca28ed0f.Properties {
               <BinaryItem
                 Name="ST_572db21fb91b4fe5b196a495ca28ed0f.dll">TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
-ZGUuDQ0KJAAAAAAAAABQRQAATAEDAA/v82EAAAAAAAAAAOAAIiALATAAABAAAAAIAAAAAAAAHi4A
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDAIwlBGIAAAAAAAAAAOAAIiALATAAABAAAAAIAAAAAAAAHi4A
 AAAgAAAAQAAAAAAAEAAgAAAAAgAABAAAAAAAAAAGAAAAAAAAAACAAAAAAgAAAAAAAAMAYIUAABAA
 ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAAMwtAABPAAAAAEAAAHgEAAAAAAAAAAAAAAAAAAAA
 AAAAAGAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -4294,8 +4304,8 @@ OwQQAGEAOwQQAGkAOwQGAIEAOwQGAKkAOwQVALkAOwQGAHEALAUbAMEADQUgAMkAswMlANEAxAIr
 AIkAEgMvANkAQgUzAOEAJAE6AMEAXAUBAHEAOwQGAIkAOwQGAOkAbwA/AOkAawVGAJEAOwRLALEA
 OwQGAAgAFABkAAgAGABpACkAcwDRAC4ACwCpAC4AEwCyAC4AGwDRAC4AIwDaAC4AKwADAS4AMwAD
 AS4AOwADAS4AQwDaAC4ASwAJAS4AUwADAS4AWwAgAUMAYwBpAEkAcwDRAGEAewBpAGMAawBpAAMA
-AQAEAAMAAAArBJoAAADTAJ8AAABUBaQAAgAEAAMAAgAFAAUAAQAGAAUAAgAHAAcABIAAAAEAAAB/
-H49lAAAAAAAA1AIAAAQAAAAAAAAAAAAAAFIAOwAAAAAADwAAAAAAAAAAAAAAWwAbAwAAAAAEAAAA
+AQAEAAMAAAArBJoAAADTAJ8AAABUBaQAAgAEAAMAAgAFAAUAAQAGAAUAAgAHAAcABIAAAAEAAACL
+H82XAAAAAAAA1AIAAAQAAAAAAAAAAAAAAFIAOwAAAAAADwAAAAAAAAAAAAAAWwAbAwAAAAAEAAAA
 AAAAAAAAAABSALwDAAAAAA8AAAAAAAAAAAAAAFsAFAAAAAAAAAAAAAEAAACMBAAABQACAAAAAAAA
 PE1vZHVsZT4AU3lzdGVtLklPAE1pY3Jvc29mdC5TcWxTZXJ2ZXIuTWFuYWdlZERUUwB2YWx1ZV9f
 AG1zY29ybGliAGRlZmF1bHRJbnN0YW5jZQBWYXJpYWJsZQBSdW50aW1lVHlwZUhhbmRsZQBHZXRU
@@ -4325,7 +4335,7 @@ bHQAc2V0X1Rhc2tSZXN1bHQAZ2V0X0Fzc2VtYmx5AAAtVQBzAGUAcgA6ADoARABvAHcAbgBsAG8A
 YQBkAEwAbwBjAGEAdABpAG8AbgAAA1wAAB9VAHMAZQByADoAOgBDAG8AdgBpAGQARABhAHQAYQAA
 cVMAVABfADUANwAyAGQAYgAyADEAZgBiADkAMQBiADQAZgBlADUAYgAxADkANgBhADQAOQA1AGMA
 YQAyADgAZQBkADAAZgAuAFAAcgBvAHAAZQByAHQAaQBlAHMALgBSAGUAcwBvAHUAcgBjAGUAcwAA
-AAAAVeTIGR74PkmXdoCUFUfDQgAEIAEBCAMgAAEFIAEBEREEIAEBDgUgAQERUQQgABJhBCAAEmUF
+AAAAgZMvHlVTtk63q5mSNzhPlAAEIAEBCAMgAAEFIAEBEREEIAEBDgUgAQERUQQgABJhBCAAEmUF
 IAESaRwDIAAcAyAADgYAAw4ODg4EAAEBDgYAARJ1EXkEIAASfQYgAgEOEn0It3pcVhk04IkIiYRd
 zYCAzJEEAAAAAAQBAAAAAwYSSQMGEk0DBhIQAgYIAwYRFAQAABJJBAAAEk0FAAEBEk0EAAASEAMA
 AAEECAASSQQIABJNBAgAEhAIAQAIAAAAAAAeAQABAFQCFldyYXBOb25FeGNlcHRpb25UaHJvd3MB
@@ -4347,14 +4357,14 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAABABAAAAAYAACAAAAAAAAAAAAAAAAAAAABAAEAAAAwAACAAAAAAAAAAAAAAAAAAAABAAAA
 AABIAAAAWEAAABoEAAAAAAAAAAAAABoENAAAAFYAUwBfAFYARQBSAFMASQBPAE4AXwBJAE4ARgBP
-AAAAAAC9BO/+AAABAAAAAQCPZX8fAAABAI9lfx8/AAAAAAAAAAQAAAACAAAAAAAAAAAAAAAAAAAA
+AAAAAAC9BO/+AAABAAAAAQDNl4sfAAABAM2Xix8/AAAAAAAAAAQAAAACAAAAAAAAAAAAAAAAAAAA
 RAAAAAEAVgBhAHIARgBpAGwAZQBJAG4AZgBvAAAAAAAkAAQAAABUAHIAYQBuAHMAbABhAHQAaQBv
 AG4AAAAAAAAAsAR6AwAAAQBTAHQAcgBpAG4AZwBGAGkAbABlAEkAbgBmAG8AAABWAwAAAQAwADAA
 MAAwADAANABiADAAAAAaAAEAAQBDAG8AbQBtAGUAbgB0AHMAAAAAAAAAIgABAAEAQwBvAG0AcABh
 AG4AeQBOAGEAbQBlAAAAAAAAAAAAcAAkAAEARgBpAGwAZQBEAGUAcwBjAHIAaQBwAHQAaQBvAG4A
 AAAAAFMAVABfADUANwAyAGQAYgAyADEAZgBiADkAMQBiADQAZgBlADUAYgAxADkANgBhADQAOQA1
 AGMAYQAyADgAZQBkADAAZgAAAD4ADwABAEYAaQBsAGUAVgBlAHIAcwBpAG8AbgAAAAAAMQAuADAA
-LgA4ADAANgAzAC4AMgA1ADkAOQA5AAAAAABwACgAAQBJAG4AdABlAHIAbgBhAGwATgBhAG0AZQAA
+LgA4ADAANwA1AC4AMwA4ADgANgAxAAAAAABwACgAAQBJAG4AdABlAHIAbgBhAGwATgBhAG0AZQAA
 AFMAVABfADUANwAyAGQAYgAyADEAZgBiADkAMQBiADQAZgBlADUAYgAxADkANgBhADQAOQA1AGMA
 YQAyADgAZQBkADAAZgAuAGQAbABsAAAASAASAAEATABlAGcAYQBsAEMAbwBwAHkAcgBpAGcAaAB0
 AAAAQwBvAHAAeQByAGkAZwBoAHQAIABAACAAIAAyADAAMgAyAAAAKgABAAEATABlAGcAYQBsAFQA
@@ -4363,8 +4373,8 @@ AGEAbQBlAAAAUwBUAF8ANQA3ADIAZABiADIAMQBmAGIAOQAxAGIANABmAGUANQBiADEAOQA2AGEA
 NAA5ADUAYwBhADIAOABlAGQAMABmAC4AZABsAGwAAABoACQAAQBQAHIAbwBkAHUAYwB0AE4AYQBt
 AGUAAAAAAFMAVABfADUANwAyAGQAYgAyADEAZgBiADkAMQBiADQAZgBlADUAYgAxADkANgBhADQA
 OQA1AGMAYQAyADgAZQBkADAAZgAAAEIADwABAFAAcgBvAGQAdQBjAHQAVgBlAHIAcwBpAG8AbgAA
-ADEALgAwAC4AOAAwADYAMwAuADIANQA5ADkAOQAAAAAARgAPAAEAQQBzAHMAZQBtAGIAbAB5ACAA
-VgBlAHIAcwBpAG8AbgAAADEALgAwAC4AOAAwADYAMwAuADIANQA5ADkAOQAAAAAAAAAAAAAAAAAA
+ADEALgAwAC4AOAAwADcANQAuADMAOAA4ADYAMQAAAAAARgAPAAEAQQBzAHMAZQBtAGIAbAB5ACAA
+VgBlAHIAcwBpAG8AbgAAADEALgAwAC4AOAAwADcANQAuADMAOAA4ADYAMQAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -4385,6 +4395,26 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
+          DTS:refId="Package\First use\Delete temp folder"
+          DTS:CreationName="Microsoft.FileSystemTask"
+          DTS:Description="File System Task"
+          DTS:DTSID="{7A29240F-0F42-4D03-9B5A-E10EBD077B93}"
+          DTS:ExecutableType="Microsoft.FileSystemTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Delete temp folder"
+          DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <FileSystemData
+              TaskOperationType="DeleteDirectory"
+              TaskSourcePath="User::DownloadLocation"
+              TaskIsSourceVariable="True"
+              TaskDestinationPath="User::DownloadLocation"
+              TaskIsDestinationVariable="True" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
           DTS:refId="Package\First use\Download COVID"
           DTS:CreationName="Microsoft.ScriptTask"
           DTS:Description="Script Task"
@@ -4392,7 +4422,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           DTS:ExecutableType="Microsoft.ScriptTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Download COVID"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <ScriptProject
@@ -5041,7 +5071,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
           DTS:ExecutableType="Microsoft.ScriptTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Download Indicators"
-          DTS:ThreadHint="2">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <ScriptProject
@@ -7119,11 +7149,19 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\First use.PrecedenceConstraints[Constraint 6]"
           DTS:CreationName=""
-          DTS:DTSID="{23C7C637-5C98-4E44-B90F-0EB4DD0C42D6}"
-          DTS:From="Package\First use\Create table with countries and regions"
+          DTS:DTSID="{01E107F2-7338-46F3-8D26-8D3A8D9AFFEC}"
+          DTS:From="Package\First use\Change indicators"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 6"
           DTS:To="Package\First use\Download COVID" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\First use.PrecedenceConstraints[Constraint 7]"
+          DTS:CreationName=""
+          DTS:DTSID="{4CA72CA1-B87C-41AD-B521-B3428ED3FDDE}"
+          DTS:From="Package\First use\Delete downloaded"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 7"
+          DTS:To="Package\First use\Delete temp folder" />
       </DTS:PrecedenceConstraints>
     </DTS:Executable>
     <DTS:Executable
@@ -7245,6 +7283,7 @@ END"</DTS:PropertyExpression>
           <DTS:ObjectData>
             <ExecutePackageTask>
               <UseProjectReference>True</UseProjectReference>
+              <PackageName>Upload death reasons.dtsx</PackageName>
             </ExecutePackageTask>
           </DTS:ObjectData>
         </DTS:Executable>
@@ -7261,6 +7300,7 @@ END"</DTS:PropertyExpression>
           <DTS:ObjectData>
             <ExecutePackageTask>
               <UseProjectReference>True</UseProjectReference>
+              <PackageName>Upload HDI.dtsx</PackageName>
             </ExecutePackageTask>
           </DTS:ObjectData>
         </DTS:Executable>
@@ -7294,6 +7334,7 @@ END"</DTS:PropertyExpression>
           <DTS:ObjectData>
             <ExecutePackageTask>
               <UseProjectReference>True</UseProjectReference>
+              <PackageName>Upload Influenza.dtsx</PackageName>
             </ExecutePackageTask>
           </DTS:ObjectData>
         </DTS:Executable>
@@ -7339,6 +7380,30 @@ END"</DTS:PropertyExpression>
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 4"
           DTS:To="Package\Load do SSMS\Upload indicators" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Load do SSMS.PrecedenceConstraints[Constraint 5]"
+          DTS:CreationName=""
+          DTS:DTSID="{A8CCD8DA-0144-4BE4-B25F-0625E83D2A83}"
+          DTS:From="Package\Load do SSMS\Upload indicators"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 5"
+          DTS:To="Package\Load do SSMS\Upload HDI" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Load do SSMS.PrecedenceConstraints[Constraint 6]"
+          DTS:CreationName=""
+          DTS:DTSID="{C14984FB-80BD-4D7F-BCB0-D8A7F4119E05}"
+          DTS:From="Package\Load do SSMS\Upload HDI"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 6"
+          DTS:To="Package\Load do SSMS\Upload Influenza" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Load do SSMS.PrecedenceConstraints[Constraint 7]"
+          DTS:CreationName=""
+          DTS:DTSID="{3D4F59B8-6DEB-4970-983E-357886E9D2B1}"
+          DTS:From="Package\Load do SSMS\Upload Influenza"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 7"
+          DTS:To="Package\Load do SSMS\Upload death reason" />
       </DTS:PrecedenceConstraints>
     </DTS:Executable>
     <DTS:Executable
@@ -7360,7 +7425,7 @@ END"</DTS:PropertyExpression>
           DTS:ExecutableType="Microsoft.ScriptTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Download COVID"
-          DTS:ThreadHint="3">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <ScriptProject
@@ -7991,11 +8056,11 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
         <NodeLayout
           Size="168.8,41.6"
           Id="Package\First use\Delete downloaded"
-          TopLeft="77.523811729587,408.451967960039" />
+          TopLeft="555.301597643872,591.981382298676" />
         <NodeLayout
           Size="160,41.6"
           Id="Package\First use\Download COVID"
-          TopLeft="75.3809531878452,268.463730960692" />
+          TopLeft="553.15873910213,451.993145299329" />
         <NodeLayout
           Size="175.2,41.6"
           Id="Package\First use\Download Indicators"
@@ -8014,25 +8079,25 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
         <NodeLayout
           Size="156,41.6"
           Id="Package\First use\Transform Covid"
-          TopLeft="83.9523819052443,341.075496696147" />
+          TopLeft="561.730167819529,524.604911034784" />
         <NodeLayout
           Size="183.2,41.6"
           Id="Package\First use\Trigger error message"
           TopLeft="558.838098733279,130.960787384568" />
         <EdgeLayout
           Id="Package\First use.PrecedenceConstraints[Constraint]"
-          TopLeft="158.666667546545,310.063730960692">
+          TopLeft="636.44445346083,493.593145299329">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,31.0117657354549"
+              EndConnector="0,31.011765735455"
               Start="0,0"
-              End="0,23.5117657354549">
+              End="0,23.511765735455">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,23.5117657354549" />
+                    End="0,23.511765735455" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -8067,7 +8132,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\First use.PrecedenceConstraints[Constraint 1]"
-          TopLeft="161.938096817416,382.675496696147">
+          TopLeft="639.715882731701,566.204911034784">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -8265,30 +8330,44 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\First use.PrecedenceConstraints[Constraint 6]"
-          TopLeft="291.230026790095,227.966668429095">
+          TopLeft="632.369850870784,420.61079107655">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-55.8490736022499,61.2970625315975"
+              EndConnector="0,31.3823542227785"
               Start="0,0"
-              End="-48.3490736022499,61.2970625315975">
+              End="0,23.8823542227785">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-23.924536801125,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-23.924536801125,0"
-                    Point2="-27.924536801125,0"
-                    Point3="-27.924536801125,4" />
+                    End="0,23.8823542227785" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="166.4,41.6"
+          Id="Package\First use\Delete temp folder"
+          TopLeft="550.8508010169,663.003925274611" />
+        <EdgeLayout
+          Id="Package\First use.PrecedenceConstraints[Constraint 7]"
+          TopLeft="636.876199330386,633.581382298676">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,29.4225429759352"
+              Start="0,0"
+              End="0,21.9225429759352">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
                   <mssgle:LineSegment
-                    End="-27.924536801125,57.2970625315975" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-27.924536801125,57.2970625315975"
-                    Point2="-27.924536801125,61.2970625315975"
-                    Point3="-31.924536801125,61.2970625315975" />
-                  <mssgle:LineSegment
-                    End="-48.3490736022499,61.2970625315975" />
+                    End="0,21.9225429759352" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -8300,8 +8379,8 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="869.6,504.8"
-          Size="869.6,548"
+          PanelSize="869.6,760"
+          Size="869.6,803.2"
           Id="Package\First use"
           TopLeft="96.4285730707407,217.410086869534" />
         <NodeLayout
@@ -8439,24 +8518,90 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
-          Size="132.8,41.6"
+          Size="132.8,42.4"
           Id="Package\Load do SSMS\Upload HDI"
-          TopLeft="119.685719552819,451.211768834896" />
+          TopLeft="119.685719552819,461.662749373624" />
         <NodeLayout
           Size="157.6,41.6"
           Id="Package\Load do SSMS\Upload Influenza"
-          TopLeft="145.400005705016,516.670592407207" />
+          TopLeft="99.3682588893542,537.912422770475" />
         <NodeLayout
           Size="176,41.6"
           Id="Package\Load do SSMS\Upload death reason"
-          TopLeft="149.685720063716,576.011767376335" />
+          TopLeft="94.9238143692214,611.698042386626" />
+        <EdgeLayout
+          Id="Package\Load do SSMS.PrecedenceConstraints[Constraint 5]"
+          TopLeft="186.757149079138,436.964708263239">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,24.6980411103854"
+              Start="0,0"
+              End="0,17.1980411103854">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.1980411103854" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load do SSMS.PrecedenceConstraints[Constraint 6]"
+          TopLeft="182.126989221086,504.062749373624">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,33.849673396851"
+              Start="0,0"
+              End="0,26.349673396851">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.349673396851" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load do SSMS.PrecedenceConstraints[Constraint 7]"
+          TopLeft="180.546036629288,579.512422770475">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,32.1856196161503"
+              Start="0,0"
+              End="0,24.6856196161503">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.6856196161503" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="450.4,670.4"
-          Size="450.4,713.6"
+          PanelSize="450.4,708"
+          Size="450.4,751.2"
           Id="Package\Load do SSMS"
-          TopLeft="313.535717615668,832.632359737962" />
+          TopLeft="306.392860351169,1054.25327603377" />
         <NodeLayout
           Size="160,41.6"
           Id="Package\Refresh data\Download COVID"
@@ -8496,18 +8641,18 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
           TopLeft="1216.45002045717,431.929403855231" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="534.982145343204,765.410086869534">
+          TopLeft="531.410716710955,1020.61008686953">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,67.2222728684281"
+              EndConnector="0,33.6431891642403"
               Start="0,0"
-              End="0,59.7222728684281">
+              End="0,26.1431891642403">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,59.7222728684281" />
+                    End="0,26.1431891642403" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
