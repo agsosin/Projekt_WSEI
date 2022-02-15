@@ -7,9 +7,11 @@ Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "Paczki_robaczki", "Paczki_r
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Deploy|Default = Deploy|Default
 		Development|Default = Development|Default
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7B33FE03-9154-4582-940C-127BE1EC6972}.Deploy|Default.ActiveCfg = Deploy
 		{7B33FE03-9154-4582-940C-127BE1EC6972}.Development|Default.ActiveCfg = Development
 		{7B33FE03-9154-4582-940C-127BE1EC6972}.Development|Default.Build.0 = Development
 	EndGlobalSection
