@@ -2,68 +2,68 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>Paczki_robaczki</Name>
-    <LastWriteTime>2022-02-15T19:55:21.9607362Z</LastWriteTime>
+    <LastWriteTime>2022-02-18T20:59:27.2157621Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
     <ProjectBuildItemInfo>
       <Name>Change COVID data.dtsx</Name>
-      <LastWriteTime>2022-02-05T21:47:36.7236916Z</LastWriteTime>
+      <LastWriteTime>2022-02-18T20:59:27.205759Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Change indicators.dtsx</Name>
-      <LastWriteTime>2022-02-09T19:27:43.8483845Z</LastWriteTime>
+      <LastWriteTime>2022-02-18T20:59:27.2107452Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Change influenza.dtsx</Name>
-      <LastWriteTime>2022-02-05T21:47:36.8666479Z</LastWriteTime>
+      <LastWriteTime>2022-02-18T21:55:10.0590413Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Change HDI.dtsx</Name>
-      <LastWriteTime>2022-02-05T21:47:36.7426426Z</LastWriteTime>
+      <LastWriteTime>2022-02-18T20:59:27.2067562Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Execute in order.dtsx</Name>
-      <LastWriteTime>2022-02-16T20:31:41.5598328Z</LastWriteTime>
+      <LastWriteTime>2022-02-18T20:59:27.2147347Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Change death reasons.dtsx</Name>
-      <LastWriteTime>2022-02-05T21:47:36.7467411Z</LastWriteTime>
+      <LastWriteTime>2022-02-18T20:59:27.2077535Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Upload countries.dtsx</Name>
-      <LastWriteTime>2022-02-05T21:47:36.8858413Z</LastWriteTime>
+      <LastWriteTime>2022-02-18T21:41:44.9411316Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Upload covid.dtsx</Name>
-      <LastWriteTime>2022-02-09T19:12:01.6992147Z</LastWriteTime>
+      <LastWriteTime>2022-02-18T20:59:27.218732Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Upload indicators.dtsx</Name>
-      <LastWriteTime>2022-02-09T20:46:24.9133116Z</LastWriteTime>
+      <LastWriteTime>2022-02-18T20:59:27.2207188Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Upload HDI.dtsx</Name>
-      <LastWriteTime>2022-02-09T20:11:29.929811Z</LastWriteTime>
+      <LastWriteTime>2022-02-18T20:59:27.2167301Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Upload Influenza.dtsx</Name>
-      <LastWriteTime>2022-02-09T20:47:52.0124773Z</LastWriteTime>
+      <LastWriteTime>2022-02-18T20:59:27.2177272Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Upload death reasons.dtsx</Name>
-      <LastWriteTime>2022-02-09T20:38:36.0512042Z</LastWriteTime>
+      <LastWriteTime>2022-02-18T20:59:27.2197206Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>

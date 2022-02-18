@@ -11,8 +11,8 @@
   DTS:LocaleID="1045"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="3"
-  DTS:VersionGUID="{06BBA440-AA9A-4F27-8E82-70D6560A7556}">
+  DTS:VersionBuild="5"
+  DTS:VersionGUID="{DA84D0BB-BC65-4F1C-AD07-2159ACD2AAC2}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -86,23 +86,6 @@
   </DTS:ConnectionManagers>
   <DTS:Variables />
   <DTS:Executables>
-    <DTS:Executable
-      DTS:refId="Package\Truncate countries"
-      DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:Description="Execute SQL Task"
-      DTS:DTSID="{36B14A31-4B4F-4DB0-9BE2-023B2A7F7B76}"
-      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Truncate countries"
-      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <SQLTask:SqlTaskData
-          SQLTask:Connection="{9ECC9E2D-1D15-477D-B8E3-083C2C2E19AF}"
-          SQLTask:SqlStatementSource="TRUNCATE TABLE dbo.countries" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
-      </DTS:ObjectData>
-    </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\Upload countries"
       DTS:CreationName="Microsoft.Pipeline"
@@ -301,6 +284,177 @@
               </outputs>
             </component>
             <component
+              refId="Package\Upload countries\Sort"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Upload countries\Sort.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Upload countries\Sort.Inputs[Sort Input].Columns[country name]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="52"
+                      cachedName="country name"
+                      lineageId="Package\Upload countries\Flat File Source.Outputs[Flat File Source Output].Columns[country name]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Upload countries\Sort.Inputs[Sort Input].Columns[country-code]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="3"
+                      cachedName="country-code"
+                      lineageId="Package\Upload countries\Flat File Source.Outputs[Flat File Source Output].Columns[country-code]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Upload countries\Sort.Inputs[Sort Input].Columns[region]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="8"
+                      cachedName="region"
+                      lineageId="Package\Upload countries\Flat File Source.Outputs[Flat File Source Output].Columns[region]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Upload countries\Sort.Inputs[Sort Input].Columns[sub-region]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="31"
+                      cachedName="sub-region"
+                      lineageId="Package\Upload countries\Flat File Source.Outputs[Flat File Source Output].Columns[sub-region]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Upload countries\Sort.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Upload countries\Sort.Outputs[Sort Output].Columns[country name]"
+                      codePage="1250"
+                      dataType="str"
+                      length="52"
+                      lineageId="Package\Upload countries\Sort.Outputs[Sort Output].Columns[country name]"
+                      name="country name">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Upload countries\Flat File Source.Outputs[Flat File Source Output].Columns[country name]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Upload countries\Sort.Outputs[Sort Output].Columns[country-code]"
+                      codePage="1250"
+                      dataType="str"
+                      length="3"
+                      lineageId="Package\Upload countries\Sort.Outputs[Sort Output].Columns[country-code]"
+                      name="country-code"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Upload countries\Flat File Source.Outputs[Flat File Source Output].Columns[country-code]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Upload countries\Sort.Outputs[Sort Output].Columns[region]"
+                      codePage="1250"
+                      dataType="str"
+                      length="8"
+                      lineageId="Package\Upload countries\Sort.Outputs[Sort Output].Columns[region]"
+                      name="region">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Upload countries\Flat File Source.Outputs[Flat File Source Output].Columns[region]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Upload countries\Sort.Outputs[Sort Output].Columns[sub-region]"
+                      codePage="1250"
+                      dataType="str"
+                      length="31"
+                      lineageId="Package\Upload countries\Sort.Outputs[Sort Output].Columns[sub-region]"
+                      name="sub-region">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Upload countries\Flat File Source.Outputs[Flat File Source Output].Columns[sub-region]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
               refId="Package\Upload countries\SQL Server Destination"
               componentClassID="Microsoft.SQLServerDestination"
               contactInfo="SQL Server Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;5"
@@ -391,15 +545,16 @@
                       cachedLength="52"
                       cachedName="country name"
                       externalMetadataColumnId="Package\Upload countries\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[country name]"
-                      lineageId="Package\Upload countries\Flat File Source.Outputs[Flat File Source Output].Columns[country name]" />
+                      lineageId="Package\Upload countries\Sort.Outputs[Sort Output].Columns[country name]" />
                     <inputColumn
                       refId="Package\Upload countries\SQL Server Destination.Inputs[SQL Server Destination Input].Columns[country-code]"
                       cachedCodepage="1250"
                       cachedDataType="str"
                       cachedLength="3"
                       cachedName="country-code"
+                      cachedSortKeyPosition="1"
                       externalMetadataColumnId="Package\Upload countries\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[country-code]"
-                      lineageId="Package\Upload countries\Flat File Source.Outputs[Flat File Source Output].Columns[country-code]" />
+                      lineageId="Package\Upload countries\Sort.Outputs[Sort Output].Columns[country-code]" />
                     <inputColumn
                       refId="Package\Upload countries\SQL Server Destination.Inputs[SQL Server Destination Input].Columns[region]"
                       cachedCodepage="1250"
@@ -407,7 +562,7 @@
                       cachedLength="8"
                       cachedName="region"
                       externalMetadataColumnId="Package\Upload countries\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[region]"
-                      lineageId="Package\Upload countries\Flat File Source.Outputs[Flat File Source Output].Columns[region]" />
+                      lineageId="Package\Upload countries\Sort.Outputs[Sort Output].Columns[region]" />
                     <inputColumn
                       refId="Package\Upload countries\SQL Server Destination.Inputs[SQL Server Destination Input].Columns[sub-region]"
                       cachedCodepage="1250"
@@ -415,7 +570,7 @@
                       cachedLength="31"
                       cachedName="sub-region"
                       externalMetadataColumnId="Package\Upload countries\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[sub-region]"
-                      lineageId="Package\Upload countries\Flat File Source.Outputs[Flat File Source Output].Columns[sub-region]" />
+                      lineageId="Package\Upload countries\Sort.Outputs[Sort Output].Columns[sub-region]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -427,7 +582,7 @@
                       refId="Package\Upload countries\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[country name]"
                       codePage="1250"
                       dataType="str"
-                      length="52"
+                      length="70"
                       name="country name" />
                     <externalMetadataColumn
                       refId="Package\Upload countries\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[country-code]"
@@ -439,13 +594,13 @@
                       refId="Package\Upload countries\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[region]"
                       codePage="1250"
                       dataType="str"
-                      length="8"
+                      length="20"
                       name="region" />
                     <externalMetadataColumn
                       refId="Package\Upload countries\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[sub-region]"
                       codePage="1250"
                       dataType="str"
-                      length="31"
+                      length="40"
                       name="sub-region" />
                   </externalMetadataColumns>
                 </input>
@@ -455,24 +610,19 @@
           <paths>
             <path
               refId="Package\Upload countries.Paths[Flat File Source Output]"
-              endId="Package\Upload countries\SQL Server Destination.Inputs[SQL Server Destination Input]"
+              endId="Package\Upload countries\Sort.Inputs[Sort Input]"
               name="Flat File Source Output"
               startId="Package\Upload countries\Flat File Source.Outputs[Flat File Source Output]" />
+            <path
+              refId="Package\Upload countries.Paths[Sort Output]"
+              endId="Package\Upload countries\SQL Server Destination.Inputs[SQL Server Destination Input]"
+              name="Sort Output"
+              startId="Package\Upload countries\Sort.Outputs[Sort Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
-  <DTS:PrecedenceConstraints>
-    <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Constraint]"
-      DTS:CreationName=""
-      DTS:DTSID="{CE9367DF-1DF4-4ABD-A6EA-F33BC2DF68AE}"
-      DTS:From="Package\Truncate countries"
-      DTS:LogicalAnd="True"
-      DTS:ObjectName="Constraint"
-      DTS:To="Package\Upload countries" />
-  </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
 <!--If you manually edit this section and make a mistake, you can delete it. -->
@@ -484,37 +634,11 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
           Size="156.8,41.6"
           Id="Package\Upload countries"
           TopLeft="39.7857148695966,102.617648420862" />
-        <NodeLayout
-          Size="166.4,41.6"
-          Id="Package\Truncate countries"
-          TopLeft="33.5714291431466,22.1764708992519" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="117.478572006372,63.7764708992519">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,38.8411775216099"
-              Start="0,0"
-              End="0,31.3411775216099">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,31.3411775216099" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -522,35 +646,77 @@
     design-time-name="Package\Upload countries">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="187.2,41.6"
+          Id="Package\Upload countries\SQL Server Destination"
+          TopLeft="81.4285728152917,241.647062212538" />
         <NodeLayout
           Size="150.4,41.6"
           Id="Package\Upload countries\Flat File Source"
           TopLeft="87.8571443533411,69.5882362700664" />
         <NodeLayout
-          Size="187.2,41.6"
-          Id="Package\Upload countries\SQL Server Destination"
-          TopLeft="72.8571440978926,149.88235504322" />
+          Size="97.6,41.6"
+          Id="Package\Upload countries\Sort"
+          TopLeft="110.000001873289,152.176472722453" />
         <EdgeLayout
-          Id="Package\Upload countries.Paths[Flat File Source Output]"
-          TopLeft="164.757144225617,111.188236270066">
+          Id="Package\Upload countries.Paths[Sort Output]"
+          TopLeft="158.800001873289,193.776472722453">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,38.6941187731535"
+              EndConnector="16.2285709420029,47.8705894900855"
               Start="0,0"
-              End="0,31.1941187731535">
+              End="16.2285709420029,40.3705894900855">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,31.1941187731535" />
+                    End="0,19.9352947450428" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.9352947450428"
+                    Point2="0,23.9352947450428"
+                    Point3="4,23.9352947450428" />
+                  <mssgle:LineSegment
+                    End="12.2285709420029,23.9352947450428" />
+                  <mssgle:CubicBezierSegment
+                    Point1="12.2285709420029,23.9352947450428"
+                    Point2="16.2285709420029,23.9352947450428"
+                    Point3="16.2285709420029,27.9352947450428" />
+                  <mssgle:LineSegment
+                    End="16.2285709420029,40.3705894900855" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Upload countries.Paths[Flat File Source Output]"
+          TopLeft="160.928573113315,111.188236270066">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,40.9882364523864"
+              Start="0,0"
+              End="0,33.4882364523864">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.4882364523864" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
