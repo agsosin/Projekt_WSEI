@@ -11,8 +11,8 @@
   DTS:LocaleID="1045"
   DTS:ObjectName="Execute in order"
   DTS:PackageType="5"
-  DTS:VersionBuild="136"
-  DTS:VersionGUID="{AD6307A3-40C3-4E30-99A9-C307C00A98AA}">
+  DTS:VersionBuild="137"
+  DTS:VersionGUID="{2C337212-170E-4F38-A453-89EB39C60C47}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -8647,14 +8647,14 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,33.6431891642403"
+              EndConnector="0,33.6431891642359"
               Start="0,0"
-              End="0,26.1431891642403">
+              End="0,26.1431891642359">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,26.1431891642403" />
+                    End="0,26.1431891642359" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
