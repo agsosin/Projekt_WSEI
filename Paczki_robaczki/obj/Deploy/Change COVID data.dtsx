@@ -11,8 +11,8 @@
   DTS:LocaleID="1045"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="67"
-  DTS:VersionGUID="{AD3AC691-1FA8-461C-9AC7-73002E5BB476}">
+  DTS:VersionBuild="70"
+  DTS:VersionGUID="{BEA5BA1D-3460-4D32-AC67-13AB0083717B}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -40,25 +40,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="iso_code"
-              DTS:DTSID="{007CC663-5250-4917-895D-98CA41748349}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="continent"
-              DTS:DTSID="{C56541E2-351E-4CEE-98AB-D6A4AE256B01}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="location"
-              DTS:DTSID="{4F2F96B1-CD68-4B54-A807-7BD48FA7EE92}"
+              DTS:DTSID="{ACDC1E2E-274E-443A-95D5-2026A5AF4218}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -67,7 +49,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="date"
-              DTS:DTSID="{0A84B6CA-7075-4662-BD18-235115E16F93}"
+              DTS:DTSID="{3DC5A73B-4E7D-49BF-A902-C1CCBD42EE04}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -76,7 +58,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="total_cases"
-              DTS:DTSID="{4D73F0FD-D22C-4781-96D2-FE5F772488E2}"
+              DTS:DTSID="{74576E37-2382-45B8-9C31-468D4B09C71C}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -85,7 +67,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="new_cases"
-              DTS:DTSID="{6A8E4A4C-21A4-4AA0-969C-24E96A02A355}"
+              DTS:DTSID="{6E2D9B6C-51F2-49A2-B257-F0FD97EB8EB2}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -94,7 +76,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="new_cases_smoothed"
-              DTS:DTSID="{B7EF0783-CBFD-4B9A-A178-0CA013E83540}"
+              DTS:DTSID="{8EE1A6FC-6D79-4807-B882-5D6CB02E7586}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -103,7 +85,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="total_deaths"
-              DTS:DTSID="{C1A1A43C-81F1-4641-871D-2B5B6D35130C}"
+              DTS:DTSID="{1F5A2FB2-4BD1-4B57-891E-21D59F2B5552}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -112,7 +94,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="new_deaths"
-              DTS:DTSID="{DD464D20-3DD6-4BFA-9C07-50CCD3EFE2E3}"
+              DTS:DTSID="{DCC4C911-C7F8-4B63-A900-C2209E39CC0D}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -121,61 +103,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="new_deaths_smoothed"
-              DTS:DTSID="{94781222-8037-4D30-9F27-347E766B9A46}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="total_cases_per_million"
-              DTS:DTSID="{88A9B22B-6ED2-4772-8009-49F6773D0112}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="new_cases_per_million"
-              DTS:DTSID="{EE05C4A5-939E-4DFD-8616-BB6CAD5E3AC8}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="new_cases_smoothed_per_million"
-              DTS:DTSID="{D223741E-D32F-4D9B-9A9A-775DC556C0B9}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="total_deaths_per_million"
-              DTS:DTSID="{9D5E6C40-FB94-4028-B4BC-50593946D04F}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="new_deaths_per_million"
-              DTS:DTSID="{12B59B3D-53D7-4484-9747-4AA879A1D575}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="new_deaths_smoothed_per_million"
-              DTS:DTSID="{E4CA117C-2283-4C53-8364-975904AD0D85}"
+              DTS:DTSID="{4AA1C536-C07B-4A29-A0F3-49603DDCF522}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -184,16 +112,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="icu_patients"
-              DTS:DTSID="{F96B7059-22F2-492E-B1F1-E89506F6ED09}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="icu_patients_per_million"
-              DTS:DTSID="{0F94CD2A-2705-4681-B6E0-EE8800E392AA}"
+              DTS:DTSID="{F982EECC-B084-458E-9C30-FC1387F9A347}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -202,16 +121,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="hosp_patients"
-              DTS:DTSID="{57E6FE6D-D061-40D7-A50D-2B467CFB9837}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="hosp_patients_per_million"
-              DTS:DTSID="{F3FD723B-ED33-4965-A5AF-B5920D643115}"
+              DTS:DTSID="{B17C3A77-3814-4C84-82DE-55E8B3447F14}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -220,7 +130,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="new_tests"
-              DTS:DTSID="{A0224660-5BCB-4441-9C98-8B353B423AAE}"
+              DTS:DTSID="{6FAF1E8C-FCE4-4659-ADB7-BC039EE181B6}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -229,25 +139,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="total_tests"
-              DTS:DTSID="{B97B83AB-CE01-45E1-8E3A-C441F8E202C4}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="total_tests_per_thousand"
-              DTS:DTSID="{D1B00467-23BF-4A5E-BDCF-6BC4192FEC34}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="new_tests_per_thousand"
-              DTS:DTSID="{BC859201-E38C-43B6-8089-4509E07BE145}"
+              DTS:DTSID="{D48523E8-39C2-4E50-88EB-B5CDF1FDA27C}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -256,16 +148,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="new_tests_smoothed"
-              DTS:DTSID="{99A5AF69-42F7-4612-993A-648BA9E2C782}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="new_tests_smoothed_per_thousand"
-              DTS:DTSID="{EC104721-883C-466A-8BBE-5B3061BBFBC0}"
+              DTS:DTSID="{382762FA-0660-4814-84D5-21664A3F80BE}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -274,7 +157,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="positive_rate"
-              DTS:DTSID="{7E57ACCF-837E-40D0-AB34-B485A866AAE3}"
+              DTS:DTSID="{33DD7BBE-7278-44FF-9207-8F78AE7E8737}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -283,7 +166,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="tests_per_case"
-              DTS:DTSID="{829ACA70-D513-4619-BDED-E37D4C2009EB}"
+              DTS:DTSID="{3CBC241D-50B2-42A5-8330-973796691707}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -292,7 +175,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="tests_units"
-              DTS:DTSID="{00A81E97-7FF4-48D9-9198-0D3D68ED6F47}"
+              DTS:DTSID="{7CFC005B-3CD4-431E-87E4-9441CCEE75B5}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -301,7 +184,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="total_vaccinations"
-              DTS:DTSID="{8EF93E4D-2878-4FC7-A3BB-0E6056CDA61D}"
+              DTS:DTSID="{6CA9C64F-81DA-4C09-9327-3532DED1C168}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -310,7 +193,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="people_vaccinated"
-              DTS:DTSID="{2E4FF4CD-CAD8-456C-B63E-BEFDC192AACD}"
+              DTS:DTSID="{A10B2D3C-2AC5-47F1-A27C-E31142674EC8}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -319,7 +202,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="people_fully_vaccinated"
-              DTS:DTSID="{C1E54FE1-223C-4285-BE59-43CAA7CF80B5}"
+              DTS:DTSID="{0B5B8898-EA53-4609-8CD0-6630796BE3AD}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -328,7 +211,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="total_boosters"
-              DTS:DTSID="{D13E9CA3-1BD0-4730-B81A-684869DB9AE7}"
+              DTS:DTSID="{CB7B42F5-E5E4-4458-8B0D-9D13BE67B826}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -337,7 +220,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="new_vaccinations"
-              DTS:DTSID="{63E74B73-C268-4E07-80E7-406BD10ECEF3}"
+              DTS:DTSID="{58BCE51E-E9E7-4D27-B7EC-4991D0DB0E78}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -346,52 +229,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="new_vaccinations_smoothed"
-              DTS:DTSID="{FB8494B9-CDD7-4B0D-B5A4-4F634A2DCB54}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="total_vaccinations_per_hundred"
-              DTS:DTSID="{2077AB42-2671-48CA-9293-7EA5FE382DC7}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="people_vaccinated_per_hundred"
-              DTS:DTSID="{77E1D35F-6467-4A04-8B04-3F8C1A6712B4}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="people_fully_vaccinated_per_hundred"
-              DTS:DTSID="{FB080B21-2247-4216-91AB-50BE1DEE36FA}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="total_boosters_per_hundred"
-              DTS:DTSID="{BF74D8C3-22BC-47C5-90FD-67D1ACAE5BCD}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="new_vaccinations_smoothed_per_million"
-              DTS:DTSID="{71E0E36A-F3C0-43CD-9D85-5443E745F513}"
+              DTS:DTSID="{7EB9B93C-1063-4B3B-812A-F8C6F2FE40B1}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -400,16 +238,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="new_people_vaccinated_smoothed"
-              DTS:DTSID="{F2E07584-0ED1-4A2B-B555-B2E99BD4F4EA}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="new_people_vaccinated_smoothed_per_hundred"
-              DTS:DTSID="{5DAE282B-4961-4B31-B9A0-81318DBD3F08}"
+              DTS:DTSID="{067B074F-1F1F-4532-9921-FEBEBC17114B}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -418,7 +247,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="stringency_index"
-              DTS:DTSID="{9E9CF95B-71A3-4976-8E36-82B9CAD17A56}"
+              DTS:DTSID="{E357C635-C085-4F0A-8AF2-CCC2C755B70D}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -427,7 +256,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="population"
-              DTS:DTSID="{34261BB1-ED58-41A3-BC6B-8750039A1EF4}"
+              DTS:DTSID="{B771B56C-8431-4808-B923-C753DB0EE1CD}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -436,7 +265,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="population_density"
-              DTS:DTSID="{EF45D04E-D957-4A98-8B63-EADA09BBAA93}"
+              DTS:DTSID="{B13D5116-6AF3-4C84-B765-BE70E9CA0632}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -445,7 +274,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="median_age"
-              DTS:DTSID="{5DBAEEA4-3803-4450-8542-7FD1477C1BD5}"
+              DTS:DTSID="{CE17104A-9108-4C7F-BB74-B70791EC460A}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -454,7 +283,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="aged_65_older"
-              DTS:DTSID="{03F69912-499F-4781-B0A9-183D27070E7A}"
+              DTS:DTSID="{590EDBB6-19A7-4399-B394-C7BCC183A1C5}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -463,7 +292,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="aged_70_older"
-              DTS:DTSID="{84A7BE93-A61E-4A86-B5DD-B74B41CB34BE}"
+              DTS:DTSID="{4D31C816-DC79-444C-819A-C7B1ACF04919}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -472,7 +301,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="gdp_per_capita"
-              DTS:DTSID="{DA773008-10F6-469A-87B8-0B8E772BDF55}"
+              DTS:DTSID="{D53D30D4-B0DC-4F47-80E9-16C70274CA71}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -481,7 +310,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="extreme_poverty"
-              DTS:DTSID="{ED8AAFBF-1C2E-49CC-892C-A54198F3378E}"
+              DTS:DTSID="{36EE1DEF-A5DB-4548-A410-738247EB5084}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -490,7 +319,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="cardiovasc_death_rate"
-              DTS:DTSID="{62585F36-23C3-4539-862D-D991DA96A08E}"
+              DTS:DTSID="{910AB775-4256-4FCE-B22A-2EAFE98F55C8}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -499,7 +328,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="diabetes_prevalence"
-              DTS:DTSID="{8B8B52A1-8B7F-4205-A3B3-729BFEA92E0A}"
+              DTS:DTSID="{6F80F45D-4D3B-4955-99EC-58A22A58F873}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -508,7 +337,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="female_smokers"
-              DTS:DTSID="{34603D0C-65CB-4390-8B2D-215B633489D3}"
+              DTS:DTSID="{611AC5E4-6F02-4C88-918E-F795D16F2863}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -517,7 +346,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="male_smokers"
-              DTS:DTSID="{8714049C-34B8-4B92-819D-E13CA24DC510}"
+              DTS:DTSID="{B48CBA08-57FF-45EE-8D39-F9768CFAE2DA}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -526,16 +355,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="handwashing_facilities"
-              DTS:DTSID="{5CB5230F-3916-45B4-A586-76D467680E2C}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="hospital_beds_per_thousand"
-              DTS:DTSID="{9AD81798-A4B9-4037-A5A6-670503BEF4FA}"
+              DTS:DTSID="{DA1FD6D1-1323-4A2F-9D88-D114AC7266E7}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -544,7 +364,25 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="life_expectancy"
-              DTS:DTSID="{B5342F95-FEFE-4B3C-9A2C-E359AC28C22B}"
+              DTS:DTSID="{93C62384-F6F4-495D-8088-E797DEAD85D2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="excess_mortality_cumulative_absolute"
+              DTS:DTSID="{5B12829B-A8AB-46CB-B283-F0A910ECF73B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="excess_mortality_cumulative"
+              DTS:DTSID="{AF5EB3D1-7EDA-4367-A4F4-9F56962BBCC0}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -552,8 +390,8 @@
               DTS:MaximumWidth="50"
               DTS:DataType="129"
               DTS:TextQualified="True"
-              DTS:ObjectName="human_development_index"
-              DTS:DTSID="{DE3E3A94-BB7B-4FCB-837C-BEC98A9D2C42}"
+              DTS:ObjectName="excess_mortality"
+              DTS:DTSID="{008D992D-E59F-4152-A9A9-79D17C292C4B}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -1919,22 +1757,6 @@
                       externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[iso_code]"
                       lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[iso_code]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[continent]"
-                      cachedCodepage="1250"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="continent"
-                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[continent]"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[continent]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[location]"
-                      cachedCodepage="1250"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="location"
-                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[location]"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[location]" />
-                    <inputColumn
                       refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[date]"
                       cachedCodepage="1250"
                       cachedDataType="str"
@@ -1991,54 +1813,6 @@
                       externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[new_deaths_smoothed]"
                       lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[new_deaths_smoothed]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[total_cases_per_million]"
-                      cachedCodepage="1250"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="total_cases_per_million"
-                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[total_cases_per_million]"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[total_cases_per_million]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[new_cases_per_million]"
-                      cachedCodepage="1250"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="new_cases_per_million"
-                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[new_cases_per_million]"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[new_cases_per_million]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[new_cases_smoothed_per_million]"
-                      cachedCodepage="1250"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="new_cases_smoothed_per_million"
-                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[new_cases_smoothed_per_million]"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[new_cases_smoothed_per_million]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[total_deaths_per_million]"
-                      cachedCodepage="1250"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="total_deaths_per_million"
-                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[total_deaths_per_million]"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[total_deaths_per_million]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[new_deaths_per_million]"
-                      cachedCodepage="1250"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="new_deaths_per_million"
-                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[new_deaths_per_million]"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[new_deaths_per_million]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[new_deaths_smoothed_per_million]"
-                      cachedCodepage="1250"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="new_deaths_smoothed_per_million"
-                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[new_deaths_smoothed_per_million]"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[new_deaths_smoothed_per_million]" />
-                    <inputColumn
                       refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[icu_patients]"
                       cachedCodepage="1250"
                       cachedDataType="str"
@@ -2047,14 +1821,6 @@
                       externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[icu_patients]"
                       lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[icu_patients]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[icu_patients_per_million]"
-                      cachedCodepage="1250"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="icu_patients_per_million"
-                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[icu_patients_per_million]"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[icu_patients_per_million]" />
-                    <inputColumn
                       refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[hosp_patients]"
                       cachedCodepage="1250"
                       cachedDataType="str"
@@ -2062,14 +1828,6 @@
                       cachedName="hosp_patients"
                       externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[hosp_patients]"
                       lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[hosp_patients]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[hosp_patients_per_million]"
-                      cachedCodepage="1250"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="hosp_patients_per_million"
-                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[hosp_patients_per_million]"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[hosp_patients_per_million]" />
                     <inputColumn
                       refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[new_tests]"
                       cachedCodepage="1250"
@@ -2087,22 +1845,6 @@
                       externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[total_tests]"
                       lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[total_tests]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[total_tests_per_thousand]"
-                      cachedCodepage="1250"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="total_tests_per_thousand"
-                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[total_tests_per_thousand]"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[total_tests_per_thousand]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[new_tests_per_thousand]"
-                      cachedCodepage="1250"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="new_tests_per_thousand"
-                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[new_tests_per_thousand]"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[new_tests_per_thousand]" />
-                    <inputColumn
                       refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[new_tests_smoothed]"
                       cachedCodepage="1250"
                       cachedDataType="str"
@@ -2110,14 +1852,6 @@
                       cachedName="new_tests_smoothed"
                       externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[new_tests_smoothed]"
                       lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[new_tests_smoothed]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[new_tests_smoothed_per_thousand]"
-                      cachedCodepage="1250"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="new_tests_smoothed_per_thousand"
-                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[new_tests_smoothed_per_thousand]"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[new_tests_smoothed_per_thousand]" />
                     <inputColumn
                       refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[positive_rate]"
                       cachedCodepage="1250"
@@ -2191,46 +1925,6 @@
                       externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[new_vaccinations_smoothed]"
                       lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[new_vaccinations_smoothed]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[total_vaccinations_per_hundred]"
-                      cachedCodepage="1250"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="total_vaccinations_per_hundred"
-                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[total_vaccinations_per_hundred]"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[total_vaccinations_per_hundred]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[people_vaccinated_per_hundred]"
-                      cachedCodepage="1250"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="people_vaccinated_per_hundred"
-                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[people_vaccinated_per_hundred]"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[people_vaccinated_per_hundred]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[people_fully_vaccinated_per_hundred]"
-                      cachedCodepage="1250"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="people_fully_vaccinated_per_hundred"
-                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[people_fully_vaccinated_per_hundred]"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[people_fully_vaccinated_per_hundred]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[total_boosters_per_hundred]"
-                      cachedCodepage="1250"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="total_boosters_per_hundred"
-                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[total_boosters_per_hundred]"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[total_boosters_per_hundred]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[new_vaccinations_smoothed_per_million]"
-                      cachedCodepage="1250"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="new_vaccinations_smoothed_per_million"
-                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[new_vaccinations_smoothed_per_million]"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[new_vaccinations_smoothed_per_million]" />
-                    <inputColumn
                       refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[new_people_vaccinated_smoothed]"
                       cachedCodepage="1250"
                       cachedDataType="str"
@@ -2238,14 +1932,6 @@
                       cachedName="new_people_vaccinated_smoothed"
                       externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[new_people_vaccinated_smoothed]"
                       lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[new_people_vaccinated_smoothed]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[new_people_vaccinated_smoothed_per_hundred]"
-                      cachedCodepage="1250"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="new_people_vaccinated_smoothed_per_hundred"
-                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[new_people_vaccinated_smoothed_per_hundred]"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[new_people_vaccinated_smoothed_per_hundred]" />
                     <inputColumn
                       refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[stringency_index]"
                       cachedCodepage="1250"
@@ -2351,14 +2037,6 @@
                       externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[handwashing_facilities]"
                       lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[handwashing_facilities]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[hospital_beds_per_thousand]"
-                      cachedCodepage="1250"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="hospital_beds_per_thousand"
-                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[hospital_beds_per_thousand]"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[hospital_beds_per_thousand]" />
-                    <inputColumn
                       refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[life_expectancy]"
                       cachedCodepage="1250"
                       cachedDataType="str"
@@ -2367,13 +2045,29 @@
                       externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[life_expectancy]"
                       lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[life_expectancy]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[human_development_index]"
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[excess_mortality_cumulative_absolute]"
                       cachedCodepage="1250"
                       cachedDataType="str"
                       cachedLength="50"
-                      cachedName="human_development_index"
-                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[human_development_index]"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[human_development_index]" />
+                      cachedName="excess_mortality_cumulative_absolute"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[excess_mortality_cumulative_absolute]"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[excess_mortality_cumulative_absolute]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[excess_mortality_cumulative]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="excess_mortality_cumulative"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[excess_mortality_cumulative]"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[excess_mortality_cumulative]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[excess_mortality]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="excess_mortality"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[excess_mortality]"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[excess_mortality]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -2383,18 +2077,6 @@
                       dataType="str"
                       length="50"
                       name="iso_code" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[continent]"
-                      codePage="1250"
-                      dataType="str"
-                      length="50"
-                      name="continent" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[location]"
-                      codePage="1250"
-                      dataType="str"
-                      length="50"
-                      name="location" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[date]"
                       codePage="1250"
@@ -2438,65 +2120,17 @@
                       length="50"
                       name="new_deaths_smoothed" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[total_cases_per_million]"
-                      codePage="1250"
-                      dataType="str"
-                      length="50"
-                      name="total_cases_per_million" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[new_cases_per_million]"
-                      codePage="1250"
-                      dataType="str"
-                      length="50"
-                      name="new_cases_per_million" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[new_cases_smoothed_per_million]"
-                      codePage="1250"
-                      dataType="str"
-                      length="50"
-                      name="new_cases_smoothed_per_million" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[total_deaths_per_million]"
-                      codePage="1250"
-                      dataType="str"
-                      length="50"
-                      name="total_deaths_per_million" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[new_deaths_per_million]"
-                      codePage="1250"
-                      dataType="str"
-                      length="50"
-                      name="new_deaths_per_million" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[new_deaths_smoothed_per_million]"
-                      codePage="1250"
-                      dataType="str"
-                      length="50"
-                      name="new_deaths_smoothed_per_million" />
-                    <externalMetadataColumn
                       refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[icu_patients]"
                       codePage="1250"
                       dataType="str"
                       length="50"
                       name="icu_patients" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[icu_patients_per_million]"
-                      codePage="1250"
-                      dataType="str"
-                      length="50"
-                      name="icu_patients_per_million" />
-                    <externalMetadataColumn
                       refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[hosp_patients]"
                       codePage="1250"
                       dataType="str"
                       length="50"
                       name="hosp_patients" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[hosp_patients_per_million]"
-                      codePage="1250"
-                      dataType="str"
-                      length="50"
-                      name="hosp_patients_per_million" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[new_tests]"
                       codePage="1250"
@@ -2510,29 +2144,11 @@
                       length="50"
                       name="total_tests" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[total_tests_per_thousand]"
-                      codePage="1250"
-                      dataType="str"
-                      length="50"
-                      name="total_tests_per_thousand" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[new_tests_per_thousand]"
-                      codePage="1250"
-                      dataType="str"
-                      length="50"
-                      name="new_tests_per_thousand" />
-                    <externalMetadataColumn
                       refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[new_tests_smoothed]"
                       codePage="1250"
                       dataType="str"
                       length="50"
                       name="new_tests_smoothed" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[new_tests_smoothed_per_thousand]"
-                      codePage="1250"
-                      dataType="str"
-                      length="50"
-                      name="new_tests_smoothed_per_thousand" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[positive_rate]"
                       codePage="1250"
@@ -2588,47 +2204,11 @@
                       length="50"
                       name="new_vaccinations_smoothed" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[total_vaccinations_per_hundred]"
-                      codePage="1250"
-                      dataType="str"
-                      length="50"
-                      name="total_vaccinations_per_hundred" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[people_vaccinated_per_hundred]"
-                      codePage="1250"
-                      dataType="str"
-                      length="50"
-                      name="people_vaccinated_per_hundred" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[people_fully_vaccinated_per_hundred]"
-                      codePage="1250"
-                      dataType="str"
-                      length="50"
-                      name="people_fully_vaccinated_per_hundred" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[total_boosters_per_hundred]"
-                      codePage="1250"
-                      dataType="str"
-                      length="50"
-                      name="total_boosters_per_hundred" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[new_vaccinations_smoothed_per_million]"
-                      codePage="1250"
-                      dataType="str"
-                      length="50"
-                      name="new_vaccinations_smoothed_per_million" />
-                    <externalMetadataColumn
                       refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[new_people_vaccinated_smoothed]"
                       codePage="1250"
                       dataType="str"
                       length="50"
                       name="new_people_vaccinated_smoothed" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[new_people_vaccinated_smoothed_per_hundred]"
-                      codePage="1250"
-                      dataType="str"
-                      length="50"
-                      name="new_people_vaccinated_smoothed_per_hundred" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[stringency_index]"
                       codePage="1250"
@@ -2708,23 +2288,29 @@
                       length="50"
                       name="handwashing_facilities" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[hospital_beds_per_thousand]"
-                      codePage="1250"
-                      dataType="str"
-                      length="50"
-                      name="hospital_beds_per_thousand" />
-                    <externalMetadataColumn
                       refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[life_expectancy]"
                       codePage="1250"
                       dataType="str"
                       length="50"
                       name="life_expectancy" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[human_development_index]"
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[excess_mortality_cumulative_absolute]"
                       codePage="1250"
                       dataType="str"
                       length="50"
-                      name="human_development_index" />
+                      name="excess_mortality_cumulative_absolute" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[excess_mortality_cumulative]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="excess_mortality_cumulative" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[excess_mortality]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="excess_mortality" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -2770,50 +2356,6 @@
                       length="50"
                       lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[iso_code]"
                       name="iso_code"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[continent]"
-                      codePage="1250"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[continent]"
-                      length="50"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[continent]"
-                      name="continent"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[location]"
-                      codePage="1250"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[location]"
-                      length="50"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[location]"
-                      name="location"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -2981,50 +2523,6 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[total_cases_per_million]"
-                      codePage="1250"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[total_cases_per_million]"
-                      length="50"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[total_cases_per_million]"
-                      name="total_cases_per_million"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[new_cases_per_million]"
-                      codePage="1250"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[new_cases_per_million]"
-                      length="50"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[new_cases_per_million]"
-                      name="new_cases_per_million"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
                       refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[new_cases_smoothed_per_million]"
                       codePage="1250"
                       dataType="str"
@@ -3034,50 +2532,6 @@
                       length="50"
                       lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[new_cases_smoothed_per_million]"
                       name="new_cases_smoothed_per_million"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[total_deaths_per_million]"
-                      codePage="1250"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[total_deaths_per_million]"
-                      length="50"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[total_deaths_per_million]"
-                      name="total_deaths_per_million"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[new_deaths_per_million]"
-                      codePage="1250"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[new_deaths_per_million]"
-                      length="50"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[new_deaths_per_million]"
-                      name="new_deaths_per_million"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -3135,28 +2589,6 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[icu_patients_per_million]"
-                      codePage="1250"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[icu_patients_per_million]"
-                      length="50"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[icu_patients_per_million]"
-                      name="icu_patients_per_million"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
                       refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[hosp_patients]"
                       codePage="1250"
                       dataType="str"
@@ -3166,28 +2598,6 @@
                       length="50"
                       lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[hosp_patients]"
                       name="hosp_patients"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[hosp_patients_per_million]"
-                      codePage="1250"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[hosp_patients_per_million]"
-                      length="50"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[hosp_patients_per_million]"
-                      name="hosp_patients_per_million"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -3245,50 +2655,6 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[total_tests_per_thousand]"
-                      codePage="1250"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[total_tests_per_thousand]"
-                      length="50"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[total_tests_per_thousand]"
-                      name="total_tests_per_thousand"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[new_tests_per_thousand]"
-                      codePage="1250"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[new_tests_per_thousand]"
-                      length="50"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[new_tests_per_thousand]"
-                      name="new_tests_per_thousand"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
                       refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[new_tests_smoothed]"
                       codePage="1250"
                       dataType="str"
@@ -3298,28 +2664,6 @@
                       length="50"
                       lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[new_tests_smoothed]"
                       name="new_tests_smoothed"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[new_tests_smoothed_per_thousand]"
-                      codePage="1250"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[new_tests_smoothed_per_thousand]"
-                      length="50"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[new_tests_smoothed_per_thousand]"
-                      name="new_tests_smoothed_per_thousand"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -3531,116 +2875,6 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[total_vaccinations_per_hundred]"
-                      codePage="1250"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[total_vaccinations_per_hundred]"
-                      length="50"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[total_vaccinations_per_hundred]"
-                      name="total_vaccinations_per_hundred"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[people_vaccinated_per_hundred]"
-                      codePage="1250"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[people_vaccinated_per_hundred]"
-                      length="50"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[people_vaccinated_per_hundred]"
-                      name="people_vaccinated_per_hundred"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[people_fully_vaccinated_per_hundred]"
-                      codePage="1250"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[people_fully_vaccinated_per_hundred]"
-                      length="50"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[people_fully_vaccinated_per_hundred]"
-                      name="people_fully_vaccinated_per_hundred"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[total_boosters_per_hundred]"
-                      codePage="1250"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[total_boosters_per_hundred]"
-                      length="50"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[total_boosters_per_hundred]"
-                      name="total_boosters_per_hundred"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[new_vaccinations_smoothed_per_million]"
-                      codePage="1250"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[new_vaccinations_smoothed_per_million]"
-                      length="50"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[new_vaccinations_smoothed_per_million]"
-                      name="new_vaccinations_smoothed_per_million"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
                       refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[new_people_vaccinated_smoothed]"
                       codePage="1250"
                       dataType="str"
@@ -3650,28 +2884,6 @@
                       length="50"
                       lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[new_people_vaccinated_smoothed]"
                       name="new_people_vaccinated_smoothed"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[new_people_vaccinated_smoothed_per_hundred]"
-                      codePage="1250"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[new_people_vaccinated_smoothed_per_hundred]"
-                      length="50"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[new_people_vaccinated_smoothed_per_hundred]"
-                      name="new_people_vaccinated_smoothed_per_hundred"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -3971,28 +3183,6 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[hospital_beds_per_thousand]"
-                      codePage="1250"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[hospital_beds_per_thousand]"
-                      length="50"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[hospital_beds_per_thousand]"
-                      name="hospital_beds_per_thousand"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
                       refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[life_expectancy]"
                       codePage="1250"
                       dataType="str"
@@ -4015,15 +3205,59 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[human_development_index]"
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[excess_mortality_cumulative_absolute]"
                       codePage="1250"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[human_development_index]"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[excess_mortality_cumulative_absolute]"
                       length="50"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[human_development_index]"
-                      name="human_development_index"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[excess_mortality_cumulative_absolute]"
+                      name="excess_mortality_cumulative_absolute"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[excess_mortality_cumulative]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[excess_mortality_cumulative]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[excess_mortality_cumulative]"
+                      name="excess_mortality_cumulative"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[excess_mortality]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[excess_mortality]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[excess_mortality]"
+                      name="excess_mortality"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -4545,7 +3779,7 @@
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-8.7994140625,2.78102641551143,17.598828125,9.5732421875"
+              BoundingBox="-8.7994140625,2.78102641551145,17.598828125,9.5732421875"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>

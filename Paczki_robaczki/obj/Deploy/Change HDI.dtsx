@@ -11,8 +11,8 @@
   DTS:LocaleID="1045"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="10"
-  DTS:VersionGUID="{FF622FFC-4DED-4728-AC75-853547DEEA2A}">
+  DTS:VersionBuild="11"
+  DTS:VersionGUID="{8E6F39D3-AE82-4792-8347-BB0DE82EBAC0}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -41,7 +41,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="HDI Rank"
-              DTS:DTSID="{3C92B61B-2193-4DDD-A1CE-FBBF499F4AAB}"
+              DTS:DTSID="{51639D84-AECF-4C3E-A5BF-F8EA33599CCD}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -50,7 +50,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Country"
-              DTS:DTSID="{8FA4B3D8-4AAF-493E-9D33-57FE678E742E}"
+              DTS:DTSID="{EAC03829-FE08-4B8C-B276-0E64647D2C37}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -59,25 +59,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Year 2019"
-              DTS:DTSID="{5C3F61BB-E01C-45DF-ADB8-C7821EBFE04A}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="country-code"
-              DTS:DTSID="{869C1470-239E-4C5F-8CD2-6C63794E1F82}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="region"
-              DTS:DTSID="{10513C18-BB92-44F1-BDD3-194B942651EA}"
+              DTS:DTSID="{9A161A6E-2B8F-4747-85FA-730C9F2E8675}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -85,8 +67,8 @@
               DTS:MaximumWidth="50"
               DTS:DataType="129"
               DTS:TextQualified="True"
-              DTS:ObjectName="sub-region"
-              DTS:DTSID="{1316DE6E-18A0-4411-A54D-53D29C778611}"
+              DTS:ObjectName="country-code"
+              DTS:DTSID="{B514C5BF-64DA-4B43-AF0A-645FD278E56C}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -1910,22 +1892,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
                       externalMetadataColumnId="Package\Change HDI\HDI final destination.Inputs[Flat File Destination Input].ExternalColumns[country-code]"
                       lineageId="Package\Change HDI\Merge Join 1.Outputs[Merge Join Output].Columns[country-code]" />
                     <inputColumn
-                      refId="Package\Change HDI\HDI final destination.Inputs[Flat File Destination Input].Columns[region]"
-                      cachedCodepage="1250"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="region"
-                      externalMetadataColumnId="Package\Change HDI\HDI final destination.Inputs[Flat File Destination Input].ExternalColumns[region]"
-                      lineageId="Package\Change HDI\Merge Join 1.Outputs[Merge Join Output].Columns[region]" />
-                    <inputColumn
-                      refId="Package\Change HDI\HDI final destination.Inputs[Flat File Destination Input].Columns[sub-region]"
-                      cachedCodepage="1250"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="sub-region"
-                      externalMetadataColumnId="Package\Change HDI\HDI final destination.Inputs[Flat File Destination Input].ExternalColumns[sub-region]"
-                      lineageId="Package\Change HDI\Merge Join 1.Outputs[Merge Join Output].Columns[sub-region]" />
-                    <inputColumn
                       refId="Package\Change HDI\HDI final destination.Inputs[Flat File Destination Input].Columns[Year 2019]"
                       cachedCodepage="1250"
                       cachedDataType="str"
@@ -1954,18 +1920,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
                       dataType="str"
                       length="50"
                       name="country-code" />
-                    <externalMetadataColumn
-                      refId="Package\Change HDI\HDI final destination.Inputs[Flat File Destination Input].ExternalColumns[region]"
-                      codePage="1250"
-                      dataType="str"
-                      length="50"
-                      name="region" />
-                    <externalMetadataColumn
-                      refId="Package\Change HDI\HDI final destination.Inputs[Flat File Destination Input].ExternalColumns[sub-region]"
-                      codePage="1250"
-                      dataType="str"
-                      length="50"
-                      name="sub-region" />
                     <externalMetadataColumn
                       refId="Package\Change HDI\HDI final destination.Inputs[Flat File Destination Input].ExternalColumns[Year 2019]"
                       codePage="1250"
@@ -2053,20 +2007,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
                       cachedLength="50"
                       cachedName="country-code"
                       lineageId="Package\Change HDI\Sort by country name 2.Outputs[Sort Output].Columns[country-code]" />
-                    <inputColumn
-                      refId="Package\Change HDI\Merge Join 1.Inputs[Merge Join Right Input].Columns[region]"
-                      cachedCodepage="1250"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="region"
-                      lineageId="Package\Change HDI\Sort by country name 2.Outputs[Sort Output].Columns[region]" />
-                    <inputColumn
-                      refId="Package\Change HDI\Merge Join 1.Inputs[Merge Join Right Input].Columns[sub-region]"
-                      cachedCodepage="1250"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="sub-region"
-                      lineageId="Package\Change HDI\Sort by country name 2.Outputs[Sort Output].Columns[sub-region]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -2136,36 +2076,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
                           dataType="System.Int32"
                           description="The input column associated with this output column"
                           name="InputColumnID">#{Package\Change HDI\Merge Join 1.Inputs[Merge Join Right Input].Columns[country-code]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Change HDI\Merge Join 1.Outputs[Merge Join Output].Columns[region]"
-                      codePage="1250"
-                      dataType="str"
-                      length="50"
-                      lineageId="Package\Change HDI\Merge Join 1.Outputs[Merge Join Output].Columns[region]"
-                      name="region">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The input column associated with this output column"
-                          name="InputColumnID">#{Package\Change HDI\Merge Join 1.Inputs[Merge Join Right Input].Columns[region]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Change HDI\Merge Join 1.Outputs[Merge Join Output].Columns[sub-region]"
-                      codePage="1250"
-                      dataType="str"
-                      length="50"
-                      lineageId="Package\Change HDI\Merge Join 1.Outputs[Merge Join Output].Columns[sub-region]"
-                      name="sub-region">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The input column associated with this output column"
-                          name="InputColumnID">#{Package\Change HDI\Merge Join 1.Inputs[Merge Join Right Input].Columns[sub-region]}</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
@@ -3264,9 +3174,25 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
+          Size="189.6,41.6"
+          Id="Package\Change HDI\Sort by country name 2"
+          TopLeft="269.785718786473,133.205884143968" />
+        <NodeLayout
+          Size="138.4,41.6"
+          Id="Package\Change HDI\Merge Join 1"
+          TopLeft="234.285718275576,328.823534023391" />
+        <NodeLayout
+          Size="175.2,41.6"
+          Id="Package\Change HDI\HDI final destination"
+          TopLeft="216.428575114328,396.117652614224" />
+        <NodeLayout
           Size="139.2,41.6"
           Id="Package\Change HDI\Source - HDI"
           TopLeft="89.285715806241,61.1764714462122" />
+        <NodeLayout
+          Size="189.6,41.6"
+          Id="Package\Change HDI\Sort by country name 1"
+          TopLeft="60.0000010217939,276.058827401033" />
         <NodeLayout
           Size="164,41.6"
           Id="Package\Change HDI\Source - countries"
@@ -3275,90 +3201,10 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
           Size="126.4,41.6"
           Id="Package\Change HDI\Clear data"
           TopLeft="92.8571444384906,130.000001823201" />
-        <EdgeLayout
-          Id="Package\Change HDI.Paths[Flat File Source Output]"
-          TopLeft="157.471430122366,102.776471446212">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,27.2235303769888"
-              Start="0,0"
-              End="0,19.7235303769888">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,19.7235303769888" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <NodeLayout
-          Size="189.6,41.6"
-          Id="Package\Change HDI\Sort by country name 2"
-          TopLeft="269.785718786473,133.205884143968" />
-        <NodeLayout
-          Size="189.6,41.6"
-          Id="Package\Change HDI\Sort by country name 1"
-          TopLeft="60.0000010217939,276.058827401033" />
-        <EdgeLayout
-          Id="Package\Change HDI.Paths[Flat File Source Output1]"
-          TopLeft="361.150004598073,104.305883232367">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,28.9000009116006"
-              Start="0,0"
-              End="0,21.4000009116006">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,21.4000009116006" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="138.4,41.6"
-          Id="Package\Change HDI\Merge Join 1"
-          TopLeft="234.285718275576,328.823534023391" />
-        <EdgeLayout
-          Id="Package\Change HDI.Paths[Sort Output]"
-          TopLeft="249.600001021794,296.858827401033">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="32.1523839204491,31.9647066223579"
-              Start="0,0"
-              End="32.1523839204491,24.4647066223579">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="28.1523839204491,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="28.1523839204491,0"
-                    Point2="32.1523839204491,0"
-                    Point3="32.1523839204491,4" />
-                  <mssgle:LineSegment
-                    End="32.1523839204491,24.4647066223579" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          Size="156,41.6"
+          Id="Package\Change HDI\Delete junk data"
+          TopLeft="82.1428585417417,202.894120414034" />
         <EdgeLayout
           Id="Package\Change HDI.Paths[Sort Output1]"
           TopLeft="364.585718786473,174.805884143968">
@@ -3393,14 +3239,34 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="175.2,41.6"
-          Id="Package\Change HDI\HDI final destination"
-          TopLeft="216.428575114328,396.117652614224" />
-        <NodeLayout
-          Size="156,41.6"
-          Id="Package\Change HDI\Delete junk data"
-          TopLeft="82.1428585417417,202.894120414034" />
+        <EdgeLayout
+          Id="Package\Change HDI.Paths[Sort Output]"
+          TopLeft="249.600001021794,296.858827401033">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="32.1523839204491,31.9647066223579"
+              Start="0,0"
+              End="32.1523839204491,24.4647066223579">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="28.1523839204491,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="28.1523839204491,0"
+                    Point2="32.1523839204491,0"
+                    Point3="32.1523839204491,4" />
+                  <mssgle:LineSegment
+                    End="32.1523839204491,24.4647066223579" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Change HDI.Paths[Output 0]"
           TopLeft="158.100001490116,171.600001823201">
@@ -3461,6 +3327,50 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
                   Capacity="5">
                   <mssgle:LineSegment
                     End="0,18.1941185908333" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Change HDI.Paths[Flat File Source Output1]"
+          TopLeft="361.150004598073,104.305883232367">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,28.9000009116006"
+              Start="0,0"
+              End="0,21.4000009116006">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.4000009116006" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Change HDI.Paths[Flat File Source Output]"
+          TopLeft="157.471430122366,102.776471446212">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,27.2235303769888"
+              Start="0,0"
+              End="0,19.7235303769888">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.7235303769888" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
