@@ -11,8 +11,8 @@
   DTS:LocaleID="1045"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="20"
-  DTS:VersionGUID="{17BDC8F0-226F-4169-A63C-29AE772393F2}">
+  DTS:VersionBuild="22"
+  DTS:VersionGUID="{79F8A7D6-9EA7-498F-8EFB-B44A86E66E13}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -25,7 +25,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="0"
           DTS:ConnectRetryInterval="0"
-          DTS:ConnectionString="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=D:\Studies\AAA_Semestr_Ostatni\P3\Paczki\Pliki_plaskie\Error.xls;Extended Properties=&quot;Excel 8.0;HDR=YES&quot;;" />
+          DTS:ConnectionString="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=D:\Studies\AAA_Semestr_Ostatni\P3\Paczki\Pliki_plaskie\Error.xls;Extended Properties=&quot;EXCEL 8.0;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -1846,6 +1846,7 @@
                       lineageId="Package\Upload covid\Convert to decimal.Outputs[Data Conversion Output].Columns[stringency_index]"
                       name="stringency_index"
                       precision="18"
+                      scale="2"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -1887,7 +1888,8 @@
                       errorRowDisposition="FailComponent"
                       lineageId="Package\Upload covid\Convert to decimal.Outputs[Data Conversion Output].Columns[population_density]"
                       name="population_density"
-                      precision="18"
+                      precision="30"
+                      scale="3"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -1909,6 +1911,7 @@
                       lineageId="Package\Upload covid\Convert to decimal.Outputs[Data Conversion Output].Columns[median_age]"
                       name="median_age"
                       precision="18"
+                      scale="1"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -1930,6 +1933,7 @@
                       lineageId="Package\Upload covid\Convert to decimal.Outputs[Data Conversion Output].Columns[aged_65_older]"
                       name="aged_65_older"
                       precision="18"
+                      scale="3"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -1951,6 +1955,7 @@
                       lineageId="Package\Upload covid\Convert to decimal.Outputs[Data Conversion Output].Columns[aged_70_older]"
                       name="aged_70_older"
                       precision="18"
+                      scale="3"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -1971,7 +1976,8 @@
                       errorRowDisposition="FailComponent"
                       lineageId="Package\Upload covid\Convert to decimal.Outputs[Data Conversion Output].Columns[gdp_per_capita]"
                       name="gdp_per_capita"
-                      precision="18"
+                      precision="30"
+                      scale="3"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -1993,6 +1999,7 @@
                       lineageId="Package\Upload covid\Convert to decimal.Outputs[Data Conversion Output].Columns[extreme_poverty]"
                       name="extreme_poverty"
                       precision="18"
+                      scale="1"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -2013,7 +2020,8 @@
                       errorRowDisposition="FailComponent"
                       lineageId="Package\Upload covid\Convert to decimal.Outputs[Data Conversion Output].Columns[cardiovasc_death_rate]"
                       name="cardiovasc_death_rate"
-                      precision="18"
+                      precision="30"
+                      scale="3"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -2035,6 +2043,7 @@
                       lineageId="Package\Upload covid\Convert to decimal.Outputs[Data Conversion Output].Columns[diabetes_prevalence]"
                       name="diabetes_prevalence"
                       precision="18"
+                      scale="2"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -2055,7 +2064,8 @@
                       errorRowDisposition="FailComponent"
                       lineageId="Package\Upload covid\Convert to decimal.Outputs[Data Conversion Output].Columns[female_smokers]"
                       name="female_smokers"
-                      precision="18"
+                      precision="30"
+                      scale="1"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -2076,7 +2086,8 @@
                       errorRowDisposition="FailComponent"
                       lineageId="Package\Upload covid\Convert to decimal.Outputs[Data Conversion Output].Columns[male_smokers]"
                       name="male_smokers"
-                      precision="18"
+                      precision="30"
+                      scale="1"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -2097,7 +2108,8 @@
                       errorRowDisposition="FailComponent"
                       lineageId="Package\Upload covid\Convert to decimal.Outputs[Data Conversion Output].Columns[handwashing_facilities]"
                       name="handwashing_facilities"
-                      precision="18"
+                      precision="30"
+                      scale="3"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -2119,6 +2131,7 @@
                       lineageId="Package\Upload covid\Convert to decimal.Outputs[Data Conversion Output].Columns[total_boosters]"
                       name="total_boosters"
                       precision="18"
+                      scale="2"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -2223,7 +2236,8 @@
                       errorRowDisposition="FailComponent"
                       lineageId="Package\Upload covid\Convert to decimal.Outputs[Data Conversion Output].Columns[new_cases_smoothed]"
                       name="new_cases_smoothed"
-                      precision="18"
+                      precision="30"
+                      scale="3"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -2286,7 +2300,8 @@
                       errorRowDisposition="FailComponent"
                       lineageId="Package\Upload covid\Convert to decimal.Outputs[Data Conversion Output].Columns[new_deaths_smoothed]"
                       name="new_deaths_smoothed"
-                      precision="18"
+                      precision="30"
+                      scale="3"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -2434,6 +2449,7 @@
                       lineageId="Package\Upload covid\Convert to decimal.Outputs[Data Conversion Output].Columns[positive_rate]"
                       name="positive_rate"
                       precision="18"
+                      scale="4"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -2455,6 +2471,7 @@
                       lineageId="Package\Upload covid\Convert to decimal.Outputs[Data Conversion Output].Columns[tests_per_case]"
                       name="tests_per_case"
                       precision="18"
+                      scale="1"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -2579,81 +2596,6 @@
               </outputs>
             </component>
             <component
-              refId="Package\Upload covid\Flat File Destination"
-              componentClassID="Microsoft.FlatFileDestination"
-              contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
-              description="Flat File Destination"
-              localeId="1045"
-              name="Flat File Destination"
-              version="1">
-              <properties>
-                <property
-                  dataType="System.Boolean"
-                  description="Specifies whether the data will overwrite or append to the destination file."
-                  name="Overwrite">true</property>
-                <property
-                  dataType="System.Null"
-                  description="Specifies the text to write to the destination file before any data is written."
-                  expressionType="Notify"
-                  name="Header" />
-                <property
-                  dataType="System.Boolean"
-                  description="When text qualifier is enabled, specifies whether the text qualifier in the data written to the destination file will be escaped or not."
-                  name="EscapeQualifier">false</property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Upload covid\Flat File Destination.Connections[FlatFileConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager]"
-                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager]"
-                  name="FlatFileConnection" />
-              </connections>
-              <inputs>
-                <input
-                  refId="Package\Upload covid\Flat File Destination.Inputs[Flat File Destination Input]"
-                  hasSideEffects="true"
-                  name="Flat File Destination Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Upload covid\Flat File Destination.Inputs[Flat File Destination Input].Columns[Flat File Source Error Output Column]"
-                      cachedCodepage="1250"
-                      cachedDataType="text"
-                      cachedName="Flat File Source Error Output Column"
-                      externalMetadataColumnId="Package\Upload covid\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Flat File Source Error Output Column]"
-                      lineageId="Package\Upload covid\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]" />
-                    <inputColumn
-                      refId="Package\Upload covid\Flat File Destination.Inputs[Flat File Destination Input].Columns[ErrorCode]"
-                      cachedDataType="i4"
-                      cachedName="ErrorCode"
-                      externalMetadataColumnId="Package\Upload covid\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ErrorCode]"
-                      lineageId="Package\Upload covid\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]" />
-                    <inputColumn
-                      refId="Package\Upload covid\Flat File Destination.Inputs[Flat File Destination Input].Columns[ErrorColumn]"
-                      cachedDataType="i4"
-                      cachedName="ErrorColumn"
-                      externalMetadataColumnId="Package\Upload covid\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ErrorColumn]"
-                      lineageId="Package\Upload covid\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]" />
-                  </inputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Upload covid\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Flat File Source Error Output Column]"
-                      codePage="1250"
-                      dataType="text"
-                      name="Flat File Source Error Output Column" />
-                    <externalMetadataColumn
-                      refId="Package\Upload covid\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ErrorCode]"
-                      dataType="i4"
-                      name="ErrorCode" />
-                    <externalMetadataColumn
-                      refId="Package\Upload covid\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ErrorColumn]"
-                      dataType="i4"
-                      name="ErrorColumn" />
-                  </externalMetadataColumns>
-                </input>
-              </inputs>
-            </component>
-            <component
               refId="Package\Upload covid\Flat File Source"
               componentClassID="Microsoft.FlatFileSource"
               contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
@@ -2689,7 +2631,7 @@
                       codePage="1250"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="RedirectRow"
+                      errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Upload covid\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[iso_code]"
                       length="3"
                       lineageId="Package\Upload covid\Flat File Source.Outputs[Flat File Source Output].Columns[iso_code]"
@@ -2711,7 +2653,7 @@
                       codePage="1250"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="RedirectRow"
+                      errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Upload covid\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[date]"
                       length="50"
                       lineageId="Package\Upload covid\Flat File Source.Outputs[Flat File Source Output].Columns[date]"
@@ -2733,7 +2675,7 @@
                       codePage="1250"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="RedirectRow"
+                      errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Upload covid\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[total_cases]"
                       length="50"
                       lineageId="Package\Upload covid\Flat File Source.Outputs[Flat File Source Output].Columns[total_cases]"
@@ -2755,7 +2697,7 @@
                       codePage="1250"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="RedirectRow"
+                      errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Upload covid\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[new_cases]"
                       length="50"
                       lineageId="Package\Upload covid\Flat File Source.Outputs[Flat File Source Output].Columns[new_cases]"
@@ -2777,7 +2719,7 @@
                       codePage="1250"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="RedirectRow"
+                      errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Upload covid\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[new_cases_smoothed]"
                       length="50"
                       lineageId="Package\Upload covid\Flat File Source.Outputs[Flat File Source Output].Columns[new_cases_smoothed]"
@@ -2799,7 +2741,7 @@
                       codePage="1250"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="RedirectRow"
+                      errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Upload covid\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[total_deaths]"
                       length="50"
                       lineageId="Package\Upload covid\Flat File Source.Outputs[Flat File Source Output].Columns[total_deaths]"
@@ -2821,7 +2763,7 @@
                       codePage="1250"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="RedirectRow"
+                      errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Upload covid\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[new_deaths]"
                       length="50"
                       lineageId="Package\Upload covid\Flat File Source.Outputs[Flat File Source Output].Columns[new_deaths]"
@@ -2843,7 +2785,7 @@
                       codePage="1250"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="RedirectRow"
+                      errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Upload covid\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[new_deaths_smoothed]"
                       length="50"
                       lineageId="Package\Upload covid\Flat File Source.Outputs[Flat File Source Output].Columns[new_deaths_smoothed]"
@@ -2865,7 +2807,7 @@
                       codePage="1250"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="RedirectRow"
+                      errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Upload covid\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[icu_patients]"
                       length="50"
                       lineageId="Package\Upload covid\Flat File Source.Outputs[Flat File Source Output].Columns[icu_patients]"
@@ -2887,7 +2829,7 @@
                       codePage="1250"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="RedirectRow"
+                      errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Upload covid\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[hosp_patients]"
                       length="50"
                       lineageId="Package\Upload covid\Flat File Source.Outputs[Flat File Source Output].Columns[hosp_patients]"
@@ -2909,7 +2851,7 @@
                       codePage="1250"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="RedirectRow"
+                      errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Upload covid\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[new_tests]"
                       length="50"
                       lineageId="Package\Upload covid\Flat File Source.Outputs[Flat File Source Output].Columns[new_tests]"
@@ -2931,7 +2873,7 @@
                       codePage="1250"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="RedirectRow"
+                      errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Upload covid\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[total_tests]"
                       length="50"
                       lineageId="Package\Upload covid\Flat File Source.Outputs[Flat File Source Output].Columns[total_tests]"
@@ -2953,7 +2895,7 @@
                       codePage="1250"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="RedirectRow"
+                      errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Upload covid\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[new_tests_smoothed]"
                       length="50"
                       lineageId="Package\Upload covid\Flat File Source.Outputs[Flat File Source Output].Columns[new_tests_smoothed]"
@@ -2975,7 +2917,7 @@
                       codePage="1250"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="RedirectRow"
+                      errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Upload covid\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[positive_rate]"
                       length="50"
                       lineageId="Package\Upload covid\Flat File Source.Outputs[Flat File Source Output].Columns[positive_rate]"
@@ -2997,7 +2939,7 @@
                       codePage="1250"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="RedirectRow"
+                      errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Upload covid\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[tests_per_case]"
                       length="50"
                       lineageId="Package\Upload covid\Flat File Source.Outputs[Flat File Source Output].Columns[tests_per_case]"
@@ -3019,7 +2961,7 @@
                       codePage="1250"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="RedirectRow"
+                      errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Upload covid\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[tests_units]"
                       length="20"
                       lineageId="Package\Upload covid\Flat File Source.Outputs[Flat File Source Output].Columns[tests_units]"
@@ -3041,7 +2983,7 @@
                       codePage="1250"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="RedirectRow"
+                      errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Upload covid\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[total_vaccinations]"
                       length="50"
                       lineageId="Package\Upload covid\Flat File Source.Outputs[Flat File Source Output].Columns[total_vaccinations]"
@@ -3063,7 +3005,7 @@
                       codePage="1250"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="RedirectRow"
+                      errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Upload covid\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[people_vaccinated]"
                       length="50"
                       lineageId="Package\Upload covid\Flat File Source.Outputs[Flat File Source Output].Columns[people_vaccinated]"
@@ -3085,7 +3027,7 @@
                       codePage="1250"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="RedirectRow"
+                      errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Upload covid\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[people_fully_vaccinated]"
                       length="50"
                       lineageId="Package\Upload covid\Flat File Source.Outputs[Flat File Source Output].Columns[people_fully_vaccinated]"
@@ -3107,7 +3049,7 @@
                       codePage="1250"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="RedirectRow"
+                      errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Upload covid\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[total_boosters]"
                       length="50"
                       lineageId="Package\Upload covid\Flat File Source.Outputs[Flat File Source Output].Columns[total_boosters]"
@@ -3129,7 +3071,7 @@
                       codePage="1250"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="RedirectRow"
+                      errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Upload covid\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[new_vaccinations]"
                       length="50"
                       lineageId="Package\Upload covid\Flat File Source.Outputs[Flat File Source Output].Columns[new_vaccinations]"
@@ -3151,7 +3093,7 @@
                       codePage="1250"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="RedirectRow"
+                      errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Upload covid\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[new_vaccinations_smoothed]"
                       length="50"
                       lineageId="Package\Upload covid\Flat File Source.Outputs[Flat File Source Output].Columns[new_vaccinations_smoothed]"
@@ -3173,7 +3115,7 @@
                       codePage="1250"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="RedirectRow"
+                      errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Upload covid\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[new_people_vaccinated_smoothed]"
                       length="50"
                       lineageId="Package\Upload covid\Flat File Source.Outputs[Flat File Source Output].Columns[new_people_vaccinated_smoothed]"
@@ -3195,7 +3137,7 @@
                       codePage="1250"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="RedirectRow"
+                      errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Upload covid\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[stringency_index]"
                       length="50"
                       lineageId="Package\Upload covid\Flat File Source.Outputs[Flat File Source Output].Columns[stringency_index]"
@@ -3217,7 +3159,7 @@
                       codePage="1250"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="RedirectRow"
+                      errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Upload covid\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[population]"
                       length="50"
                       lineageId="Package\Upload covid\Flat File Source.Outputs[Flat File Source Output].Columns[population]"
@@ -3239,7 +3181,7 @@
                       codePage="1250"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="RedirectRow"
+                      errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Upload covid\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[population_density]"
                       length="50"
                       lineageId="Package\Upload covid\Flat File Source.Outputs[Flat File Source Output].Columns[population_density]"
@@ -3261,7 +3203,7 @@
                       codePage="1250"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="RedirectRow"
+                      errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Upload covid\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[median_age]"
                       length="50"
                       lineageId="Package\Upload covid\Flat File Source.Outputs[Flat File Source Output].Columns[median_age]"
@@ -3283,7 +3225,7 @@
                       codePage="1250"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="RedirectRow"
+                      errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Upload covid\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[aged_65_older]"
                       length="50"
                       lineageId="Package\Upload covid\Flat File Source.Outputs[Flat File Source Output].Columns[aged_65_older]"
@@ -3305,7 +3247,7 @@
                       codePage="1250"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="RedirectRow"
+                      errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Upload covid\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[aged_70_older]"
                       length="50"
                       lineageId="Package\Upload covid\Flat File Source.Outputs[Flat File Source Output].Columns[aged_70_older]"
@@ -3327,7 +3269,7 @@
                       codePage="1250"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="RedirectRow"
+                      errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Upload covid\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[gdp_per_capita]"
                       length="50"
                       lineageId="Package\Upload covid\Flat File Source.Outputs[Flat File Source Output].Columns[gdp_per_capita]"
@@ -3349,7 +3291,7 @@
                       codePage="1250"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="RedirectRow"
+                      errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Upload covid\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[extreme_poverty]"
                       length="50"
                       lineageId="Package\Upload covid\Flat File Source.Outputs[Flat File Source Output].Columns[extreme_poverty]"
@@ -3371,7 +3313,7 @@
                       codePage="1250"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="RedirectRow"
+                      errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Upload covid\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[cardiovasc_death_rate]"
                       length="50"
                       lineageId="Package\Upload covid\Flat File Source.Outputs[Flat File Source Output].Columns[cardiovasc_death_rate]"
@@ -3393,7 +3335,7 @@
                       codePage="1250"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="RedirectRow"
+                      errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Upload covid\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[diabetes_prevalence]"
                       length="50"
                       lineageId="Package\Upload covid\Flat File Source.Outputs[Flat File Source Output].Columns[diabetes_prevalence]"
@@ -3415,7 +3357,7 @@
                       codePage="1250"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="RedirectRow"
+                      errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Upload covid\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[female_smokers]"
                       length="50"
                       lineageId="Package\Upload covid\Flat File Source.Outputs[Flat File Source Output].Columns[female_smokers]"
@@ -3437,7 +3379,7 @@
                       codePage="1250"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="RedirectRow"
+                      errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Upload covid\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[male_smokers]"
                       length="50"
                       lineageId="Package\Upload covid\Flat File Source.Outputs[Flat File Source Output].Columns[male_smokers]"
@@ -3459,7 +3401,7 @@
                       codePage="1250"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="RedirectRow"
+                      errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Upload covid\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[handwashing_facilities]"
                       length="50"
                       lineageId="Package\Upload covid\Flat File Source.Outputs[Flat File Source Output].Columns[handwashing_facilities]"
@@ -3481,7 +3423,7 @@
                       codePage="1250"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="RedirectRow"
+                      errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Upload covid\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[life_expectancy]"
                       length="50"
                       lineageId="Package\Upload covid\Flat File Source.Outputs[Flat File Source Output].Columns[life_expectancy]"
@@ -3503,7 +3445,7 @@
                       codePage="1250"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="RedirectRow"
+                      errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Upload covid\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[excess_mortality_cumulative_absolute]"
                       length="50"
                       lineageId="Package\Upload covid\Flat File Source.Outputs[Flat File Source Output].Columns[excess_mortality_cumulative_absolute]"
@@ -3525,7 +3467,7 @@
                       codePage="1250"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="RedirectRow"
+                      errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Upload covid\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[excess_mortality_cumulative]"
                       length="50"
                       lineageId="Package\Upload covid\Flat File Source.Outputs[Flat File Source Output].Columns[excess_mortality_cumulative]"
@@ -3547,7 +3489,7 @@
                       codePage="1250"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="RedirectRow"
+                      errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Upload covid\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[excess_mortality]"
                       length="50"
                       lineageId="Package\Upload covid\Flat File Source.Outputs[Flat File Source Output].Columns[excess_mortality]"
@@ -5008,6 +4950,7 @@
                       cachedDataType="numeric"
                       cachedName="stringency_index"
                       cachedPrecision="18"
+                      cachedScale="2"
                       externalMetadataColumnId="Package\Upload covid\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[stringency_index]"
                       lineageId="Package\Upload covid\Convert to decimal.Outputs[Data Conversion Output].Columns[stringency_index]" />
                     <inputColumn
@@ -5021,7 +4964,8 @@
                       refId="Package\Upload covid\SQL Server Destination.Inputs[SQL Server Destination Input].Columns[population_density]"
                       cachedDataType="numeric"
                       cachedName="population_density"
-                      cachedPrecision="18"
+                      cachedPrecision="30"
+                      cachedScale="3"
                       externalMetadataColumnId="Package\Upload covid\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[population_density]"
                       lineageId="Package\Upload covid\Convert to decimal.Outputs[Data Conversion Output].Columns[population_density]" />
                     <inputColumn
@@ -5029,6 +4973,7 @@
                       cachedDataType="numeric"
                       cachedName="median_age"
                       cachedPrecision="18"
+                      cachedScale="1"
                       externalMetadataColumnId="Package\Upload covid\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[median_age]"
                       lineageId="Package\Upload covid\Convert to decimal.Outputs[Data Conversion Output].Columns[median_age]" />
                     <inputColumn
@@ -5036,6 +4981,7 @@
                       cachedDataType="numeric"
                       cachedName="aged_65_older"
                       cachedPrecision="18"
+                      cachedScale="3"
                       externalMetadataColumnId="Package\Upload covid\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[aged_65_older]"
                       lineageId="Package\Upload covid\Convert to decimal.Outputs[Data Conversion Output].Columns[aged_65_older]" />
                     <inputColumn
@@ -5043,13 +4989,15 @@
                       cachedDataType="numeric"
                       cachedName="aged_70_older"
                       cachedPrecision="18"
+                      cachedScale="3"
                       externalMetadataColumnId="Package\Upload covid\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[aged_70_older]"
                       lineageId="Package\Upload covid\Convert to decimal.Outputs[Data Conversion Output].Columns[aged_70_older]" />
                     <inputColumn
                       refId="Package\Upload covid\SQL Server Destination.Inputs[SQL Server Destination Input].Columns[gdp_per_capita]"
                       cachedDataType="numeric"
                       cachedName="gdp_per_capita"
-                      cachedPrecision="18"
+                      cachedPrecision="30"
+                      cachedScale="3"
                       externalMetadataColumnId="Package\Upload covid\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[gdp_per_capita]"
                       lineageId="Package\Upload covid\Convert to decimal.Outputs[Data Conversion Output].Columns[gdp_per_capita]" />
                     <inputColumn
@@ -5057,13 +5005,15 @@
                       cachedDataType="numeric"
                       cachedName="extreme_poverty"
                       cachedPrecision="18"
+                      cachedScale="1"
                       externalMetadataColumnId="Package\Upload covid\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[extreme_poverty]"
                       lineageId="Package\Upload covid\Convert to decimal.Outputs[Data Conversion Output].Columns[extreme_poverty]" />
                     <inputColumn
                       refId="Package\Upload covid\SQL Server Destination.Inputs[SQL Server Destination Input].Columns[cardiovasc_death_rate]"
                       cachedDataType="numeric"
                       cachedName="cardiovasc_death_rate"
-                      cachedPrecision="18"
+                      cachedPrecision="30"
+                      cachedScale="3"
                       externalMetadataColumnId="Package\Upload covid\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[cardiovasc_death_rate]"
                       lineageId="Package\Upload covid\Convert to decimal.Outputs[Data Conversion Output].Columns[cardiovasc_death_rate]" />
                     <inputColumn
@@ -5071,27 +5021,31 @@
                       cachedDataType="numeric"
                       cachedName="diabetes_prevalence"
                       cachedPrecision="18"
+                      cachedScale="2"
                       externalMetadataColumnId="Package\Upload covid\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[diabetes_prevalence]"
                       lineageId="Package\Upload covid\Convert to decimal.Outputs[Data Conversion Output].Columns[diabetes_prevalence]" />
                     <inputColumn
                       refId="Package\Upload covid\SQL Server Destination.Inputs[SQL Server Destination Input].Columns[female_smokers]"
                       cachedDataType="numeric"
                       cachedName="female_smokers"
-                      cachedPrecision="18"
+                      cachedPrecision="30"
+                      cachedScale="1"
                       externalMetadataColumnId="Package\Upload covid\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[female_smokers]"
                       lineageId="Package\Upload covid\Convert to decimal.Outputs[Data Conversion Output].Columns[female_smokers]" />
                     <inputColumn
                       refId="Package\Upload covid\SQL Server Destination.Inputs[SQL Server Destination Input].Columns[male_smokers]"
                       cachedDataType="numeric"
                       cachedName="male_smokers"
-                      cachedPrecision="18"
+                      cachedPrecision="30"
+                      cachedScale="1"
                       externalMetadataColumnId="Package\Upload covid\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[male_smokers]"
                       lineageId="Package\Upload covid\Convert to decimal.Outputs[Data Conversion Output].Columns[male_smokers]" />
                     <inputColumn
                       refId="Package\Upload covid\SQL Server Destination.Inputs[SQL Server Destination Input].Columns[handwashing_facilities]"
                       cachedDataType="numeric"
                       cachedName="handwashing_facilities"
-                      cachedPrecision="18"
+                      cachedPrecision="30"
+                      cachedScale="3"
                       externalMetadataColumnId="Package\Upload covid\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[handwashing_facilities]"
                       lineageId="Package\Upload covid\Convert to decimal.Outputs[Data Conversion Output].Columns[handwashing_facilities]" />
                     <inputColumn
@@ -5099,6 +5053,7 @@
                       cachedDataType="numeric"
                       cachedName="total_boosters"
                       cachedPrecision="18"
+                      cachedScale="2"
                       externalMetadataColumnId="Package\Upload covid\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[total_boosters]"
                       lineageId="Package\Upload covid\Convert to decimal.Outputs[Data Conversion Output].Columns[total_boosters]" />
                     <inputColumn
@@ -5127,6 +5082,7 @@
                       cachedDataType="numeric"
                       cachedName="tests_per_case"
                       cachedPrecision="18"
+                      cachedScale="1"
                       externalMetadataColumnId="Package\Upload covid\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[tests_per_case]"
                       lineageId="Package\Upload covid\Convert to decimal.Outputs[Data Conversion Output].Columns[tests_per_case]" />
                     <inputColumn
@@ -5134,6 +5090,7 @@
                       cachedDataType="numeric"
                       cachedName="positive_rate"
                       cachedPrecision="18"
+                      cachedScale="4"
                       externalMetadataColumnId="Package\Upload covid\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[positive_rate]"
                       lineageId="Package\Upload covid\Convert to decimal.Outputs[Data Conversion Output].Columns[positive_rate]" />
                     <inputColumn
@@ -5175,7 +5132,8 @@
                       refId="Package\Upload covid\SQL Server Destination.Inputs[SQL Server Destination Input].Columns[new_deaths_smoothed]"
                       cachedDataType="numeric"
                       cachedName="new_deaths_smoothed"
-                      cachedPrecision="18"
+                      cachedPrecision="30"
+                      cachedScale="3"
                       externalMetadataColumnId="Package\Upload covid\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[new_deaths_smoothed]"
                       lineageId="Package\Upload covid\Convert to decimal.Outputs[Data Conversion Output].Columns[new_deaths_smoothed]" />
                     <inputColumn
@@ -5196,7 +5154,8 @@
                       refId="Package\Upload covid\SQL Server Destination.Inputs[SQL Server Destination Input].Columns[new_cases_smoothed]"
                       cachedDataType="numeric"
                       cachedName="new_cases_smoothed"
-                      cachedPrecision="18"
+                      cachedPrecision="30"
+                      cachedScale="3"
                       externalMetadataColumnId="Package\Upload covid\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[new_cases_smoothed]"
                       lineageId="Package\Upload covid\Convert to decimal.Outputs[Data Conversion Output].Columns[new_cases_smoothed]" />
                     <inputColumn
@@ -5226,8 +5185,7 @@
                       refId="Package\Upload covid\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[total_cases]"
                       dataType="numeric"
                       name="total_cases"
-                      precision="30"
-                      scale="1" />
+                      precision="18" />
                     <externalMetadataColumn
                       refId="Package\Upload covid\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[new_cases]"
                       dataType="numeric"
@@ -5237,7 +5195,8 @@
                       refId="Package\Upload covid\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[new_cases_smoothed]"
                       dataType="numeric"
                       name="new_cases_smoothed"
-                      precision="18" />
+                      precision="30"
+                      scale="3" />
                     <externalMetadataColumn
                       refId="Package\Upload covid\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[total_deaths]"
                       dataType="numeric"
@@ -5252,7 +5211,8 @@
                       refId="Package\Upload covid\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[new_deaths_smoothed]"
                       dataType="numeric"
                       name="new_deaths_smoothed"
-                      precision="18" />
+                      precision="30"
+                      scale="3" />
                     <externalMetadataColumn
                       refId="Package\Upload covid\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[icu_patients]"
                       dataType="numeric"
@@ -5282,12 +5242,14 @@
                       refId="Package\Upload covid\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[positive_rate]"
                       dataType="numeric"
                       name="positive_rate"
-                      precision="18" />
+                      precision="18"
+                      scale="4" />
                     <externalMetadataColumn
                       refId="Package\Upload covid\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[tests_per_case]"
                       dataType="numeric"
                       name="tests_per_case"
-                      precision="18" />
+                      precision="18"
+                      scale="1" />
                     <externalMetadataColumn
                       refId="Package\Upload covid\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[tests_units]"
                       codePage="1250"
@@ -5333,7 +5295,8 @@
                       refId="Package\Upload covid\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[stringency_index]"
                       dataType="numeric"
                       name="stringency_index"
-                      precision="18" />
+                      precision="18"
+                      scale="2" />
                     <externalMetadataColumn
                       refId="Package\Upload covid\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[population]"
                       dataType="numeric"
@@ -5343,62 +5306,74 @@
                       refId="Package\Upload covid\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[population_density]"
                       dataType="numeric"
                       name="population_density"
-                      precision="18" />
+                      precision="30"
+                      scale="3" />
                     <externalMetadataColumn
                       refId="Package\Upload covid\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[median_age]"
                       dataType="numeric"
                       name="median_age"
-                      precision="18" />
+                      precision="18"
+                      scale="1" />
                     <externalMetadataColumn
                       refId="Package\Upload covid\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[aged_65_older]"
                       dataType="numeric"
                       name="aged_65_older"
-                      precision="18" />
+                      precision="18"
+                      scale="3" />
                     <externalMetadataColumn
                       refId="Package\Upload covid\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[aged_70_older]"
                       dataType="numeric"
                       name="aged_70_older"
-                      precision="18" />
+                      precision="18"
+                      scale="3" />
                     <externalMetadataColumn
                       refId="Package\Upload covid\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[gdp_per_capita]"
                       dataType="numeric"
                       name="gdp_per_capita"
-                      precision="18" />
+                      precision="30"
+                      scale="3" />
                     <externalMetadataColumn
                       refId="Package\Upload covid\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[extreme_poverty]"
                       dataType="numeric"
                       name="extreme_poverty"
-                      precision="18" />
+                      precision="18"
+                      scale="1" />
                     <externalMetadataColumn
                       refId="Package\Upload covid\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[cardiovasc_death_rate]"
                       dataType="numeric"
                       name="cardiovasc_death_rate"
-                      precision="18" />
+                      precision="30"
+                      scale="3" />
                     <externalMetadataColumn
                       refId="Package\Upload covid\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[diabetes_prevalence]"
                       dataType="numeric"
                       name="diabetes_prevalence"
-                      precision="18" />
+                      precision="18"
+                      scale="2" />
                     <externalMetadataColumn
                       refId="Package\Upload covid\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[female_smokers]"
                       dataType="numeric"
                       name="female_smokers"
-                      precision="18" />
+                      precision="30"
+                      scale="1" />
                     <externalMetadataColumn
                       refId="Package\Upload covid\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[male_smokers]"
                       dataType="numeric"
                       name="male_smokers"
-                      precision="18" />
+                      precision="30"
+                      scale="1" />
                     <externalMetadataColumn
                       refId="Package\Upload covid\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[handwashing_facilities]"
                       dataType="numeric"
                       name="handwashing_facilities"
-                      precision="18" />
+                      precision="30"
+                      scale="3" />
                     <externalMetadataColumn
                       refId="Package\Upload covid\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[life_expectancy]"
                       dataType="numeric"
                       name="life_expectancy"
-                      precision="18" />
+                      precision="18"
+                      scale="2" />
                     <externalMetadataColumn
                       refId="Package\Upload covid\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[excess_mortality]"
                       dataType="numeric"
@@ -5435,11 +5410,6 @@
               endId="Package\Upload covid\Convert to decimal.Inputs[Data Conversion Input]"
               name="Derived Column Output"
               startId="Package\Upload covid\Change dot to coma.Outputs[Derived Column Output]" />
-            <path
-              refId="Package\Upload covid.Paths[Flat File Source Error Output]"
-              endId="Package\Upload covid\Flat File Destination.Inputs[Flat File Destination Input]"
-              name="Flat File Source Error Output"
-              startId="Package\Upload covid\Flat File Source.Outputs[Flat File Source Error Output]" />
             <path
               refId="Package\Upload covid.Paths[Flat File Source Output]"
               endId="Package\Upload covid\Set nulls.Inputs[Derived Column Input]"
@@ -5509,49 +5479,75 @@
     design-time-name="Package\Upload covid">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="187.2,41.6"
-          Id="Package\Upload covid\SQL Server Destination"
-          TopLeft="98.5714302500901,251.588238822548" />
-        <NodeLayout
-          Size="166.4,41.6"
-          Id="Package\Upload covid\Convert to decimal"
-          TopLeft="347.857148781115,258.82353292947" />
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="118.4,41.6"
           Id="Package\Upload covid\Set nulls"
           TopLeft="114.285716231989,115.164707351639" />
         <NodeLayout
+          Size="187.2,41.6"
+          Id="Package\Upload covid\SQL Server Destination"
+          TopLeft="98.5714302500901,251.588238822548" />
+        <NodeLayout
           Size="150.4,41.6"
           Id="Package\Upload covid\Flat File Source"
-          TopLeft="108.57143042039,41.2941182261933" />
+          TopLeft="111.42857332619,44.3529417985039" />
+        <NodeLayout
+          Size="173.6,41.6"
+          Id="Package\Upload covid\Change dot to coma"
+          TopLeft="329.285719893417,116.235295747803" />
+        <NodeLayout
+          Size="166.4,41.6"
+          Id="Package\Upload covid\Convert to decimal"
+          TopLeft="347.857148781115,258.82353292947" />
         <EdgeLayout
-          Id="Package\Upload covid.Paths[Flat File Source Output]"
-          TopLeft="183.77143042039,82.8941182261933">
+          Id="Package\Upload covid.Paths[Derived Column Output1]"
+          TopLeft="416.085719893417,157.835295747803">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-10.2857141884008,32.2705891254454"
+              EndConnector="14.9714288876983,100.988237181667"
               Start="0,0"
-              End="-10.2857141884008,24.7705891254454">
+              End="14.9714288876983,93.4882371816672">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,12.1352945627227" />
+                    End="0,46.4941185908336" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,12.1352945627227"
-                    Point2="0,16.1352945627227"
-                    Point3="-4,16.1352945627227" />
+                    Point1="0,46.4941185908336"
+                    Point2="0,50.4941185908336"
+                    Point3="4,50.4941185908336" />
                   <mssgle:LineSegment
-                    End="-6.28571418840076,16.1352945627227" />
+                    End="10.9714288876983,50.4941185908336" />
                   <mssgle:CubicBezierSegment
-                    Point1="-6.28571418840076,16.1352945627227"
-                    Point2="-10.2857141884008,16.1352945627227"
-                    Point3="-10.2857141884008,20.1352945627227" />
+                    Point1="10.9714288876983,50.4941185908336"
+                    Point2="14.9714288876983,50.4941185908336"
+                    Point3="14.9714288876983,54.4941185908336" />
                   <mssgle:LineSegment
-                    End="-10.2857141884008,24.7705891254454" />
+                    End="14.9714288876983,93.4882371816672" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Upload covid.Paths[Derived Column Output]"
+          TopLeft="232.685716231989,136.500001549721">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="96.6000036614278,0"
+              Start="0,0"
+              End="89.1000036614278,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="89.1000036614278,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5582,86 +5578,32 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="171.2,41.6"
-          Id="Package\Upload covid\Flat File Destination"
-          TopLeft="283.571433400621,37.470588760805" />
         <EdgeLayout
-          Id="Package\Upload covid.Paths[Flat File Source Error Output]"
-          TopLeft="258.97143042039,60.1823534934991">
+          Id="Package\Upload covid.Paths[Flat File Source Output]"
+          TopLeft="186.62857332619,85.9529417985039">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="24.6000029802316,0"
+              EndConnector="-13.1428570942007,29.2117655531351"
               Start="0,0"
-              End="17.1000029802316,0">
+              End="-13.1428570942007,21.7117655531351">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="17.1000029802316,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-55.0763852286342,5,127.2527734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="173.6,41.6"
-          Id="Package\Upload covid\Change dot to coma"
-          TopLeft="329.285719893417,116.235295747803" />
-        <EdgeLayout
-          Id="Package\Upload covid.Paths[Derived Column Output]"
-          TopLeft="232.685716231989,136.500001549721">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="96.6000036614278,0"
-              Start="0,0"
-              End="89.1000036614278,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="89.1000036614278,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Upload covid.Paths[Derived Column Output1]"
-          TopLeft="416.085719893417,157.835295747803">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="14.9714288876983,100.988237181667"
-              Start="0,0"
-              End="14.9714288876983,93.4882371816672">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,46.4941185908336" />
+                    End="0,10.6058827765675" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,46.4941185908336"
-                    Point2="0,50.4941185908336"
-                    Point3="4,50.4941185908336" />
+                    Point1="0,10.6058827765675"
+                    Point2="0,14.6058827765675"
+                    Point3="-4,14.6058827765675" />
                   <mssgle:LineSegment
-                    End="10.9714288876983,50.4941185908336" />
+                    End="-9.14285709420074,14.6058827765675" />
                   <mssgle:CubicBezierSegment
-                    Point1="10.9714288876983,50.4941185908336"
-                    Point2="14.9714288876983,50.4941185908336"
-                    Point3="14.9714288876983,54.4941185908336" />
+                    Point1="-9.14285709420074,14.6058827765675"
+                    Point2="-13.1428570942007,14.6058827765675"
+                    Point3="-13.1428570942007,18.6058827765675" />
                   <mssgle:LineSegment
-                    End="14.9714288876983,93.4882371816672" />
+                    End="-13.1428570942007,21.7117655531351" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
