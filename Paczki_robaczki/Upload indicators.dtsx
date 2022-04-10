@@ -11,8 +11,8 @@
   DTS:LocaleID="1045"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="17"
-  DTS:VersionGUID="{F8D948F7-EED2-4958-B50F-3C2FE5B0B113}">
+  DTS:VersionBuild="24"
+  DTS:VersionGUID="{DBC2038B-6791-4275-AC3B-DAFC043C054C}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -251,6 +251,161 @@
           version="1">
           <components>
             <component
+              refId="Package\Upload death rate\Change dot to coma"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Change dot to coma"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Upload death rate\Change dot to coma.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Upload death rate\Change dot to coma.Inputs[Derived Column Input].Columns[&quot;Year 2019&quot;]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="16"
+                      cachedName="&quot;Year 2019&quot;"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Upload death rate\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;Year 2019&quot;]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[REPLACE](#{Package\Upload death rate\Flat File Source.Outputs[Flat File Source Output].Columns["Year 2019"]},".",",")</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">REPLACE(["Year 2019"],".",",")</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Upload death rate\Change dot to coma.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Upload death rate\Change dot to coma.Inputs[Derived Column Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Upload death rate\Change dot to coma.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Upload death rate\Change dot to coma.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Upload death rate\Change dot to coma.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Upload death rate\Change dot to coma.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Upload death rate\Change dot to coma.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Upload death rate\Change dot to coma.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Upload death rate\Convert to decimal"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Convert to decimal"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Upload death rate\Convert to decimal.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Upload death rate\Convert to decimal.Inputs[Data Conversion Input].Columns[&quot;Year 2019&quot;]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="16"
+                      cachedName="&quot;Year 2019&quot;"
+                      lineageId="Package\Upload death rate\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;Year 2019&quot;]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Upload death rate\Convert to decimal.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Upload death rate\Convert to decimal.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Upload death rate\Convert to decimal.Outputs[Data Conversion Output].Columns[Copy of &quot;Year 2019&quot;]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Upload death rate\Convert to decimal.Outputs[Data Conversion Output].Columns[Copy of &quot;Year 2019&quot;]"
+                      name="Copy of &quot;Year 2019&quot;"
+                      precision="20"
+                      scale="14"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Upload death rate\Flat File Source.Outputs[Flat File Source Output].Columns["Year 2019"]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Upload death rate\Convert to decimal.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Upload death rate\Convert to decimal.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Upload death rate\Convert to decimal.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Upload death rate\Convert to decimal.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Upload death rate\Convert to decimal.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Upload death rate\Convert to decimal.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
               refId="Package\Upload death rate\Flat File Source"
               componentClassID="Microsoft.FlatFileSource"
               contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
@@ -372,6 +527,82 @@
               </outputs>
             </component>
             <component
+              refId="Package\Upload death rate\Set nulls"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Set nulls"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Upload death rate\Set nulls.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Upload death rate\Set nulls.Inputs[Derived Column Input].Columns[&quot;Year 2019&quot;]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="16"
+                      cachedName="&quot;Year 2019&quot;"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Upload death rate\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;Year 2019&quot;]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[LEN]([TRIM](#{Package\Upload death rate\Flat File Source.Outputs[Flat File Source Output].Columns["Year 2019"]})) == 0 ? NULL(DT_WSTR,10) : #{Package\Upload death rate\Flat File Source.Outputs[Flat File Source Output].Columns["Year 2019"]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">LEN(TRIM(["Year 2019"])) == 0 ? NULL(DT_WSTR,10) : ["Year 2019"]</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Upload death rate\Set nulls.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Upload death rate\Set nulls.Inputs[Derived Column Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Upload death rate\Set nulls.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Upload death rate\Set nulls.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Upload death rate\Set nulls.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Upload death rate\Set nulls.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Upload death rate\Set nulls.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Upload death rate\Set nulls.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
               refId="Package\Upload death rate\SQL Server Destination"
               componentClassID="Microsoft.SQLServerDestination"
               contactInfo="SQL Server Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;5"
@@ -464,13 +695,13 @@
                       externalMetadataColumnId="Package\Upload death rate\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[Country Code]"
                       lineageId="Package\Upload death rate\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;Country Code&quot;]" />
                     <inputColumn
-                      refId="Package\Upload death rate\SQL Server Destination.Inputs[SQL Server Destination Input].Columns[&quot;Year 2019&quot;]"
-                      cachedCodepage="1250"
-                      cachedDataType="str"
-                      cachedLength="16"
-                      cachedName="&quot;Year 2019&quot;"
+                      refId="Package\Upload death rate\SQL Server Destination.Inputs[SQL Server Destination Input].Columns[Copy of &quot;Year 2019&quot;]"
+                      cachedDataType="numeric"
+                      cachedName="Copy of &quot;Year 2019&quot;"
+                      cachedPrecision="20"
+                      cachedScale="14"
                       externalMetadataColumnId="Package\Upload death rate\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[Year 2019]"
-                      lineageId="Package\Upload death rate\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;Year 2019&quot;]" />
+                      lineageId="Package\Upload death rate\Convert to decimal.Outputs[Data Conversion Output].Columns[Copy of &quot;Year 2019&quot;]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -486,10 +717,10 @@
                       name="Country Code" />
                     <externalMetadataColumn
                       refId="Package\Upload death rate\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[Year 2019]"
-                      codePage="1250"
-                      dataType="str"
-                      length="16"
-                      name="Year 2019" />
+                      dataType="numeric"
+                      name="Year 2019"
+                      precision="20"
+                      scale="14" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -497,8 +728,23 @@
           </components>
           <paths>
             <path
-              refId="Package\Upload death rate.Paths[Flat File Source Output]"
+              refId="Package\Upload death rate.Paths[Data Conversion Output]"
               endId="Package\Upload death rate\SQL Server Destination.Inputs[SQL Server Destination Input]"
+              name="Data Conversion Output"
+              startId="Package\Upload death rate\Convert to decimal.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Upload death rate.Paths[Derived Column Output]"
+              endId="Package\Upload death rate\Change dot to coma.Inputs[Derived Column Input]"
+              name="Derived Column Output"
+              startId="Package\Upload death rate\Set nulls.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Upload death rate.Paths[Derived Column Output1]"
+              endId="Package\Upload death rate\Convert to decimal.Inputs[Data Conversion Input]"
+              name="Derived Column Output"
+              startId="Package\Upload death rate\Change dot to coma.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Upload death rate.Paths[Flat File Source Output]"
+              endId="Package\Upload death rate\Set nulls.Inputs[Derived Column Input]"
               name="Flat File Source Output"
               startId="Package\Upload death rate\Flat File Source.Outputs[Flat File Source Output]" />
           </paths>
@@ -1270,14 +1516,6 @@
                       cachedName="&quot;Country Code&quot;"
                       externalMetadataColumnId="Package\Upload tourism\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[Country Code]"
                       lineageId="Package\Upload tourism\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;Country Code&quot;]" />
-                    <inputColumn
-                      refId="Package\Upload tourism\SQL Server Destination.Inputs[SQL Server Destination Input].Columns[&quot;Year 2018&quot;]"
-                      cachedCodepage="1250"
-                      cachedDataType="str"
-                      cachedLength="17"
-                      cachedName="&quot;Year 2018&quot;"
-                      externalMetadataColumnId="Package\Upload tourism\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[Year 2018]"
-                      lineageId="Package\Upload tourism\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;Year 2018&quot;]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1292,11 +1530,10 @@
                       length="3"
                       name="Country Code" />
                     <externalMetadataColumn
-                      refId="Package\Upload tourism\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[Year 2018]"
-                      codePage="1250"
-                      dataType="str"
-                      length="17"
-                      name="Year 2018" />
+                      refId="Package\Upload tourism\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[Year 2019]"
+                      dataType="numeric"
+                      name="Year 2019"
+                      precision="18" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -1639,11 +1876,11 @@
         <NodeLayout
           Size="168.8,41.6"
           Id="Package\Truncate indicators"
-          TopLeft="197.642860415031,55.2058830500474" />
+          TopLeft="198.357146141481,56.7352948362027" />
         <NodeLayout
           Size="163.2,41.6"
           Id="Package\Upload death rate"
-          TopLeft="207.857146396929,123.88235467858" />
+          TopLeft="207.857146396929,126.94117825089" />
         <NodeLayout
           Size="148,41.6"
           Id="Package\Upload density"
@@ -1662,18 +1899,18 @@
           TopLeft="200.71428913243,428.235300123485" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="287.485717849829,165.48235467858">
+          TopLeft="287.485717849829,168.54117825089">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,42.5176482385418"
+              EndConnector="0,39.4588246662317"
               Start="0,0"
-              End="0,35.0176482385418">
+              End="0,31.9588246662317">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,35.0176482385418" />
+                    End="0,31.9588246662317" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1750,18 +1987,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 4]"
-          TopLeft="285.75000340598,96.8058830500474">
+          TopLeft="286.107146269205,98.3352948362027">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,27.0764716285323"
+              EndConnector="0,28.6058834146873"
               Start="0,0"
-              End="0,19.5764716285323">
+              End="0,21.1058834146873">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,19.5764716285323" />
+                    End="0,21.1058834146873" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1777,49 +2014,149 @@
     design-time-name="Package\Upload death rate">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="187.2,41.6"
           Id="Package\Upload death rate\SQL Server Destination"
-          TopLeft="186,210" />
+          TopLeft="214.571429057997,248.235294653883" />
         <NodeLayout
           Size="150.4,41.6"
           Id="Package\Upload death rate\Flat File Source"
-          TopLeft="183,119" />
+          TopLeft="182.28571427355,125.882353037699" />
+        <NodeLayout
+          Size="118.4,41.6"
+          Id="Package\Upload death rate\Set nulls"
+          TopLeft="354.285720319164,135.352943074745" />
         <EdgeLayout
           Id="Package\Upload death rate.Paths[Flat File Source Output]"
-          TopLeft="258.2,160.6">
+          TopLeft="257.48571427355,125.882353037699">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="21.4,49.4"
+              EndConnector="156.000006045614,9.47059003704565"
               Start="0,0"
-              End="21.4,41.9">
+              End="156.000006045614,1.97059003704565">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,20.7" />
+                    End="0,-18.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,20.7"
-                    Point2="0,24.7"
-                    Point3="4,24.7" />
+                    Point1="0,-18.5"
+                    Point2="0,-22.5"
+                    Point3="4,-22.5" />
                   <mssgle:LineSegment
-                    End="17.4,24.7" />
+                    End="152.000006045614,-22.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="17.4,24.7"
-                    Point2="21.4,24.7"
-                    Point3="21.4,28.7" />
+                    Point1="152.000006045614,-22.5"
+                    Point2="156.000006045614,-22.5"
+                    Point3="156.000006045614,-18.5" />
                   <mssgle:LineSegment
-                    End="21.4,41.9" />
+                    End="156.000006045614,1.97059003704565" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="173.6,41.6"
+          Id="Package\Upload death rate\Change dot to coma"
+          TopLeft="503.571437147199,138.411766647055" />
+        <EdgeLayout
+          Id="Package\Upload death rate.Paths[Derived Column Output]"
+          TopLeft="472.685720319164,157.6823548609">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="30.8857168280352,0"
+              Start="0,0"
+              End="23.3857168280352,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="23.3857168280352,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="166.4,41.6"
+          Id="Package\Upload death rate\Convert to decimal"
+          TopLeft="522.857151761347,226.352944350985" />
+        <EdgeLayout
+          Id="Package\Upload death rate.Paths[Derived Column Output1]"
+          TopLeft="590.371437147199,180.011766647055">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="15.6857146141476,46.34117770393"
+              Start="0,0"
+              End="15.6857146141476,38.84117770393">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.170588851965" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.170588851965"
+                    Point2="0,23.170588851965"
+                    Point3="4,23.170588851965" />
+                  <mssgle:LineSegment
+                    End="11.6857146141476,23.170588851965" />
+                  <mssgle:CubicBezierSegment
+                    Point1="11.6857146141476,23.170588851965"
+                    Point2="15.6857146141476,23.170588851965"
+                    Point3="15.6857146141476,27.170588851965" />
+                  <mssgle:LineSegment
+                    End="15.6857146141476,38.84117770393" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Upload death rate.Paths[Data Conversion Output]"
+          TopLeft="522.857151761347,247.152944350985">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-121.08572270335,21.8823503028974"
+              Start="0,0"
+              End="-113.58572270335,21.8823503028974">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-56.5428613516749,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-56.5428613516749,0"
+                    Point2="-60.5428613516749,0"
+                    Point3="-60.5428613516749,4" />
+                  <mssgle:LineSegment
+                    End="-60.5428613516749,17.8823503028974" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-60.5428613516749,17.8823503028974"
+                    Point2="-60.5428613516749,21.8823503028974"
+                    Point3="-64.5428613516749,21.8823503028974" />
+                  <mssgle:LineSegment
+                    End="-113.58572270335,21.8823503028974" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
