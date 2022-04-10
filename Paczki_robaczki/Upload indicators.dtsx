@@ -11,8 +11,8 @@
   DTS:LocaleID="1045"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="24"
-  DTS:VersionGUID="{DBC2038B-6791-4275-AC3B-DAFC043C054C}">
+  DTS:VersionBuild="29"
+  DTS:VersionGUID="{7B559FE2-4264-4664-AB7A-C9AA15400DD3}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -766,6 +766,161 @@
           version="1">
           <components>
             <component
+              refId="Package\Upload density\decimals"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="decimals"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Upload density\decimals.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Upload density\decimals.Inputs[Data Conversion Input].Columns[Year 2020]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="17"
+                      cachedName="Year 2020"
+                      lineageId="Package\Upload density\Flat File Source.Outputs[Flat File Source Output].Columns[Year 2020]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Upload density\decimals.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Upload density\decimals.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Upload density\decimals.Outputs[Data Conversion Output].Columns[Copy of Year 2020]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Upload density\decimals.Outputs[Data Conversion Output].Columns[Copy of Year 2020]"
+                      name="Copy of Year 2020"
+                      precision="30"
+                      scale="15"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Upload density\Flat File Source.Outputs[Flat File Source Output].Columns[Year 2020]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Upload density\decimals.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Upload density\decimals.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Upload density\decimals.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Upload density\decimals.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Upload density\decimals.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Upload density\decimals.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Upload density\Dot to coma"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Dot to coma"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Upload density\Dot to coma.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Upload density\Dot to coma.Inputs[Derived Column Input].Columns[Year 2020]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="17"
+                      cachedName="Year 2020"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Upload density\Flat File Source.Outputs[Flat File Source Output].Columns[Year 2020]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[REPLACE](#{Package\Upload density\Flat File Source.Outputs[Flat File Source Output].Columns[Year 2020]},".",",")</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">REPLACE([Year 2020],".",",")</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Upload density\Dot to coma.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Upload density\Dot to coma.Inputs[Derived Column Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Upload density\Dot to coma.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Upload density\Dot to coma.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Upload density\Dot to coma.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Upload density\Dot to coma.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Upload density\Dot to coma.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Upload density\Dot to coma.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
               refId="Package\Upload density\Flat File Source"
               componentClassID="Microsoft.FlatFileSource"
               contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
@@ -887,6 +1042,82 @@
               </outputs>
             </component>
             <component
+              refId="Package\Upload density\Nulls"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Nulls"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Upload density\Nulls.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Upload density\Nulls.Inputs[Derived Column Input].Columns[Year 2020]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="17"
+                      cachedName="Year 2020"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Upload density\Flat File Source.Outputs[Flat File Source Output].Columns[Year 2020]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[LEN]([TRIM](#{Package\Upload density\Flat File Source.Outputs[Flat File Source Output].Columns[Year 2020]})) == 0 ? NULL(DT_WSTR,10) : #{Package\Upload density\Flat File Source.Outputs[Flat File Source Output].Columns[Year 2020]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">LEN(TRIM([Year 2020])) == 0 ? NULL(DT_WSTR,10) : [Year 2020]</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Upload density\Nulls.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Upload density\Nulls.Inputs[Derived Column Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Upload density\Nulls.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Upload density\Nulls.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Upload density\Nulls.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Upload density\Nulls.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Upload density\Nulls.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Upload density\Nulls.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
               refId="Package\Upload density\SQL Server Destination"
               componentClassID="Microsoft.SQLServerDestination"
               contactInfo="SQL Server Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;5"
@@ -979,13 +1210,13 @@
                       externalMetadataColumnId="Package\Upload density\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[Country Code]"
                       lineageId="Package\Upload density\Flat File Source.Outputs[Flat File Source Output].Columns[Country Code]" />
                     <inputColumn
-                      refId="Package\Upload density\SQL Server Destination.Inputs[SQL Server Destination Input].Columns[Year 2020]"
-                      cachedCodepage="1250"
-                      cachedDataType="str"
-                      cachedLength="17"
-                      cachedName="Year 2020"
+                      refId="Package\Upload density\SQL Server Destination.Inputs[SQL Server Destination Input].Columns[Copy of Year 2020]"
+                      cachedDataType="numeric"
+                      cachedName="Copy of Year 2020"
+                      cachedPrecision="30"
+                      cachedScale="15"
                       externalMetadataColumnId="Package\Upload density\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[Year 2020]"
-                      lineageId="Package\Upload density\Flat File Source.Outputs[Flat File Source Output].Columns[Year 2020]" />
+                      lineageId="Package\Upload density\decimals.Outputs[Data Conversion Output].Columns[Copy of Year 2020]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1001,10 +1232,10 @@
                       name="Country Code" />
                     <externalMetadataColumn
                       refId="Package\Upload density\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[Year 2020]"
-                      codePage="1250"
-                      dataType="str"
-                      length="17"
-                      name="Year 2020" />
+                      dataType="numeric"
+                      name="Year 2020"
+                      precision="30"
+                      scale="15" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -1012,8 +1243,23 @@
           </components>
           <paths>
             <path
-              refId="Package\Upload density.Paths[Flat File Source Output]"
+              refId="Package\Upload density.Paths[Data Conversion Output]"
               endId="Package\Upload density\SQL Server Destination.Inputs[SQL Server Destination Input]"
+              name="Data Conversion Output"
+              startId="Package\Upload density\decimals.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Upload density.Paths[Derived Column Output]"
+              endId="Package\Upload density\Dot to coma.Inputs[Derived Column Input]"
+              name="Derived Column Output"
+              startId="Package\Upload density\Nulls.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Upload density.Paths[Derived Column Output1]"
+              endId="Package\Upload density\decimals.Inputs[Data Conversion Input]"
+              name="Derived Column Output"
+              startId="Package\Upload density\Dot to coma.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Upload density.Paths[Flat File Source Output]"
+              endId="Package\Upload density\Nulls.Inputs[Derived Column Input]"
               name="Flat File Source Output"
               startId="Package\Upload density\Flat File Source.Outputs[Flat File Source Output]" />
           </paths>
@@ -1034,6 +1280,82 @@
         <pipeline
           version="1">
           <components>
+            <component
+              refId="Package\Upload pop_total\Dot to coma"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Dot to coma"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Upload pop_total\Dot to coma.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Upload pop_total\Dot to coma.Inputs[Derived Column Input].Columns[Year 2020]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="12"
+                      cachedName="Year 2020"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Upload pop_total\Flat File Source.Outputs[Flat File Source Output].Columns[Year 2020]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[REPLACE](#{Package\Upload pop_total\Flat File Source.Outputs[Flat File Source Output].Columns[Year 2020]},".",",")</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">REPLACE([Year 2020],".",",")</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Upload pop_total\Dot to coma.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Upload pop_total\Dot to coma.Inputs[Derived Column Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Upload pop_total\Dot to coma.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Upload pop_total\Dot to coma.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Upload pop_total\Dot to coma.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Upload pop_total\Dot to coma.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Upload pop_total\Dot to coma.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Upload pop_total\Dot to coma.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
             <component
               refId="Package\Upload pop_total\Flat File Source"
               componentClassID="Microsoft.FlatFileSource"
@@ -1156,6 +1478,159 @@
               </outputs>
             </component>
             <component
+              refId="Package\Upload pop_total\Integer"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Integer"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Upload pop_total\Integer.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Upload pop_total\Integer.Inputs[Data Conversion Input].Columns[Year 2020]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="12"
+                      cachedName="Year 2020"
+                      lineageId="Package\Upload pop_total\Flat File Source.Outputs[Flat File Source Output].Columns[Year 2020]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Upload pop_total\Integer.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Upload pop_total\Integer.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Upload pop_total\Integer.Outputs[Data Conversion Output].Columns[Copy of Year 2020]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Upload pop_total\Integer.Outputs[Data Conversion Output].Columns[Copy of Year 2020]"
+                      name="Copy of Year 2020"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Upload pop_total\Flat File Source.Outputs[Flat File Source Output].Columns[Year 2020]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Upload pop_total\Integer.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Upload pop_total\Integer.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Upload pop_total\Integer.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Upload pop_total\Integer.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Upload pop_total\Integer.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Upload pop_total\Integer.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Upload pop_total\Nulls"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Nulls"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Upload pop_total\Nulls.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Upload pop_total\Nulls.Inputs[Derived Column Input].Columns[Year 2020]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="12"
+                      cachedName="Year 2020"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Upload pop_total\Flat File Source.Outputs[Flat File Source Output].Columns[Year 2020]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[LEN]([TRIM](#{Package\Upload pop_total\Flat File Source.Outputs[Flat File Source Output].Columns[Year 2020]})) == 0 ? NULL(DT_WSTR,10) : #{Package\Upload pop_total\Flat File Source.Outputs[Flat File Source Output].Columns[Year 2020]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">LEN(TRIM([Year 2020])) == 0 ? NULL(DT_WSTR,10) : [Year 2020]</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Upload pop_total\Nulls.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Upload pop_total\Nulls.Inputs[Derived Column Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Upload pop_total\Nulls.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Upload pop_total\Nulls.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Upload pop_total\Nulls.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Upload pop_total\Nulls.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Upload pop_total\Nulls.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Upload pop_total\Nulls.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
               refId="Package\Upload pop_total\SQL Server Destination"
               componentClassID="Microsoft.SQLServerDestination"
               contactInfo="SQL Server Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;5"
@@ -1248,13 +1723,11 @@
                       externalMetadataColumnId="Package\Upload pop_total\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[Country Code]"
                       lineageId="Package\Upload pop_total\Flat File Source.Outputs[Flat File Source Output].Columns[Country Code]" />
                     <inputColumn
-                      refId="Package\Upload pop_total\SQL Server Destination.Inputs[SQL Server Destination Input].Columns[Year 2020]"
-                      cachedCodepage="1250"
-                      cachedDataType="str"
-                      cachedLength="12"
-                      cachedName="Year 2020"
+                      refId="Package\Upload pop_total\SQL Server Destination.Inputs[SQL Server Destination Input].Columns[Copy of Year 2020]"
+                      cachedDataType="i4"
+                      cachedName="Copy of Year 2020"
                       externalMetadataColumnId="Package\Upload pop_total\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[Year 2020]"
-                      lineageId="Package\Upload pop_total\Flat File Source.Outputs[Flat File Source Output].Columns[Year 2020]" />
+                      lineageId="Package\Upload pop_total\Integer.Outputs[Data Conversion Output].Columns[Copy of Year 2020]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1270,9 +1743,7 @@
                       name="Country Code" />
                     <externalMetadataColumn
                       refId="Package\Upload pop_total\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[Year 2020]"
-                      codePage="1250"
-                      dataType="str"
-                      length="12"
+                      dataType="i4"
                       name="Year 2020" />
                   </externalMetadataColumns>
                 </input>
@@ -1281,8 +1752,23 @@
           </components>
           <paths>
             <path
-              refId="Package\Upload pop_total.Paths[Flat File Source Output]"
+              refId="Package\Upload pop_total.Paths[Data Conversion Output]"
               endId="Package\Upload pop_total\SQL Server Destination.Inputs[SQL Server Destination Input]"
+              name="Data Conversion Output"
+              startId="Package\Upload pop_total\Integer.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Upload pop_total.Paths[Derived Column Output]"
+              endId="Package\Upload pop_total\Dot to coma.Inputs[Derived Column Input]"
+              name="Derived Column Output"
+              startId="Package\Upload pop_total\Nulls.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Upload pop_total.Paths[Derived Column Output1]"
+              endId="Package\Upload pop_total\Integer.Inputs[Data Conversion Input]"
+              name="Derived Column Output"
+              startId="Package\Upload pop_total\Dot to coma.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Upload pop_total.Paths[Flat File Source Output]"
+              endId="Package\Upload pop_total\Nulls.Inputs[Derived Column Input]"
               name="Flat File Source Output"
               startId="Package\Upload pop_total\Flat File Source.Outputs[Flat File Source Output]" />
           </paths>
@@ -1303,6 +1789,85 @@
         <pipeline
           version="1">
           <components>
+            <component
+              refId="Package\Upload tourism\convert to numeric"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="convert to numeric"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Upload tourism\convert to numeric.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Upload tourism\convert to numeric.Inputs[Data Conversion Input].Columns[&quot;Year 2018&quot;]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="17"
+                      cachedName="&quot;Year 2018&quot;"
+                      lineageId="Package\Upload tourism\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;Year 2018&quot;]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Upload tourism\convert to numeric.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Upload tourism\convert to numeric.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Upload tourism\convert to numeric.Outputs[Data Conversion Output].Columns[Copy of &quot;Year 2018&quot;]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Upload tourism\convert to numeric.Outputs[Data Conversion Output].Columns[Copy of &quot;Year 2018&quot;]"
+                      name="Copy of &quot;Year 2018&quot;"
+                      precision="30"
+                      scale="11"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Upload tourism\Flat File Source.Outputs[Flat File Source Output].Columns["Year 2018"]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Upload tourism\convert to numeric.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Upload tourism\convert to numeric.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Upload tourism\convert to numeric.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Upload tourism\convert to numeric.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Upload tourism\convert to numeric.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Upload tourism\convert to numeric.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
             <component
               refId="Package\Upload tourism\Flat File Source"
               componentClassID="Microsoft.FlatFileSource"
@@ -1425,6 +1990,158 @@
               </outputs>
             </component>
             <component
+              refId="Package\Upload tourism\Set dot to coma"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Set dot to coma"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Upload tourism\Set dot to coma.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Upload tourism\Set dot to coma.Inputs[Derived Column Input].Columns[&quot;Year 2018&quot;]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="17"
+                      cachedName="&quot;Year 2018&quot;"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Upload tourism\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;Year 2018&quot;]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[REPLACE](#{Package\Upload tourism\Flat File Source.Outputs[Flat File Source Output].Columns["Year 2018"]},".",",")</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">REPLACE(["Year 2018"],".",",")</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Upload tourism\Set dot to coma.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Upload tourism\Set dot to coma.Inputs[Derived Column Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Upload tourism\Set dot to coma.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Upload tourism\Set dot to coma.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Upload tourism\Set dot to coma.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Upload tourism\Set dot to coma.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Upload tourism\Set dot to coma.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Upload tourism\Set dot to coma.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Upload tourism\Set nulls"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Set nulls"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Upload tourism\Set nulls.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Upload tourism\Set nulls.Inputs[Derived Column Input].Columns[&quot;Year 2018&quot;]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="17"
+                      cachedName="&quot;Year 2018&quot;"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Upload tourism\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;Year 2018&quot;]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[LEN]([TRIM](#{Package\Upload tourism\Flat File Source.Outputs[Flat File Source Output].Columns["Year 2018"]})) == 0 ? NULL(DT_WSTR,10) : #{Package\Upload tourism\Flat File Source.Outputs[Flat File Source Output].Columns["Year 2018"]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">LEN(TRIM(["Year 2018"])) == 0 ? NULL(DT_WSTR,10) : ["Year 2018"]</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Upload tourism\Set nulls.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Upload tourism\Set nulls.Inputs[Derived Column Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Upload tourism\Set nulls.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Upload tourism\Set nulls.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Upload tourism\Set nulls.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Upload tourism\Set nulls.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Upload tourism\Set nulls.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Upload tourism\Set nulls.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
               refId="Package\Upload tourism\SQL Server Destination"
               componentClassID="Microsoft.SQLServerDestination"
               contactInfo="SQL Server Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;5"
@@ -1516,6 +2233,14 @@
                       cachedName="&quot;Country Code&quot;"
                       externalMetadataColumnId="Package\Upload tourism\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[Country Code]"
                       lineageId="Package\Upload tourism\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;Country Code&quot;]" />
+                    <inputColumn
+                      refId="Package\Upload tourism\SQL Server Destination.Inputs[SQL Server Destination Input].Columns[Copy of &quot;Year 2018&quot;]"
+                      cachedDataType="numeric"
+                      cachedName="Copy of &quot;Year 2018&quot;"
+                      cachedPrecision="30"
+                      cachedScale="11"
+                      externalMetadataColumnId="Package\Upload tourism\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[Year 2018]"
+                      lineageId="Package\Upload tourism\convert to numeric.Outputs[Data Conversion Output].Columns[Copy of &quot;Year 2018&quot;]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1530,10 +2255,11 @@
                       length="3"
                       name="Country Code" />
                     <externalMetadataColumn
-                      refId="Package\Upload tourism\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[Year 2019]"
+                      refId="Package\Upload tourism\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[Year 2018]"
                       dataType="numeric"
-                      name="Year 2019"
-                      precision="18" />
+                      name="Year 2018"
+                      precision="30"
+                      scale="11" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -1541,8 +2267,23 @@
           </components>
           <paths>
             <path
-              refId="Package\Upload tourism.Paths[Flat File Source Output]"
+              refId="Package\Upload tourism.Paths[Data Conversion Output]"
               endId="Package\Upload tourism\SQL Server Destination.Inputs[SQL Server Destination Input]"
+              name="Data Conversion Output"
+              startId="Package\Upload tourism\convert to numeric.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Upload tourism.Paths[Derived Column Output]"
+              endId="Package\Upload tourism\Set dot to coma.Inputs[Derived Column Input]"
+              name="Derived Column Output"
+              startId="Package\Upload tourism\Set nulls.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Upload tourism.Paths[Derived Column Output1]"
+              endId="Package\Upload tourism\convert to numeric.Inputs[Data Conversion Input]"
+              name="Derived Column Output"
+              startId="Package\Upload tourism\Set dot to coma.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Upload tourism.Paths[Flat File Source Output]"
+              endId="Package\Upload tourism\Set nulls.Inputs[Derived Column Input]"
               name="Flat File Source Output"
               startId="Package\Upload tourism\Flat File Source.Outputs[Flat File Source Output]" />
           </paths>
@@ -1563,6 +2304,161 @@
         <pipeline
           version="1">
           <components>
+            <component
+              refId="Package\Upload urban_pop\Decimal"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Decimal"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Upload urban_pop\Decimal.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Upload urban_pop\Decimal.Inputs[Data Conversion Input].Columns[Year 2020]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="16"
+                      cachedName="Year 2020"
+                      lineageId="Package\Upload urban_pop\Flat File Source.Outputs[Flat File Source Output].Columns[Year 2020]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Upload urban_pop\Decimal.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Upload urban_pop\Decimal.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Upload urban_pop\Decimal.Outputs[Data Conversion Output].Columns[Copy of Year 2020]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Upload urban_pop\Decimal.Outputs[Data Conversion Output].Columns[Copy of Year 2020]"
+                      name="Copy of Year 2020"
+                      precision="18"
+                      scale="13"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Upload urban_pop\Flat File Source.Outputs[Flat File Source Output].Columns[Year 2020]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Upload urban_pop\Decimal.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Upload urban_pop\Decimal.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Upload urban_pop\Decimal.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Upload urban_pop\Decimal.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Upload urban_pop\Decimal.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Upload urban_pop\Decimal.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Upload urban_pop\Dot to coma"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Dot to coma"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Upload urban_pop\Dot to coma.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Upload urban_pop\Dot to coma.Inputs[Derived Column Input].Columns[Year 2020]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="16"
+                      cachedName="Year 2020"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Upload urban_pop\Flat File Source.Outputs[Flat File Source Output].Columns[Year 2020]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[REPLACE](#{Package\Upload urban_pop\Flat File Source.Outputs[Flat File Source Output].Columns[Year 2020]},".",",")</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">REPLACE([Year 2020],".",",")</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Upload urban_pop\Dot to coma.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Upload urban_pop\Dot to coma.Inputs[Derived Column Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Upload urban_pop\Dot to coma.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Upload urban_pop\Dot to coma.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Upload urban_pop\Dot to coma.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Upload urban_pop\Dot to coma.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Upload urban_pop\Dot to coma.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Upload urban_pop\Dot to coma.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
             <component
               refId="Package\Upload urban_pop\Flat File Source"
               componentClassID="Microsoft.FlatFileSource"
@@ -1685,6 +2581,82 @@
               </outputs>
             </component>
             <component
+              refId="Package\Upload urban_pop\Null"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Null"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Upload urban_pop\Null.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Upload urban_pop\Null.Inputs[Derived Column Input].Columns[Year 2020]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="16"
+                      cachedName="Year 2020"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Upload urban_pop\Flat File Source.Outputs[Flat File Source Output].Columns[Year 2020]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[LEN]([TRIM](#{Package\Upload urban_pop\Flat File Source.Outputs[Flat File Source Output].Columns[Year 2020]})) == 0 ? NULL(DT_WSTR,10) : #{Package\Upload urban_pop\Flat File Source.Outputs[Flat File Source Output].Columns[Year 2020]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">LEN(TRIM([Year 2020])) == 0 ? NULL(DT_WSTR,10) : [Year 2020]</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Upload urban_pop\Null.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Upload urban_pop\Null.Inputs[Derived Column Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Upload urban_pop\Null.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Upload urban_pop\Null.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Upload urban_pop\Null.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Upload urban_pop\Null.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Upload urban_pop\Null.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Upload urban_pop\Null.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
               refId="Package\Upload urban_pop\SQL Server Destination"
               componentClassID="Microsoft.SQLServerDestination"
               contactInfo="SQL Server Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;5"
@@ -1777,13 +2749,13 @@
                       externalMetadataColumnId="Package\Upload urban_pop\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[Country Code]"
                       lineageId="Package\Upload urban_pop\Flat File Source.Outputs[Flat File Source Output].Columns[Country Code]" />
                     <inputColumn
-                      refId="Package\Upload urban_pop\SQL Server Destination.Inputs[SQL Server Destination Input].Columns[Year 2020]"
-                      cachedCodepage="1250"
-                      cachedDataType="str"
-                      cachedLength="16"
-                      cachedName="Year 2020"
+                      refId="Package\Upload urban_pop\SQL Server Destination.Inputs[SQL Server Destination Input].Columns[Copy of Year 2020]"
+                      cachedDataType="numeric"
+                      cachedName="Copy of Year 2020"
+                      cachedPrecision="18"
+                      cachedScale="13"
                       externalMetadataColumnId="Package\Upload urban_pop\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[Year 2020]"
-                      lineageId="Package\Upload urban_pop\Flat File Source.Outputs[Flat File Source Output].Columns[Year 2020]" />
+                      lineageId="Package\Upload urban_pop\Decimal.Outputs[Data Conversion Output].Columns[Copy of Year 2020]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1799,10 +2771,10 @@
                       name="Country Code" />
                     <externalMetadataColumn
                       refId="Package\Upload urban_pop\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[Year 2020]"
-                      codePage="1250"
-                      dataType="str"
-                      length="16"
-                      name="Year 2020" />
+                      dataType="numeric"
+                      name="Year 2020"
+                      precision="18"
+                      scale="13" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -1810,8 +2782,23 @@
           </components>
           <paths>
             <path
-              refId="Package\Upload urban_pop.Paths[Flat File Source Output]"
+              refId="Package\Upload urban_pop.Paths[Data Conversion Output]"
               endId="Package\Upload urban_pop\SQL Server Destination.Inputs[SQL Server Destination Input]"
+              name="Data Conversion Output"
+              startId="Package\Upload urban_pop\Decimal.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Upload urban_pop.Paths[Derived Column Output]"
+              endId="Package\Upload urban_pop\Dot to coma.Inputs[Derived Column Input]"
+              name="Derived Column Output"
+              startId="Package\Upload urban_pop\Null.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Upload urban_pop.Paths[Derived Column Output1]"
+              endId="Package\Upload urban_pop\Decimal.Inputs[Data Conversion Input]"
+              name="Derived Column Output"
+              startId="Package\Upload urban_pop\Dot to coma.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Upload urban_pop.Paths[Flat File Source Output]"
+              endId="Package\Upload urban_pop\Null.Inputs[Derived Column Input]"
               name="Flat File Source Output"
               startId="Package\Upload urban_pop\Flat File Source.Outputs[Flat File Source Output]" />
           </paths>
@@ -1892,25 +2879,25 @@
         <NodeLayout
           Size="149.6,41.6"
           Id="Package\Upload tourism"
-          TopLeft="210.714289302729,208.000002917122" />
+          TopLeft="210.000003576279,209.529414703277" />
         <NodeLayout
           Size="164.8,41.6"
           Id="Package\Upload urban_pop"
-          TopLeft="200.71428913243,428.235300123485" />
+          TopLeft="200.71428913243,432.058829588873" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="287.485717849829,168.54117825089">
+          TopLeft="287.128574986604,168.54117825089">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,39.4588246662317"
+              EndConnector="0,40.9882364523873"
               Start="0,0"
-              End="0,31.9588246662317">
+              End="0,33.4882364523873">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,31.9588246662317" />
+                    End="0,33.4882364523873" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1921,18 +2908,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="282.971432123379,249.600002917122">
+          TopLeft="282.614289260154,251.129414703277">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,32.5764716285322"
+              EndConnector="0,31.0470598423767"
               Start="0,0"
-              End="0,25.0764716285322">
+              End="0,23.5470598423767">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,25.0764716285322" />
+                    End="0,23.5470598423767" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1969,14 +2956,14 @@
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,27.988236270066"
+              EndConnector="0,31.8117657354542"
               Start="0,0"
-              End="0,20.488236270066">
+              End="0,24.3117657354542">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,20.488236270066" />
+                    End="0,24.3117657354542" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2020,22 +3007,64 @@
           Id="Package\Upload death rate\SQL Server Destination"
           TopLeft="214.571429057997,248.235294653883" />
         <NodeLayout
+          Size="166.4,41.6"
+          Id="Package\Upload death rate\Convert to decimal"
+          TopLeft="522.857151761347,226.352944350985" />
+        <NodeLayout
           Size="150.4,41.6"
           Id="Package\Upload death rate\Flat File Source"
           TopLeft="182.28571427355,125.882353037699" />
         <NodeLayout
+          Size="173.6,41.6"
+          Id="Package\Upload death rate\Change dot to coma"
+          TopLeft="503.571437147199,138.411766647055" />
+        <NodeLayout
           Size="118.4,41.6"
           Id="Package\Upload death rate\Set nulls"
-          TopLeft="354.285720319164,135.352943074745" />
+          TopLeft="354.285720319164,138.352943074745" />
+        <EdgeLayout
+          Id="Package\Upload death rate.Paths[Data Conversion Output]"
+          TopLeft="522.857151761347,247.152944350985">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-121.08572270335,21.8823503028974"
+              Start="0,0"
+              End="-113.58572270335,21.8823503028974">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-56.5428613516749,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-56.5428613516749,0"
+                    Point2="-60.5428613516749,0"
+                    Point3="-60.5428613516749,4" />
+                  <mssgle:LineSegment
+                    End="-60.5428613516749,17.8823503028974" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-60.5428613516749,17.8823503028974"
+                    Point2="-60.5428613516749,21.8823503028974"
+                    Point3="-64.5428613516749,21.8823503028974" />
+                  <mssgle:LineSegment
+                    End="-113.58572270335,21.8823503028974" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Upload death rate.Paths[Flat File Source Output]"
           TopLeft="257.48571427355,125.882353037699">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="156.000006045614,9.47059003704565"
+              EndConnector="156.000006045614,12.470590037046"
               Start="0,0"
-              End="156.000006045614,1.97059003704565">
+              End="156.000006045614,4.97059003704602">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -2052,7 +3081,7 @@
                     Point2="156.000006045614,-22.5"
                     Point3="156.000006045614,-18.5" />
                   <mssgle:LineSegment
-                    End="156.000006045614,1.97059003704565" />
+                    End="156.000006045614,4.97059003704602" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2061,36 +3090,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="173.6,41.6"
-          Id="Package\Upload death rate\Change dot to coma"
-          TopLeft="503.571437147199,138.411766647055" />
-        <EdgeLayout
-          Id="Package\Upload death rate.Paths[Derived Column Output]"
-          TopLeft="472.685720319164,157.6823548609">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="30.8857168280352,0"
-              Start="0,0"
-              End="23.3857168280352,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="23.3857168280352,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="166.4,41.6"
-          Id="Package\Upload death rate\Convert to decimal"
-          TopLeft="522.857151761347,226.352944350985" />
         <EdgeLayout
           Id="Package\Upload death rate.Paths[Derived Column Output1]"
           TopLeft="590.371437147199,180.011766647055">
@@ -2126,31 +3125,19 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Upload death rate.Paths[Data Conversion Output]"
-          TopLeft="522.857151761347,247.152944350985">
+          Id="Package\Upload death rate.Paths[Derived Column Output]"
+          TopLeft="472.685720319164,159.1823548609">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-121.08572270335,21.8823503028974"
+              EndConnector="30.885716828035,0"
               Start="0,0"
-              End="-113.58572270335,21.8823503028974">
+              End="23.385716828035,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-56.5428613516749,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-56.5428613516749,0"
-                    Point2="-60.5428613516749,0"
-                    Point3="-60.5428613516749,4" />
-                  <mssgle:LineSegment
-                    End="-60.5428613516749,17.8823503028974" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-60.5428613516749,17.8823503028974"
-                    Point2="-60.5428613516749,21.8823503028974"
-                    Point3="-64.5428613516749,21.8823503028974" />
-                  <mssgle:LineSegment
-                    End="-113.58572270335,21.8823503028974" />
+                    End="23.385716828035,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2174,37 +3161,161 @@
     design-time-name="Package\Upload density">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="187.2,41.6"
           Id="Package\Upload density\SQL Server Destination"
-          TopLeft="92,121" />
+          TopLeft="84,163" />
         <NodeLayout
           Size="150.4,41.6"
           Id="Package\Upload density\Flat File Source"
           TopLeft="108,47" />
+        <NodeLayout
+          Size="100.8,41.6"
+          Id="Package\Upload density\Nulls"
+          TopLeft="357,75" />
         <EdgeLayout
           Id="Package\Upload density.Paths[Flat File Source Output]"
-          TopLeft="184.4,88.6">
+          TopLeft="258.4,67.8">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,32.4"
+              EndConnector="98.6,28"
               Start="0,0"
-              End="0,24.9">
+              End="91.1,28">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,24.9" />
+                    End="45.3,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="45.3,0"
+                    Point2="49.3,0"
+                    Point3="49.3,4" />
+                  <mssgle:LineSegment
+                    End="49.3,24" />
+                  <mssgle:CubicBezierSegment
+                    Point1="49.3,24"
+                    Point2="49.3,28"
+                    Point3="53.3,28" />
+                  <mssgle:LineSegment
+                    End="91.1,28" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="136,41.6"
+          Id="Package\Upload density\Dot to coma"
+          TopLeft="595,99" />
+        <EdgeLayout
+          Id="Package\Upload density.Paths[Derived Column Output]"
+          TopLeft="457.8,95.8">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="137.2,24"
+              Start="0,0"
+              End="129.7,24">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="64.6000000000001,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="64.6000000000001,0"
+                    Point2="68.6000000000001,0"
+                    Point3="68.6000000000001,4" />
+                  <mssgle:LineSegment
+                    End="68.6000000000001,20" />
+                  <mssgle:CubicBezierSegment
+                    Point1="68.6000000000001,20"
+                    Point2="68.6000000000001,24"
+                    Point3="72.6000000000001,24" />
+                  <mssgle:LineSegment
+                    End="129.7,24" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="119.2,41.6"
+          Id="Package\Upload density\decimals"
+          TopLeft="568,197" />
+        <EdgeLayout
+          Id="Package\Upload density.Paths[Derived Column Output1]"
+          TopLeft="663,140.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-35.4000000000001,56.4"
+              Start="0,0"
+              End="-35.4000000000001,48.9">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.2" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24.2"
+                    Point2="0,28.2"
+                    Point3="-4,28.2" />
+                  <mssgle:LineSegment
+                    End="-31.4000000000001,28.2" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-31.4000000000001,28.2"
+                    Point2="-35.4000000000001,28.2"
+                    Point3="-35.4000000000001,32.2" />
+                  <mssgle:LineSegment
+                    End="-35.4000000000001,48.9" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Upload density.Paths[Data Conversion Output]"
+          TopLeft="568,217.8">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-296.8,-34.0000000000001"
+              Start="0,0"
+              End="-289.3,-34.0000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-144.4,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-144.4,0"
+                    Point2="-148.4,0"
+                    Point3="-148.4,-4" />
+                  <mssgle:LineSegment
+                    End="-148.4,-30.0000000000001" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-148.4,-30.0000000000001"
+                    Point2="-148.4,-34.0000000000001"
+                    Point3="-152.4,-34.0000000000001" />
+                  <mssgle:LineSegment
+                    End="-289.3,-34.0000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -2222,29 +3333,131 @@
     design-time-name="Package\Upload pop_total">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="187.2,41.6"
           Id="Package\Upload pop_total\SQL Server Destination"
-          TopLeft="108,162" />
+          TopLeft="112,167" />
         <NodeLayout
           Size="150.4,41.6"
           Id="Package\Upload pop_total\Flat File Source"
-          TopLeft="129,71" />
+          TopLeft="133,76" />
+        <NodeLayout
+          Size="100.8,41.6"
+          Id="Package\Upload pop_total\Nulls"
+          TopLeft="320,79" />
         <EdgeLayout
           Id="Package\Upload pop_total.Paths[Flat File Source Output]"
-          TopLeft="202.9,112.6">
+          TopLeft="283.4,98.3">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,49.4"
+              EndConnector="36.6,0"
               Start="0,0"
-              End="0,41.9">
+              End="29.1,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,41.9" />
+                    End="29.1,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="136,41.6"
+          Id="Package\Upload pop_total\Dot to coma"
+          TopLeft="516,96" />
+        <EdgeLayout
+          Id="Package\Upload pop_total.Paths[Derived Column Output]"
+          TopLeft="420.8,99.8">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="95.2,17"
+              Start="0,0"
+              End="87.7,17">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="43.6,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="43.6,0"
+                    Point2="47.6,0"
+                    Point3="47.6,4" />
+                  <mssgle:LineSegment
+                    End="47.6,13" />
+                  <mssgle:CubicBezierSegment
+                    Point1="47.6,13"
+                    Point2="47.6,17"
+                    Point3="51.6,17" />
+                  <mssgle:LineSegment
+                    End="87.7,17" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="112.8,41.6"
+          Id="Package\Upload pop_total\Integer"
+          TopLeft="508,171" />
+        <EdgeLayout
+          Id="Package\Upload pop_total.Paths[Derived Column Output1]"
+          TopLeft="584,137.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-19.6,33.4"
+              Start="0,0"
+              End="-19.6,25.9">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,12.7" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,12.7"
+                    Point2="0,16.7"
+                    Point3="-4,16.7" />
+                  <mssgle:LineSegment
+                    End="-15.6,16.7" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-15.6,16.7"
+                    Point2="-19.6,16.7"
+                    Point3="-19.6,20.7" />
+                  <mssgle:LineSegment
+                    End="-19.6,25.9" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Upload pop_total.Paths[Data Conversion Output]"
+          TopLeft="508,189.8">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-208.8,0"
+              Start="0,0"
+              End="-201.3,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-201.3,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2268,49 +3481,149 @@
     design-time-name="Package\Upload tourism">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="187.2,41.6"
           Id="Package\Upload tourism\SQL Server Destination"
-          TopLeft="125,132" />
+          TopLeft="113.571428376801,206.94117752161" />
         <NodeLayout
           Size="150.4,41.6"
           Id="Package\Upload tourism\Flat File Source"
-          TopLeft="122,54" />
+          TopLeft="125.57142863225,57.8235294653882" />
+        <NodeLayout
+          Size="118.4,41.6"
+          Id="Package\Upload tourism\Set nulls"
+          TopLeft="330.000005619867,66.5294126977558" />
         <EdgeLayout
           Id="Package\Upload tourism.Paths[Flat File Source Output]"
-          TopLeft="197.2,95.6">
+          TopLeft="275.97142863225,78.6235294653882">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="21.4000000000001,36.4"
+              EndConnector="54.028576987617,8.70588323236751"
               Start="0,0"
-              End="21.4000000000001,28.9">
+              End="46.528576987617,8.70588323236751">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,14.2" />
+                    End="23.0142884938085,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,14.2"
-                    Point2="0,18.2"
-                    Point3="4,18.2" />
+                    Point1="23.0142884938085,0"
+                    Point2="27.0142884938085,0"
+                    Point3="27.0142884938085,4" />
                   <mssgle:LineSegment
-                    End="17.4000000000001,18.2" />
+                    End="27.0142884938085,4.70588323236751" />
                   <mssgle:CubicBezierSegment
-                    Point1="17.4000000000001,18.2"
-                    Point2="21.4000000000001,18.2"
-                    Point3="21.4000000000001,22.2" />
+                    Point1="27.0142884938085,4.70588323236751"
+                    Point2="27.0142884938085,8.70588323236751"
+                    Point3="31.0142884938085,8.70588323236751" />
                   <mssgle:LineSegment
-                    End="21.4000000000001,28.9" />
+                    End="46.528576987617,8.70588323236751" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="153.6,41.6"
+          Id="Package\Upload tourism\Set dot to coma"
+          TopLeft="554.285723725144,79.5294128800759" />
+        <EdgeLayout
+          Id="Package\Upload tourism.Paths[Derived Column Output]"
+          TopLeft="448.400005619867,87.3294126977558">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="105.885718105277,13.0000001823201"
+              Start="0,0"
+              End="98.3857181052773,13.0000001823201">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="48.9428590526387,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="48.9428590526387,0"
+                    Point2="52.9428590526387,0"
+                    Point3="52.9428590526387,4" />
+                  <mssgle:LineSegment
+                    End="52.9428590526387,9.00000018232009" />
+                  <mssgle:CubicBezierSegment
+                    Point1="52.9428590526387,9.00000018232009"
+                    Point2="52.9428590526387,13.0000001823201"
+                    Point3="56.9428590526387,13.0000001823201" />
+                  <mssgle:LineSegment
+                    End="98.3857181052773,13.0000001823201" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="167.2,41.6"
+          Id="Package\Upload tourism\convert to numeric"
+          TopLeft="554.285723725144,162.117649332462" />
+        <EdgeLayout
+          Id="Package\Upload tourism.Paths[Derived Column Output1]"
+          TopLeft="634.485723725144,121.129412880076">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,40.9882364523864"
+              Start="0,0"
+              End="0,33.4882364523864">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.4882364523864" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Upload tourism.Paths[Data Conversion Output]"
+          TopLeft="554.285723725144,182.917649332462">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-253.514295348343,44.8235281891476"
+              Start="0,0"
+              End="-246.014295348343,44.8235281891476">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-122.757147674171,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-122.757147674171,0"
+                    Point2="-126.757147674171,0"
+                    Point3="-126.757147674171,4" />
+                  <mssgle:LineSegment
+                    End="-126.757147674171,40.8235281891476" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-126.757147674171,40.8235281891476"
+                    Point2="-126.757147674171,44.8235281891476"
+                    Point3="-130.757147674171,44.8235281891476" />
+                  <mssgle:LineSegment
+                    End="-246.014295348343,44.8235281891476" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -2328,7 +3641,7 @@
     design-time-name="Package\Upload urban_pop">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="187.2,41.6"
           Id="Package\Upload urban_pop\SQL Server Destination"
@@ -2337,40 +3650,140 @@
           Size="150.4,41.6"
           Id="Package\Upload urban_pop\Flat File Source"
           TopLeft="93,72" />
+        <NodeLayout
+          Size="96,41.6"
+          Id="Package\Upload urban_pop\Null"
+          TopLeft="346,82" />
         <EdgeLayout
           Id="Package\Upload urban_pop.Paths[Flat File Source Output]"
-          TopLeft="168.2,113.6">
+          TopLeft="243.4,92.8">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="19.4,31.4"
+              EndConnector="102.6,10"
               Start="0,0"
-              End="19.4,23.9">
+              End="95.1,10">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,11.7" />
+                    End="47.3,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,11.7"
-                    Point2="0,15.7"
-                    Point3="4,15.7" />
+                    Point1="47.3,0"
+                    Point2="51.3,0"
+                    Point3="51.3,4" />
                   <mssgle:LineSegment
-                    End="15.4,15.7" />
+                    End="51.3,6.00000000000001" />
                   <mssgle:CubicBezierSegment
-                    Point1="15.4,15.7"
-                    Point2="19.4,15.7"
-                    Point3="19.4,19.7" />
+                    Point1="51.3,6.00000000000001"
+                    Point2="51.3,10"
+                    Point3="55.3,10" />
                   <mssgle:LineSegment
-                    End="19.4,23.9" />
+                    End="95.1,10" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="136,41.6"
+          Id="Package\Upload urban_pop\Dot to coma"
+          TopLeft="508,110" />
+        <EdgeLayout
+          Id="Package\Upload urban_pop.Paths[Derived Column Output]"
+          TopLeft="442,102.8">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="66,28"
+              Start="0,0"
+              End="58.5,28">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="29,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="29,0"
+                    Point2="33,0"
+                    Point3="33,4" />
+                  <mssgle:LineSegment
+                    End="33,24" />
+                  <mssgle:CubicBezierSegment
+                    Point1="33,24"
+                    Point2="33,28"
+                    Point3="37,28" />
+                  <mssgle:LineSegment
+                    End="58.5,28" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="116,41.6"
+          Id="Package\Upload urban_pop\Decimal"
+          TopLeft="520,192" />
+        <EdgeLayout
+          Id="Package\Upload urban_pop.Paths[Derived Column Output1]"
+          TopLeft="577,151.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,40.4"
+              Start="0,0"
+              End="0,32.9">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.9" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Upload urban_pop.Paths[Data Conversion Output]"
+          TopLeft="520,212.8">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-238.8,-47"
+              Start="0,0"
+              End="-231.3,-47">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-115.4,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-115.4,0"
+                    Point2="-119.4,0"
+                    Point3="-119.4,-4" />
+                  <mssgle:LineSegment
+                    End="-119.4,-43" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-119.4,-43"
+                    Point2="-119.4,-47"
+                    Point3="-123.4,-47" />
+                  <mssgle:LineSegment
+                    End="-231.3,-47" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
